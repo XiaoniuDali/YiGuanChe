@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "LaunchRoot.h"
 @interface AppDelegate ()
 
 @end
@@ -16,6 +16,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // 不用版本检测更新，苹果自动会检测
+    self.window.rootViewController = [LaunchRoot new];
     // Override point for customization after application launch.
     return YES;
 }
