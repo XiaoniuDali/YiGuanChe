@@ -8,6 +8,7 @@
 
 #import "IanMainViewController.h"
 #import "appMarco.h"
+#import "SearchFineViewController.h"
 #define UISCREENHEIGHT  self.view.bounds.size.height
 #define UISCREENWIDTH  self.view.bounds.size.width
 
@@ -30,16 +31,16 @@
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     [flowLayout setItemSize:CGSizeMake(100, 100)];//设置cell的尺寸
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];//设置其布局方向
-    flowLayout.sectionInset = UIEdgeInsetsMake(10, 15, 10, 15);//设置其边界
+    flowLayout.sectionInset = UIEdgeInsetsMake(10, 15, 15, 10);//设置其边界
     //其布局很有意思，当你的cell设置大小后，一行多少个cell，由cell的宽度决定
     
     UICollectionView *collectionView =[[UICollectionView alloc] initWithFrame:CGRectMake(0,214, self.view.bounds.size.width, self.view.bounds.size.height-48-125) collectionViewLayout:flowLayout] ;
     
-    UIImageView *imageView =[[UIImageView alloc] init];
-    [imageView setBackgroundColor:[UIColor redColor]];//ianRGBColor(59, 86, 129)//图片
-    [imageView setFrame:collectionView.bounds];
-    [collectionView setBackgroundView:imageView];
-    
+//    UIImageView *imageView =[[UIImageView alloc] init];
+//    [imageView setBackgroundColor:[UIColor redColor]];//ianRGBColor(59, 86, 129)//图片
+//    [imageView setFrame:collectionView.bounds];
+//    [collectionView setBackgroundView:imageView];
+//    
     
     [collectionView registerClass :[UICollectionViewCell class] forCellWithReuseIdentifier : ID];
     
@@ -68,14 +69,6 @@
     scrollView.pageControl.currentPageIndicatorTintColor = [UIColor purpleColor];
     [self.view addSubview:scrollView];
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-
-}
-
-
-
-
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
@@ -90,13 +83,24 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    UICollectionViewCell *cell =[collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
-    [cell.contentView setBackgroundColor:ianRandomColor];
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
+    
+//    [cell.contentView setBackgroundColor:[UIColor redColor]];
+    
+    if (indexPath.row == 0) {
+        cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"fineICON"]];
+
+    }
+    // 这里增加点击功能的图片ß
     return cell;
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"select  select ");
+    if (indexPath.row == 0) {
+        SearchFineViewController *searchFine = [SearchFineViewController new];
+        [self.navigationController pushViewController:searchFine animated:YES];
+    }
 }
 
 

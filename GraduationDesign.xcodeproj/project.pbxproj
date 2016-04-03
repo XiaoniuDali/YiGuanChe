@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3954F8FA1CAFA343005C1353 /* vinModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3954F8F91CAFA343005C1353 /* vinModel.m */; };
+		396621EA1CB0BC9A001D0AC3 /* SearchFineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 396621E81CB0BC9A001D0AC3 /* SearchFineViewController.m */; };
+		396621EB1CB0BC9A001D0AC3 /* SearchFineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 396621E91CB0BC9A001D0AC3 /* SearchFineViewController.xib */; };
 		39DF7A591CAC1F6500FC0A3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF7A581CAC1F6500FC0A3D /* main.m */; };
 		39DF7A5C1CAC1F6500FC0A3D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF7A5B1CAC1F6500FC0A3D /* AppDelegate.m */; };
 		39DF7A5F1CAC1F6500FC0A3D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF7A5E1CAC1F6500FC0A3D /* ViewController.m */; };
@@ -104,6 +107,11 @@
 
 /* Begin PBXFileReference section */
 		10F2EA6846F5FAA7F6A59DFD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		3954F8F81CAFA343005C1353 /* vinModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vinModel.h; sourceTree = "<group>"; };
+		3954F8F91CAFA343005C1353 /* vinModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vinModel.m; sourceTree = "<group>"; };
+		396621E71CB0BC9A001D0AC3 /* SearchFineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchFineViewController.h; sourceTree = "<group>"; };
+		396621E81CB0BC9A001D0AC3 /* SearchFineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchFineViewController.m; sourceTree = "<group>"; };
+		396621E91CB0BC9A001D0AC3 /* SearchFineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchFineViewController.xib; sourceTree = "<group>"; };
 		39DF7A541CAC1F6500FC0A3D /* GraduationDesign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraduationDesign.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39DF7A581CAC1F6500FC0A3D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		39DF7A5A1CAC1F6500FC0A3D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -285,6 +293,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3954F8F71CAFA315005C1353 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				3954F8F81CAFA343005C1353 /* vinModel.h */,
+				3954F8F91CAFA343005C1353 /* vinModel.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		396621E61CB0BC60001D0AC3 /* founctionView */ = {
+			isa = PBXGroup;
+			children = (
+				396621E71CB0BC9A001D0AC3 /* SearchFineViewController.h */,
+				396621E81CB0BC9A001D0AC3 /* SearchFineViewController.m */,
+				396621E91CB0BC9A001D0AC3 /* SearchFineViewController.xib */,
+			);
+			name = founctionView;
+			sourceTree = "<group>";
+		};
 		39DF7A4B1CAC1F6500FC0A3D = {
 			isa = PBXGroup;
 			children = (
@@ -320,6 +347,7 @@
 				39DF7AEA1CAC220900FC0A3D /* tool */,
 				39DF7A5A1CAC1F6500FC0A3D /* AppDelegate.h */,
 				39DF7A5B1CAC1F6500FC0A3D /* AppDelegate.m */,
+				3954F8F71CAFA315005C1353 /* model */,
 				39DF7A5D1CAC1F6500FC0A3D /* ViewController.h */,
 				39DF7A5E1CAC1F6500FC0A3D /* ViewController.m */,
 				39DF7A601CAC1F6500FC0A3D /* Main.storyboard */,
@@ -391,6 +419,7 @@
 		39DF7ABD1CAC220900FC0A3D /* homeController */ = {
 			isa = PBXGroup;
 			children = (
+				396621E61CB0BC60001D0AC3 /* founctionView */,
 				39DF7ABE1CAC220900FC0A3D /* IanMainViewController.h */,
 				39DF7ABF1CAC220900FC0A3D /* IanMainViewController.m */,
 			);
@@ -800,6 +829,7 @@
 				39DF7A671CAC1F6500FC0A3D /* LaunchScreen.storyboard in Resources */,
 				39DF7BCF1CAC2C6700FC0A3D /* image2.png in Resources */,
 				39DF7A641CAC1F6500FC0A3D /* Assets.xcassets in Resources */,
+				396621EB1CB0BC9A001D0AC3 /* SearchFineViewController.xib in Resources */,
 				39DF7BCE1CAC2C6700FC0A3D /* image1.png in Resources */,
 				39DF7BCD1CAC2C6700FC0A3D /* image0.png in Resources */,
 				39DF7A621CAC1F6500FC0A3D /* Main.storyboard in Resources */,
@@ -900,6 +930,7 @@
 				39DF7BC41CAC292700FC0A3D /* CustomTabBarController.m in Sources */,
 				39DF7B7D1CAC22FA00FC0A3D /* UIScrollView+MJExtension.m in Sources */,
 				39DF7B781CAC22FA00FC0A3D /* MBProgressHUD.m in Sources */,
+				3954F8FA1CAFA343005C1353 /* vinModel.m in Sources */,
 				39DF7BBB1CAC25C300FC0A3D /* SBJsonUTF8Stream.m in Sources */,
 				39DF7B7B1CAC22FA00FC0A3D /* MJRefreshFooterView.m in Sources */,
 				39DF7A591CAC1F6500FC0A3D /* main.m in Sources */,
@@ -934,6 +965,7 @@
 				39DF7B811CAC22FA00FC0A3D /* SIAlertView.m in Sources */,
 				39DF7B081CAC220900FC0A3D /* IHSettingViewController.m in Sources */,
 				39DF7B721CAC22FA00FC0A3D /* AFURLRequestSerialization.m in Sources */,
+				396621EA1CB0BC9A001D0AC3 /* SearchFineViewController.m in Sources */,
 				39DF7BB71CAC25C300FC0A3D /* SBJsonStreamWriter.m in Sources */,
 				39DF7B701CAC22FA00FC0A3D /* AFSecurityPolicy.m in Sources */,
 				39DF7BD91CAC2CAA00FC0A3D /* AdScrollView.m in Sources */,
