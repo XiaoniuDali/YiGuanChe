@@ -21,4 +21,10 @@
 // 3.2注册
 - (void)app_login_register:(NSDictionary *)dic CompleteHandle:(CompleteHandle)completeHandle;
 
+
+
+// 违章查询
+- (void)app_search_fine:(NSDictionary *)dic CompleteHandle:(CompleteHandle)completeHandle;
+// 城市ID查询
+- (void)app_get_all_config:(NSDictionary *)dic CompleteHandle:(CompleteHandle)completeHandle;
 @end

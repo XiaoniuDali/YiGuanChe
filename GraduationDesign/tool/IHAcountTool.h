@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MBProgressHUD.h"
 @class IHAcount;
 @interface IHAcountTool : NSObject
 -(IHAcount *)acount;
++ (NSString *)md5HexDigest:(NSString*)password;
++ (void)showHUD:(NSString *)text andView:(UIView *)view;
++ (void)hideHUD;
++ (void)showDelyHUD:(NSString *)text andView:(UIView *)view;
 @end

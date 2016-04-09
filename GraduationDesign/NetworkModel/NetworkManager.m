@@ -64,4 +64,54 @@
     }];
 }
 
+
+- (void)app_search_fine:(NSDictionary *)dic CompleteHandle:(CompleteHandle)completeHandle{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    // 这里服务器接口写死    
+    [manager POST:[NSString stringWithFormat:@"%@",@"http://www.cheshouye.com/api/weizhang/query_task?"] parameters:dic success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        if (completeHandle) {
+            
+            
+            completeHandle(responseObject);
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        if (completeHandle) {
+            
+            
+            completeHandle(nil);
+        }
+        
+        NSLog(@"错误: %@", error);
+        
+    }];
+}
+
+- (void)app_get_all_config:(NSDictionary *)dic CompleteHandle:(CompleteHandle)completeHandle{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    // 这里服务器接口写死
+
+    [manager POST:[NSString stringWithFormat:@"%@",@"http://www.cheshouye.com/api/weizhang/get_all_config"] parameters:dic success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        if (completeHandle) {
+            
+            
+            completeHandle(responseObject);
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        if (completeHandle) {
+            
+            
+            completeHandle(nil);
+        }
+        
+        NSLog(@"错误: %@", error);
+        
+    }];
+}
+
 @end

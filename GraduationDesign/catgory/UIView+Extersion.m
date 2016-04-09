@@ -56,10 +56,10 @@
     return self.centerX;
 }
 
--(CGFloat)centerY
-{
-    return self.centerY;
-}
+//-(CGFloat)centerY
+//{
+//    return self.centerY;
+//}
 
 
 -(void)setSize:(CGSize)size

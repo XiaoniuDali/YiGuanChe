@@ -34,7 +34,8 @@
 #define ianRandomColor ianRGBColor(arc4random_uniform(255),arc4random_uniform(255),arc4random_uniform(255))
 
 #define  IanMainScreen [UIScreen mainScreen]
-
+#define ScreenWidth self.view.bounds.size.width
+#define ScreenHeight self.view.bounds.size.height
 /**编译的时候时输出，运行在设备上的时候是nothing*/
 #ifdef DEBUG
 #define IanLog(...) NSLog(__VA_ARGS__)

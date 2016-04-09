@@ -7,9 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		390C99231CB267BB00910D91 /* SearchFineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 390C99221CB267BB00910D91 /* SearchFineModel.m */; };
+		390C99251CB2773F00910D91 /* ProvincesAndCities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 390C99241CB2773F00910D91 /* ProvincesAndCities.plist */; };
+		390C99291CB277A900910D91 /* ProvincesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 390C99271CB277A900910D91 /* ProvincesViewController.m */; };
+		390C992A1CB277A900910D91 /* ProvincesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390C99281CB277A900910D91 /* ProvincesViewController.xib */; };
+		390C992E1CB2919000910D91 /* CitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 390C992C1CB2919000910D91 /* CitiesViewController.m */; };
+		390C992F1CB2919000910D91 /* CitiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390C992D1CB2919000910D91 /* CitiesViewController.xib */; };
+		390C993E1CB2B86D00910D91 /* fineDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 390C993C1CB2B86D00910D91 /* fineDetailTableViewCell.m */; };
+		390C993F1CB2B86D00910D91 /* fineDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390C993D1CB2B86D00910D91 /* fineDetailTableViewCell.xib */; };
+		390C99431CB2BF8C00910D91 /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 390C99411CB2BF8C00910D91 /* SearchResultViewController.m */; };
+		390C99441CB2BF8C00910D91 /* SearchResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390C99421CB2BF8C00910D91 /* SearchResultViewController.xib */; };
 		3954F8FA1CAFA343005C1353 /* vinModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3954F8F91CAFA343005C1353 /* vinModel.m */; };
 		396621EA1CB0BC9A001D0AC3 /* SearchFineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 396621E81CB0BC9A001D0AC3 /* SearchFineViewController.m */; };
 		396621EB1CB0BC9A001D0AC3 /* SearchFineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 396621E91CB0BC9A001D0AC3 /* SearchFineViewController.xib */; };
+		39D196651CB40617006EE24A /* CityNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D196641CB40617006EE24A /* CityNameViewController.m */; };
+		39D196681CB40F4E006EE24A /* SearchCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D196671CB40F4E006EE24A /* SearchCityModel.m */; };
 		39DF7A591CAC1F6500FC0A3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF7A581CAC1F6500FC0A3D /* main.m */; };
 		39DF7A5C1CAC1F6500FC0A3D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF7A5B1CAC1F6500FC0A3D /* AppDelegate.m */; };
 		39DF7A5F1CAC1F6500FC0A3D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF7A5E1CAC1F6500FC0A3D /* ViewController.m */; };
@@ -107,11 +119,30 @@
 
 /* Begin PBXFileReference section */
 		10F2EA6846F5FAA7F6A59DFD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		390C99211CB267BB00910D91 /* SearchFineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchFineModel.h; sourceTree = "<group>"; };
+		390C99221CB267BB00910D91 /* SearchFineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchFineModel.m; sourceTree = "<group>"; };
+		390C99241CB2773F00910D91 /* ProvincesAndCities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ProvincesAndCities.plist; sourceTree = "<group>"; };
+		390C99261CB277A900910D91 /* ProvincesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProvincesViewController.h; sourceTree = "<group>"; };
+		390C99271CB277A900910D91 /* ProvincesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProvincesViewController.m; sourceTree = "<group>"; };
+		390C99281CB277A900910D91 /* ProvincesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProvincesViewController.xib; sourceTree = "<group>"; };
+		390C992B1CB2919000910D91 /* CitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitiesViewController.h; sourceTree = "<group>"; };
+		390C992C1CB2919000910D91 /* CitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitiesViewController.m; sourceTree = "<group>"; };
+		390C992D1CB2919000910D91 /* CitiesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CitiesViewController.xib; sourceTree = "<group>"; };
+		390C993B1CB2B86D00910D91 /* fineDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fineDetailTableViewCell.h; sourceTree = "<group>"; };
+		390C993C1CB2B86D00910D91 /* fineDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fineDetailTableViewCell.m; sourceTree = "<group>"; };
+		390C993D1CB2B86D00910D91 /* fineDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = fineDetailTableViewCell.xib; sourceTree = "<group>"; };
+		390C99401CB2BF8C00910D91 /* SearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultViewController.h; sourceTree = "<group>"; };
+		390C99411CB2BF8C00910D91 /* SearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultViewController.m; sourceTree = "<group>"; };
+		390C99421CB2BF8C00910D91 /* SearchResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultViewController.xib; sourceTree = "<group>"; };
 		3954F8F81CAFA343005C1353 /* vinModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vinModel.h; sourceTree = "<group>"; };
 		3954F8F91CAFA343005C1353 /* vinModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vinModel.m; sourceTree = "<group>"; };
 		396621E71CB0BC9A001D0AC3 /* SearchFineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchFineViewController.h; sourceTree = "<group>"; };
 		396621E81CB0BC9A001D0AC3 /* SearchFineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchFineViewController.m; sourceTree = "<group>"; };
 		396621E91CB0BC9A001D0AC3 /* SearchFineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchFineViewController.xib; sourceTree = "<group>"; };
+		39D196631CB40617006EE24A /* CityNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityNameViewController.h; sourceTree = "<group>"; };
+		39D196641CB40617006EE24A /* CityNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityNameViewController.m; sourceTree = "<group>"; };
+		39D196661CB40F4E006EE24A /* SearchCityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchCityModel.h; sourceTree = "<group>"; };
+		39D196671CB40F4E006EE24A /* SearchCityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchCityModel.m; sourceTree = "<group>"; };
 		39DF7A541CAC1F6500FC0A3D /* GraduationDesign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraduationDesign.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39DF7A581CAC1F6500FC0A3D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		39DF7A5A1CAC1F6500FC0A3D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -263,6 +294,7 @@
 		39DF7BDD1CAC2E8000FC0A3D /* IHNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHNewsViewController.h; sourceTree = "<group>"; };
 		39DF7BDE1CAC2E8000FC0A3D /* IHNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHNewsViewController.m; sourceTree = "<group>"; };
 		39DF7BE11CAC30C800FC0A3D /* appMarco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = appMarco.h; sourceTree = "<group>"; };
+		39E7CF331CB89E4F000CDE8A /* global.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = global.pch; sourceTree = "<group>"; };
 		B4049606E7913E0EDE53D452 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFC36F59DFF70180591FA75F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -308,6 +340,24 @@
 				396621E71CB0BC9A001D0AC3 /* SearchFineViewController.h */,
 				396621E81CB0BC9A001D0AC3 /* SearchFineViewController.m */,
 				396621E91CB0BC9A001D0AC3 /* SearchFineViewController.xib */,
+				390C99261CB277A900910D91 /* ProvincesViewController.h */,
+				390C99271CB277A900910D91 /* ProvincesViewController.m */,
+				390C99281CB277A900910D91 /* ProvincesViewController.xib */,
+				390C992B1CB2919000910D91 /* CitiesViewController.h */,
+				390C992C1CB2919000910D91 /* CitiesViewController.m */,
+				390C992D1CB2919000910D91 /* CitiesViewController.xib */,
+				39D196631CB40617006EE24A /* CityNameViewController.h */,
+				39D196641CB40617006EE24A /* CityNameViewController.m */,
+				390C99401CB2BF8C00910D91 /* SearchResultViewController.h */,
+				390C99411CB2BF8C00910D91 /* SearchResultViewController.m */,
+				390C99421CB2BF8C00910D91 /* SearchResultViewController.xib */,
+				390C993B1CB2B86D00910D91 /* fineDetailTableViewCell.h */,
+				390C993C1CB2B86D00910D91 /* fineDetailTableViewCell.m */,
+				390C993D1CB2B86D00910D91 /* fineDetailTableViewCell.xib */,
+				390C99211CB267BB00910D91 /* SearchFineModel.h */,
+				390C99221CB267BB00910D91 /* SearchFineModel.m */,
+				39D196661CB40F4E006EE24A /* SearchCityModel.h */,
+				39D196671CB40F4E006EE24A /* SearchCityModel.m */,
 			);
 			name = founctionView;
 			sourceTree = "<group>";
@@ -422,6 +472,7 @@
 				396621E61CB0BC60001D0AC3 /* founctionView */,
 				39DF7ABE1CAC220900FC0A3D /* IanMainViewController.h */,
 				39DF7ABF1CAC220900FC0A3D /* IanMainViewController.m */,
+				390C99241CB2773F00910D91 /* ProvincesAndCities.plist */,
 			);
 			name = homeController;
 			path = c;
@@ -503,6 +554,7 @@
 				39DF7BE11CAC30C800FC0A3D /* appMarco.h */,
 				39DF7AEB1CAC220900FC0A3D /* IHAcountTool.h */,
 				39DF7AEC1CAC220900FC0A3D /* IHAcountTool.m */,
+				39E7CF331CB89E4F000CDE8A /* global.pch */,
 			);
 			path = tool;
 			sourceTree = "<group>";
@@ -825,16 +877,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				390C99441CB2BF8C00910D91 /* SearchResultViewController.xib in Resources */,
 				39DF7BD81CAC2CAA00FC0A3D /* AdDataPlist.plist in Resources */,
 				39DF7A671CAC1F6500FC0A3D /* LaunchScreen.storyboard in Resources */,
 				39DF7BCF1CAC2C6700FC0A3D /* image2.png in Resources */,
 				39DF7A641CAC1F6500FC0A3D /* Assets.xcassets in Resources */,
 				396621EB1CB0BC9A001D0AC3 /* SearchFineViewController.xib in Resources */,
 				39DF7BCE1CAC2C6700FC0A3D /* image1.png in Resources */,
+				390C993F1CB2B86D00910D91 /* fineDetailTableViewCell.xib in Resources */,
 				39DF7BCD1CAC2C6700FC0A3D /* image0.png in Resources */,
 				39DF7A621CAC1F6500FC0A3D /* Main.storyboard in Resources */,
+				390C992A1CB277A900910D91 /* ProvincesViewController.xib in Resources */,
 				39DF7BD01CAC2C6700FC0A3D /* image3.png in Resources */,
 				39DF7B801CAC22FA00FC0A3D /* SIAlertView.bundle in Resources */,
+				390C99251CB2773F00910D91 /* ProvincesAndCities.plist in Resources */,
+				390C992F1CB2919000910D91 /* CitiesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -907,9 +964,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				390C99291CB277A900910D91 /* ProvincesViewController.m in Sources */,
 				39DF7BD71CAC2CAA00FC0A3D /* AdDataModel.m in Sources */,
 				39DF7BB91CAC25C300FC0A3D /* SBJsonStreamWriterState.m in Sources */,
 				39DF7B8E1CAC22FA00FC0A3D /* AFNetworkActivityIndicatorManager.m in Sources */,
+				39D196651CB40617006EE24A /* CityNameViewController.m in Sources */,
 				39DF7B921CAC22FA00FC0A3D /* UIImageView+AFNetworking.m in Sources */,
 				39DF7B8F1CAC22FA00FC0A3D /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				39DF7A5F1CAC1F6500FC0A3D /* ViewController.m in Sources */,
@@ -917,6 +976,7 @@
 				39DF7B6F1CAC22FA00FC0A3D /* AFNetworkReachabilityManager.m in Sources */,
 				39DF7B751CAC22FA00FC0A3D /* MF_Base64Additions.m in Sources */,
 				39DF7AF11CAC220900FC0A3D /* UIView+Extersion.m in Sources */,
+				390C99431CB2BF8C00910D91 /* SearchResultViewController.m in Sources */,
 				39DF7B791CAC22FA00FC0A3D /* MJRefreshBaseView.m in Sources */,
 				39DF7BB31CAC25C300FC0A3D /* SBJsonStreamParser.m in Sources */,
 				39DF7B001CAC220900FC0A3D /* IanCollectionViewCell.m in Sources */,
@@ -940,6 +1000,7 @@
 				39DF7BB81CAC25C300FC0A3D /* SBJsonStreamWriterAccumulator.m in Sources */,
 				39DF7BB21CAC25C300FC0A3D /* SBJsonParser.m in Sources */,
 				39DF7B7E1CAC22FA00FC0A3D /* UIScrollView+MJRefresh.m in Sources */,
+				390C992E1CB2919000910D91 /* CitiesViewController.m in Sources */,
 				39DF7BDF1CAC2E8000FC0A3D /* IHNewsViewController.m in Sources */,
 				39DF7B901CAC22FA00FC0A3D /* UIAlertView+AFNetworking.m in Sources */,
 				39DF7BB11CAC25C300FC0A3D /* NSObject+SBJson.m in Sources */,
@@ -949,12 +1010,14 @@
 				39DF7B091CAC220900FC0A3D /* IHAcountTool.m in Sources */,
 				39DF7AF21CAC220900FC0A3D /* UIWindow+Extension.m in Sources */,
 				39DF7B911CAC22FA00FC0A3D /* UIButton+AFNetworking.m in Sources */,
+				39D196681CB40F4E006EE24A /* SearchCityModel.m in Sources */,
 				39DF7BB61CAC25C300FC0A3D /* SBJsonStreamParserState.m in Sources */,
 				39DF7B061CAC220900FC0A3D /* NetworkManager.m in Sources */,
 				39DF7B011CAC220900FC0A3D /* IanNavigationBar.m in Sources */,
 				39DF7B951CAC22FA00FC0A3D /* UIWebView+AFNetworking.m in Sources */,
 				39DF7B731CAC22FA00FC0A3D /* AFURLResponseSerialization.m in Sources */,
 				39DF7B931CAC22FA00FC0A3D /* UIProgressView+AFNetworking.m in Sources */,
+				390C99231CB267BB00910D91 /* SearchFineModel.m in Sources */,
 				39DF7BB41CAC25C300FC0A3D /* SBJsonStreamParserAccumulator.m in Sources */,
 				39DF7B021CAC220900FC0A3D /* IanTabBar.m in Sources */,
 				39DF7AED1CAC220900FC0A3D /* NSDate+Extension.m in Sources */,
@@ -962,6 +1025,7 @@
 				39DF7B711CAC22FA00FC0A3D /* AFURLConnectionOperation.m in Sources */,
 				39DF7B6D1CAC22FA00FC0A3D /* AFHTTPRequestOperationManager.m in Sources */,
 				39DF7AF71CAC220900FC0A3D /* IanMainViewController.m in Sources */,
+				390C993E1CB2B86D00910D91 /* fineDetailTableViewCell.m in Sources */,
 				39DF7B811CAC22FA00FC0A3D /* SIAlertView.m in Sources */,
 				39DF7B081CAC220900FC0A3D /* IHSettingViewController.m in Sources */,
 				39DF7B721CAC22FA00FC0A3D /* AFURLRequestSerialization.m in Sources */,
@@ -1112,7 +1176,7 @@
 			baseConfigurationReference = DFC36F59DFF70180591FA75F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				GCC_PREFIX_HEADER = "";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/GraduationDesign/tool/global.pch";
 				INFOPLIST_FILE = GraduationDesign/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yiguanche.GraduationDesign;
@@ -1125,7 +1189,7 @@
 			baseConfigurationReference = 10F2EA6846F5FAA7F6A59DFD /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				GCC_PREFIX_HEADER = "";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/GraduationDesign/tool/global.pch";
 				INFOPLIST_FILE = GraduationDesign/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yiguanche.GraduationDesign;

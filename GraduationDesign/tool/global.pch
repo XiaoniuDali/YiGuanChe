@@ -1,0 +1,22 @@
+//
+//  global.pch
+//  GraduationDesign
+//
+//  Created by shupengstar on 16/4/9.
+//  Copyright © 2016年 YJH. All rights reserved.
+//
+
+#ifndef global_pch
+#define global_pch
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "IHAcountTool.h"
+#define ScreenWidth self.view.bounds.size.width
+#define ScreenHeight self.view.bounds.size.height
+
+#define CellWidth (ScreenWidth - 3*30 - 20)/4
+#define CellHeight (ScreenHeight - 64 - 48)/8
+
+#endif /* global_pch */
