@@ -95,7 +95,7 @@
             break;
             
         case 1:
-            cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"fineICON"]];
+            cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"repair.png"]];
             
             
             break;
