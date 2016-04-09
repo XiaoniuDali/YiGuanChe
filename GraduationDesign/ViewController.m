@@ -23,6 +23,8 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    // 这是develop开发文件
+    // 第二次develop
 }
 
 @end
