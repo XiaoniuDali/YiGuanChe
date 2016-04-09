@@ -1,7 +1,4 @@
 PODS:
-  - FMDB (2.6.2):
-    - FMDB/standard (= 2.6.2)
-  - FMDB/standard (2.6.2)
   - IQKeyboardManager (3.3.7)
   - Masonry (1.0.0)
   - MJExtension (3.0.10)
@@ -10,14 +7,12 @@ PODS:
   - SDWebImage/Core (3.7.5)
 
 DEPENDENCIES:
-  - FMDB
   - IQKeyboardManager
   - Masonry
   - MJExtension
   - SDWebImage
 
 SPEC CHECKSUMS:
-  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   IQKeyboardManager: 249c3946acf61345c18b038eb50863fe2793e3a8
   Masonry: b529bb169217897b6354d4b56b1fada6d475b13d
   MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
