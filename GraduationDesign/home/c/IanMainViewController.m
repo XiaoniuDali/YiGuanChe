@@ -7,7 +7,7 @@
 //
 
 #import "IanMainViewController.h"
-#import "IanNoteRepairController.h"
+//#import "IanNoteRepairController.h"
 #import "appMarco.h"
 #import "SearchFineViewController.h"
 #define UISCREENHEIGHT  self.view.bounds.size.height
@@ -36,7 +36,7 @@
     //其布局很有意思，当你的cell设置大小后，一行多少个cell，由cell的宽度决定
     
     UICollectionView *collectionView =[[UICollectionView alloc] initWithFrame:CGRectMake(0,214, self.view.bounds.size.width, self.view.bounds.size.height-48-125) collectionViewLayout:flowLayout] ;
-    
+    collectionView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     //    UIImageView *imageView =[[UIImageView alloc] init];
     //    [imageView setBackgroundColor:[UIColor redColor]];//ianRGBColor(59, 86, 129)//图片
     //    [imageView setFrame:collectionView.bounds];
@@ -142,13 +142,13 @@
             
         case 1:
         {
-            NSLog(@"纪录汽车保养、维修项目的时间、地点、价格");
-            IanNoteRepairController *noteVC =[[IanNoteRepairController alloc] init];
-            self.hidesBottomBarWhenPushed=YES;
-            //                navgationC    释放出栈的视图控制器
-            [self.navigationController pushViewController:noteVC animated:YES];
-            self.hidesBottomBarWhenPushed=NO;
-            
+//            NSLog(@"纪录汽车保养、维修项目的时间、地点、价格");
+//            IanNoteRepairController *noteVC =[[IanNoteRepairController alloc] init];
+//            self.hidesBottomBarWhenPushed=YES;
+//            //                navgationC    释放出栈的视图控制器
+//            [self.navigationController pushViewController:noteVC animated:YES];
+//            self.hidesBottomBarWhenPushed=NO;
+//            
             break;
             
         }
