@@ -7,6 +7,7 @@
 //
 
 #import "IanMainViewController.h"
+#import "IanNoteRepairController.h"
 #import "appMarco.h"
 #import "SearchFineViewController.h"
 #define UISCREENHEIGHT  self.view.bounds.size.height
@@ -36,20 +37,20 @@
     
     UICollectionView *collectionView =[[UICollectionView alloc] initWithFrame:CGRectMake(0,214, self.view.bounds.size.width, self.view.bounds.size.height-48-125) collectionViewLayout:flowLayout] ;
     
-//    UIImageView *imageView =[[UIImageView alloc] init];
-//    [imageView setBackgroundColor:[UIColor redColor]];//ianRGBColor(59, 86, 129)//图片
-//    [imageView setFrame:collectionView.bounds];
-//    [collectionView setBackgroundView:imageView];
-//    
+    //    UIImageView *imageView =[[UIImageView alloc] init];
+    //    [imageView setBackgroundColor:[UIColor redColor]];//ianRGBColor(59, 86, 129)//图片
+    //    [imageView setFrame:collectionView.bounds];
+    //    [collectionView setBackgroundView:imageView];
+    //
     
     [collectionView registerClass :[UICollectionViewCell class] forCellWithReuseIdentifier : ID];
     
     collectionView.delegate =self;
     collectionView.dataSource =self;
-
+    
     [self.view addSubview:collectionView];
     self.collectionView =collectionView;
-
+    
 }
 #pragma mark - 构建广告滚动视图
 - (void)createScrollView
@@ -82,25 +83,105 @@
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
     
-//    [cell.contentView setBackgroundColor:[UIColor redColor]];
     
-    if (indexPath.row == 0) {
-        cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"fineICON"]];
-
+    
+    //    IanLog(@"asdasd");
+    switch (indexPath.row) {
+        case 0:
+            cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"fineICON"]];
+            break;
+            
+        case 1:
+            cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"fineICON"]];
+            
+            
+            break;
+        case 2:
+            
+            break;
+        case 3:
+            
+            break;
+        case 4:
+            
+            break;
+        case 5:
+            
+            break;
+        case 6:
+            
+            break;
+            
+        default:
+            break;
+            
     }
-    // 这里增加点击功能的图片ß
+    
+    
+    
     return cell;
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"select  select ");
-    if (indexPath.row == 0) {
-        SearchFineViewController *searchFine = [SearchFineViewController new];
-        [self.navigationController pushViewController:searchFine animated:YES];
-    }
+    
+    
+    
+    
+    switch (indexPath.row) {
+        case 0:
+        {
+            SearchFineViewController *searchFine = [SearchFineViewController new];
+            [self.navigationController pushViewController:searchFine animated:YES];
+            break;
+            
+        }
+            
+        case 1:
+        {
+            NSLog(@"纪录汽车保养、维修项目的时间、地点、价格");
+            IanNoteRepairController *noteVC =[[IanNoteRepairController alloc] init];
+            self.hidesBottomBarWhenPushed=YES;
+            //                navgationC    释放出栈的视图控制器
+            [self.navigationController pushViewController:noteVC animated:YES];
+            self.hidesBottomBarWhenPushed=NO;
+            
+            break;
+            
+        }
+        case 2:
+        {
+            
+            
+            break;
+        }
+        case 3:
+        {
+            
+            break;
+        }
+        case 4:
+        {
+            
+            break;
+        }
+        case 5:
+        {
+            
+            break;
+        }
+        case 6:
+        {
+            
+            break;
+        }
+            
+        default:
+            break;
+    }    
 }
 
 
