@@ -8,11 +8,24 @@
 
 #import "vinModel.h"
 
+//@implementation vinModel
+//
+//@end
 @implementation vinModel
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:self.shaftdistance forKey:@"shaftdistance"];
+    [aCoder encodeObject:self.crateWidth forKey:@"crateWidth"];
+    [aCoder encodeObject:self.loadQualityFactor forKey:@"loadQualityFactor"];
+    [aCoder encodeObject:self.displacement forKey:@"displacement"];
+}
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super init]) {
+        self.shaftdistance = [aDecoder decodeObjectForKey:@"shaftdistance"];
+        self.crateWidth = [aDecoder decodeObjectForKey:@"crateWidth"];
+        self.loadQualityFactor = [aDecoder decodeObjectForKey:@"loadQualityFactor"];
+        self.displacement = [aDecoder decodeObjectForKey:@"displacement"];
+    }
+    return self;
+}
 @end
-@implementation Result
-
-@end
-
-
