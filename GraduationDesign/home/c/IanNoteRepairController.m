@@ -16,6 +16,9 @@
 @property(nonatomic,strong) UIButton *addBtn;
 @property(nonatomic,strong) UIButton *alterDataBtn;
 @property(nonatomic,strong) UIButton *showDataBtn;
+@property(nonatomic,strong) UITextField *noticeTf;
+
+
 
 
 @end
@@ -26,7 +29,7 @@
     [super viewDidLoad];
     self.view.frame =IanMainScreen.bounds;
     self.title =@"维修记录统计";
-    [self.view setBackgroundColor:ianRGBColor(59, 86,128)];
+    [self.view setBackgroundColor:ianRGBColor(231, 231,231)];
     
     
     //设置子控件
@@ -74,6 +77,21 @@
     
     [self.view addSubview:_alterDataBtn];
     [_alterDataBtn addTarget:self action:@selector(alterData) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    UILabel *label =[[UILabel alloc] init];
+    [label setFrame:CGRectMake(self.view.width *0.5 - 50, self.webView.height+10, 100, 30)];
+    label.text = @"维修提示";
+    label.textAlignment =NSTextAlignmentCenter;
+    [label setBackgroundColor:[UIColor yellowColor]];
+    [self.view addSubview:label];
+    
+    _noticeTf = [[UITextField alloc] initWithFrame:CGRectMake(0, label.frame.origin.y+2, self.view.width,95)];
+
+    
+    
+    
+    
 }
 
 //添加维修记录
