@@ -7,18 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Tool_FMDBModel.h"
 
-@class Result;
-@interface vinModel : NSObject
-
-@property (nonatomic, assign) NSInteger error_code;
-
-@property (nonatomic, strong) Result *result;
-
-@property (nonatomic, copy) NSString *reason;
-
-@end
-@interface Result : NSObject
+//@class Result;
+//@interface vinModel :Tool_FMDBModel<NSCoding>
+//
+//@property (nonatomic, assign) NSInteger error_code;
+//
+//@property (nonatomic, strong) Result *result;
+//
+//@property (nonatomic, copy) NSString *reason;
+//
+//@end
+@interface vinModel : Tool_FMDBModel<NSCoding>
 
 @property (nonatomic, copy) NSString *shaftdistance;/*轴距*/
 
