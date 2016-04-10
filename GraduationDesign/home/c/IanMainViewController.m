@@ -7,7 +7,7 @@
 //
 
 #import "IanMainViewController.h"
-//#import "IanNoteRepairController.h"
+#import "IanNoteRepairController.h"
 #import "appMarco.h"
 #import "SearchFineViewController.h"
 #define UISCREENHEIGHT  self.view.bounds.size.height
@@ -163,12 +163,12 @@
             
         case 1:
         {
-//            NSLog(@"纪录汽车保养、维修项目的时间、地点、价格");
-//            IanNoteRepairController *noteVC =[[IanNoteRepairController alloc] init];
-//            self.hidesBottomBarWhenPushed=YES;
-//            //                navgationC    释放出栈的视图控制器
-//            [self.navigationController pushViewController:noteVC animated:YES];
-//            self.hidesBottomBarWhenPushed=NO;
+            NSLog(@"纪录汽车保养、维修项目的时间、地点、价格");
+            IanNoteRepairController *noteVC =[[IanNoteRepairController alloc] init];
+            self.hidesBottomBarWhenPushed=YES;
+            //                navgationC    释放出栈的视图控制器
+            [self.navigationController pushViewController:noteVC animated:YES];
+            self.hidesBottomBarWhenPushed=NO;
             
             break;
             
