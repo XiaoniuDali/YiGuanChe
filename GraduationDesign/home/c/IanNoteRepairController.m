@@ -16,7 +16,7 @@
 @property(nonatomic,strong) UIButton *addBtn;
 @property(nonatomic,strong) UIButton *alterDataBtn;
 @property(nonatomic,strong) UIButton *showDataBtn;
-@property(nonatomic,strong) UITextField *noticeTf;
+@property(nonatomic,strong) UILabel *noticeLbl;
 
 
 
@@ -48,7 +48,7 @@
     
     NSString *filePath = [[NSBundle mainBundle]pathForResource:@"echarts" ofType:@"html"];
     NSString *htmlString = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-    NSLog(@"htmlStringhtmlString%@",htmlString);
+//    NSLog(@"htmlStringhtmlString%@",htmlString);
     
     [_webView loadHTMLString:htmlString baseURL:[NSURL URLWithString:filePath]];
     
@@ -80,14 +80,20 @@
     
     
     UILabel *label =[[UILabel alloc] init];
-    [label setFrame:CGRectMake(self.view.width *0.5 - 50, self.webView.height+10, 100, 30)];
+    [label setFrame:CGRectMake(self.view.width *0.5 - 50, self.webView.height+10, 100, 25)];
     label.text = @"维修提示";
     label.textAlignment =NSTextAlignmentCenter;
     [label setBackgroundColor:[UIColor yellowColor]];
     [self.view addSubview:label];
     
-    _noticeTf = [[UITextField alloc] initWithFrame:CGRectMake(0, label.frame.origin.y+2, self.view.width,95)];
-
+    _noticeLbl = [[UILabel alloc] initWithFrame:CGRectMake(0, label.frame.origin.y+27, self.view.width,95)];
+    
+    [_noticeLbl setBackgroundColor:[UIColor blueColor]];
+    [self.view addSubview:_noticeLbl];
+    _noticeLbl.text =@"根据维修保养记录的数据，显示一些提示消息";
+    _noticeLbl.userInteractionEnabled =NO;
+    [_noticeLbl setFont:[UIFont fontWithName:@"宋体" size:15]];
+    
     
     
     
