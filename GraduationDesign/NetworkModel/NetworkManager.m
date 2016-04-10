@@ -35,34 +35,34 @@
 
 
 
-#pragma mark --- 注册
-- (void)app_login_register:(NSDictionary *)dic CompleteHandle:(CompleteHandle)completeHandle {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    
-    NSString* strInterface;
-    
-    strInterface = APP_LOGIN_REGISTER;
-    
-    [manager POST:[NSString stringWithFormat:@"%@%@",SERVER,strInterface] parameters:dic success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        if (completeHandle) {
-            
-            
-            completeHandle(responseObject);
-        }
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-        if (completeHandle) {
-            
-            
-            completeHandle(nil);
-        }
-        
-        NSLog(@"错误: %@", error);
-        
-    }];
-}
+//#pragma mark --- 注册
+//- (void)app_login_register:(NSDictionary *)dic CompleteHandle:(CompleteHandle)completeHandle {
+//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+//    
+//    NSString* strInterface;
+//    
+//    strInterface = APP_LOGIN_REGISTER;
+//    
+//    [manager POST:[NSString stringWithFormat:@"%@%@",SERVER,strInterface] parameters:dic success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        
+//        if (completeHandle) {
+//            
+//            
+//            completeHandle(responseObject);
+//        }
+//        
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        
+//        if (completeHandle) {
+//            
+//            
+//            completeHandle(nil);
+//        }
+//        
+//        NSLog(@"错误: %@", error);
+//        
+//    }];
+//}
 
 
 - (void)app_search_fine:(NSDictionary *)dic CompleteHandle:(CompleteHandle)completeHandle{
@@ -114,4 +114,30 @@
     }];
 }
 
+- (void)app_search_VIN:(NSDictionary *)dic completeHandle:(CompleteHandle)completeHandle{
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    // 这里服务器接口写死
+    
+    [manager POST:[NSString stringWithFormat:@"%@",@"http://apis.haoservice.com/lifeservice/vin"] parameters:dic success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        if (completeHandle) {
+            
+            
+            completeHandle(responseObject);
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        if (completeHandle) {
+            
+            
+            completeHandle(nil);
+        }
+        
+        NSLog(@"错误: %@", error);
+        
+    }];
+    
+}
 @end

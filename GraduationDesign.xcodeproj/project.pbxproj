@@ -27,6 +27,7 @@
 		397B7D611CBA04E2002A8C56 /* echarts.js in Resources */ = {isa = PBXBuildFile; fileRef = 397B7D5B1CBA04E2002A8C56 /* echarts.js */; };
 		397B7D621CBA04E2002A8C56 /* IanAddRepairNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 397B7D5D1CBA04E2002A8C56 /* IanAddRepairNoteViewController.m */; };
 		397B7D631CBA04E2002A8C56 /* IanNoteRepairController.m in Sources */ = {isa = PBXBuildFile; fileRef = 397B7D5F1CBA04E2002A8C56 /* IanNoteRepairController.m */; };
+		397B7D661CBA4339002A8C56 /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 397B7D651CBA4339002A8C56 /* RegistViewController.m */; };
 		39DF7A591CAC1F6500FC0A3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF7A581CAC1F6500FC0A3D /* main.m */; };
 		39DF7A5C1CAC1F6500FC0A3D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF7A5B1CAC1F6500FC0A3D /* AppDelegate.m */; };
 		39DF7A5F1CAC1F6500FC0A3D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF7A5E1CAC1F6500FC0A3D /* ViewController.m */; };
@@ -157,6 +158,8 @@
 		397B7D5D1CBA04E2002A8C56 /* IanAddRepairNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IanAddRepairNoteViewController.m; sourceTree = "<group>"; };
 		397B7D5E1CBA04E2002A8C56 /* IanNoteRepairController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IanNoteRepairController.h; sourceTree = "<group>"; };
 		397B7D5F1CBA04E2002A8C56 /* IanNoteRepairController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IanNoteRepairController.m; sourceTree = "<group>"; };
+		397B7D641CBA4339002A8C56 /* RegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistViewController.h; sourceTree = "<group>"; };
+		397B7D651CBA4339002A8C56 /* RegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistViewController.m; sourceTree = "<group>"; };
 		39DF7A541CAC1F6500FC0A3D /* GraduationDesign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraduationDesign.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39DF7A581CAC1F6500FC0A3D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		39DF7A5A1CAC1F6500FC0A3D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -766,6 +769,8 @@
 				39DF7BC31CAC292700FC0A3D /* CustomTabBarController.m */,
 				39DF7BDA1CAC2D2200FC0A3D /* IanNavigationController.h */,
 				39DF7BDB1CAC2D2200FC0A3D /* IanNavigationController.m */,
+				397B7D641CBA4339002A8C56 /* RegistViewController.h */,
+				397B7D651CBA4339002A8C56 /* RegistViewController.m */,
 			);
 			path = "启动登陆界面";
 			sourceTree = "<group>";
@@ -1030,6 +1035,7 @@
 				39DF7BC41CAC292700FC0A3D /* CustomTabBarController.m in Sources */,
 				39DF7B7D1CAC22FA00FC0A3D /* UIScrollView+MJExtension.m in Sources */,
 				39DF7B781CAC22FA00FC0A3D /* MBProgressHUD.m in Sources */,
+				397B7D661CBA4339002A8C56 /* RegistViewController.m in Sources */,
 				397B7D511CBA04D4002A8C56 /* ProvincesViewController.m in Sources */,
 				397B7D4F1CBA04D4002A8C56 /* fineDetailTableViewCell.m in Sources */,
 				3954F8FA1CAFA343005C1353 /* vinModel.m in Sources */,

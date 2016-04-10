@@ -30,6 +30,7 @@
 
 /**颜色*/
 #define ianRGBColor(r,g,b) [UIColor colorWithRed:(r)/256.0 green:(g)/256.0 blue:(b)/256.0 alpha:1.0]
+
 /**随机色*/
 #define ianRandomColor ianRGBColor(arc4random_uniform(255),arc4random_uniform(255),arc4random_uniform(255))
 

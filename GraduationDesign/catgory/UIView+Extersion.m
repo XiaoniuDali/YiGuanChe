@@ -51,10 +51,10 @@
     self.frame =frame;
 }
 
--(CGFloat)centerX
-{
-    return self.centerX;
-}
+//-(CGFloat)centerX
+//{
+//    return self.centerX;
+//}
 
 //-(CGFloat)centerY
 //{

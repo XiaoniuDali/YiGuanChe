@@ -9,7 +9,7 @@
 #import "LaunchRoot.h"
 #import "CustomTabBarController.h"
 #import "IanLoginViewController.h"
-
+#import "IanNavigationController.h"
 
 #define PageNumberOfScrollView 3
 @interface LaunchRoot ()<UIScrollViewDelegate>
@@ -62,11 +62,53 @@
 //    CustomTabBarController *mainViewController = [CustomTabBarController new];
 //    [self presentViewController:mainViewController animated:YES completion:nil];
     // 如果获取不到用户信息，则跳到登录界面
-    IanLoginViewController *LoginViewController = [IanLoginViewController new];
-    [self presentViewController:LoginViewController animated:YES completion:nil];
     
+    NSArray *allModel = [vinModel findAll];
+    
+    if (allModel.count == 0) {
+        
+        [self gotoLogin];
+    } else {
+        
+        for (int i = 0; i<allModel.count; i++) {
+            vinModel *haveModel =allModel[i];
+            if (haveModel.telephone.length != 0 || haveModel.password.length != 0) {
+                
+                CustomTabBarController *tab =[[CustomTabBarController alloc ] init];
+                
+                [tab.view setFrame:self.view.bounds];
+                
+                UIWindow *window = [UIApplication sharedApplication].keyWindow;
+                
+                window.rootViewController =tab;
+                
+                [window makeKeyAndVisible];
+                
+            } else {
+                
+                [self gotoLogin];
+            }
+        }
+        
+    }
 }
-
+#pragma mark --- 跳转到登陆界面
+- (void)gotoLogin{
+    
+    UIWindow *window =     [UIApplication sharedApplication].keyWindow;
+    
+    IanNavigationController *nav=[[IanNavigationController alloc]init];
+    
+    IanLoginViewController *login =[[IanLoginViewController alloc ] init];
+    
+    [nav addChildViewController:login];
+    
+    window.rootViewController =nav;
+    
+    [window makeKeyAndVisible];
+    
+    [self.navigationController pushViewController:login animated:YES];
+}
 - (void)addImages
 {
     // 滚动图片
