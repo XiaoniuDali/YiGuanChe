@@ -20,6 +20,8 @@
 		3954F8FA1CAFA343005C1353 /* vinModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3954F8F91CAFA343005C1353 /* vinModel.m */; };
 		396621EA1CB0BC9A001D0AC3 /* SearchFineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 396621E81CB0BC9A001D0AC3 /* SearchFineViewController.m */; };
 		396621EB1CB0BC9A001D0AC3 /* SearchFineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 396621E91CB0BC9A001D0AC3 /* SearchFineViewController.xib */; };
+		397B7D341CB9F2A8002A8C56 /* Tool_FMDBGetDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 397B7D311CB9F2A8002A8C56 /* Tool_FMDBGetDatabase.m */; };
+		397B7D351CB9F2A8002A8C56 /* Tool_FMDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 397B7D331CB9F2A8002A8C56 /* Tool_FMDBModel.m */; };
 		39D196651CB40617006EE24A /* CityNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D196641CB40617006EE24A /* CityNameViewController.m */; };
 		39D196681CB40F4E006EE24A /* SearchCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D196671CB40F4E006EE24A /* SearchCityModel.m */; };
 		39DF7A591CAC1F6500FC0A3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF7A581CAC1F6500FC0A3D /* main.m */; };
@@ -139,6 +141,10 @@
 		396621E71CB0BC9A001D0AC3 /* SearchFineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchFineViewController.h; sourceTree = "<group>"; };
 		396621E81CB0BC9A001D0AC3 /* SearchFineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchFineViewController.m; sourceTree = "<group>"; };
 		396621E91CB0BC9A001D0AC3 /* SearchFineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchFineViewController.xib; sourceTree = "<group>"; };
+		397B7D301CB9F2A8002A8C56 /* Tool_FMDBGetDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tool_FMDBGetDatabase.h; sourceTree = "<group>"; };
+		397B7D311CB9F2A8002A8C56 /* Tool_FMDBGetDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tool_FMDBGetDatabase.m; sourceTree = "<group>"; };
+		397B7D321CB9F2A8002A8C56 /* Tool_FMDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tool_FMDBModel.h; sourceTree = "<group>"; };
+		397B7D331CB9F2A8002A8C56 /* Tool_FMDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tool_FMDBModel.m; sourceTree = "<group>"; };
 		39D196631CB40617006EE24A /* CityNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityNameViewController.h; sourceTree = "<group>"; };
 		39D196641CB40617006EE24A /* CityNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityNameViewController.m; sourceTree = "<group>"; };
 		39D196661CB40F4E006EE24A /* SearchCityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchCityModel.h; sourceTree = "<group>"; };
@@ -362,6 +368,17 @@
 			name = founctionView;
 			sourceTree = "<group>";
 		};
+		397B7D2F1CB9F2A8002A8C56 /* FMDB_tool */ = {
+			isa = PBXGroup;
+			children = (
+				397B7D301CB9F2A8002A8C56 /* Tool_FMDBGetDatabase.h */,
+				397B7D311CB9F2A8002A8C56 /* Tool_FMDBGetDatabase.m */,
+				397B7D321CB9F2A8002A8C56 /* Tool_FMDBModel.h */,
+				397B7D331CB9F2A8002A8C56 /* Tool_FMDBModel.m */,
+			);
+			path = FMDB_tool;
+			sourceTree = "<group>";
+		};
 		39DF7A4B1CAC1F6500FC0A3D = {
 			isa = PBXGroup;
 			children = (
@@ -551,6 +568,7 @@
 		39DF7AEA1CAC220900FC0A3D /* tool */ = {
 			isa = PBXGroup;
 			children = (
+				397B7D2F1CB9F2A8002A8C56 /* FMDB_tool */,
 				39DF7BE11CAC30C800FC0A3D /* appMarco.h */,
 				39DF7AEB1CAC220900FC0A3D /* IHAcountTool.h */,
 				39DF7AEC1CAC220900FC0A3D /* IHAcountTool.m */,
@@ -964,6 +982,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				397B7D341CB9F2A8002A8C56 /* Tool_FMDBGetDatabase.m in Sources */,
 				390C99291CB277A900910D91 /* ProvincesViewController.m in Sources */,
 				39DF7BD71CAC2CAA00FC0A3D /* AdDataModel.m in Sources */,
 				39DF7BB91CAC25C300FC0A3D /* SBJsonStreamWriterState.m in Sources */,
@@ -1023,6 +1042,7 @@
 				39DF7AED1CAC220900FC0A3D /* NSDate+Extension.m in Sources */,
 				39DF7B6C1CAC22FA00FC0A3D /* AFHTTPRequestOperation.m in Sources */,
 				39DF7B711CAC22FA00FC0A3D /* AFURLConnectionOperation.m in Sources */,
+				397B7D351CB9F2A8002A8C56 /* Tool_FMDBModel.m in Sources */,
 				39DF7B6D1CAC22FA00FC0A3D /* AFHTTPRequestOperationManager.m in Sources */,
 				39DF7AF71CAC220900FC0A3D /* IanMainViewController.m in Sources */,
 				390C993E1CB2B86D00910D91 /* fineDetailTableViewCell.m in Sources */,
