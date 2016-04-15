@@ -29,4 +29,6 @@
 - (void)app_get_all_config:(NSDictionary *)dic CompleteHandle:(CompleteHandle)completeHandle;
 // vin查询
 - (void)app_search_VIN:(NSDictionary *)dic completeHandle:(CompleteHandle)completeHandle;
+// DTC查询
+- (void)app_search_DTC:(NSDictionary *)dic completeHandle:(CompleteHandle)completeHandle;
 @end

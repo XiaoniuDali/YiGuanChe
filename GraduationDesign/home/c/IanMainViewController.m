@@ -10,6 +10,8 @@
 #import "IanNoteRepairController.h"
 #import "appMarco.h"
 #import "SearchFineViewController.h"
+#import "DTCViewController.h"
+
 #define UISCREENHEIGHT  self.view.bounds.size.height
 #define UISCREENWIDTH  self.view.bounds.size.width
 
@@ -101,6 +103,7 @@
             
             break;
         case 2:
+            cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"DTC.png"]];
             
             break;
         case 3:
@@ -155,6 +158,8 @@
         }
         case 2:
         {
+            DTCViewController *dct = [DTCViewController new];
+            [self.navigationController pushViewController:dct animated:YES];
             
             
             break;
