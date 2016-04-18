@@ -38,15 +38,17 @@
     
     
     _MArray = [[NSMutableArray alloc] init];
-    NSMutableDictionary *data =[[NSMutableDictionary alloc] init];
+    
     while ([_set next]) {
+         NSMutableDictionary *data =[[NSMutableDictionary alloc] init];
+        [data removeAllObjects];
         [data setValue:[_set stringForColumn:@"projectName"]  forKey:@"name"];
         [data setValue:[_set stringForColumn:@"time"]  forKey:@"time"];
-        [data setValue:[_set stringForColumn:@"ID"] forKey:@"ID"];
-//        [data setValue:[_set stringForColumn:@"site"]  forKey:@"site"];
-//        [data setValue:[_set stringForColumn:@"money"]  forKey:@"money"];
+        [data setValue:[_set stringForColumn:@"id"] forKey:@"ID"];
         [_MArray addObject:data];
+         data =nil;
     }
+    
     
     
     
@@ -127,14 +129,14 @@
     UIView *view =[[UIView alloc] initWithFrame:CGRectMake(0, 44, self.view.width, 25)];
     
     
-    UILabel *labelName =[[UILabel alloc] initWithFrame:CGRectMake(0.2*self.view.width, 0, 0.25*self.view.width, 25)];
+    UILabel *labelName =[[UILabel alloc] initWithFrame:CGRectMake(0.1*self.view.width, 0, 0.25*self.view.width, 25)];
     [labelName setTextAlignment:NSTextAlignmentCenter];
     labelName.text =@"项目名称";
     [view addSubview:labelName];
     
     
     
-    UILabel *labelTime =[[UILabel alloc] initWithFrame:CGRectMake(0.45*self.view.width, 0, 0.25*self.view.width, 25)];
+    UILabel *labelTime =[[UILabel alloc] initWithFrame:CGRectMake(0.65*self.view.width, 0, 0.25*self.view.width, 25)];
     [labelTime setTextAlignment:NSTextAlignmentCenter];
     labelTime.text =@"时间";
     [view addSubview:labelTime];
@@ -166,11 +168,12 @@
     IanAlterNoteTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellID];
     if (!cell) {
         cell=[[IanAlterNoteTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
-        IanLog(@"%@",_MArray[indexPath.row][@"name"]);
-        
-        NSDictionary *dict =(NSDictionary *)_MArray[indexPath.row];
-        [cell setCellWithData:dict];
     }
+    
+    IanLog(@"%@",_MArray[indexPath.row][@"name"]);
+    
+    NSDictionary *dict =(NSDictionary *)_MArray[indexPath.row];
+    [cell setCellWithData:dict];
     return cell;
 }
 
@@ -180,8 +183,8 @@
     IanLog(@"%ld",(long)indexPath.row);
     NSString * ID =_MArray[indexPath.row][@"ID"];
     
-    IanLog(@"name===%@",ID);
-    FMResultSet * set =[self.DB executeQuery:@"select * from repairNote where id = ?;",ID];
+    IanLog(@"id===%@",ID);
+//    FMResultSet * set =[self.DB executeQuery:@"select * from repairNote where id = ?;",ID];
     
 //    [set next];
 //    IanLog(@"projectName====%@",[set stringForColumn:@"projectName"]);

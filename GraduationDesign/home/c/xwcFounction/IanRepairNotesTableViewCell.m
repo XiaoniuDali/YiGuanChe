@@ -31,6 +31,7 @@
 }
 
 
+
 -(void)setSubviews
 {
     _labelName =[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0.25*self.contentView.width, 35)];

@@ -110,7 +110,9 @@
     _addBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.view.width*0.5-25, self.view.height-70, 50,50)];
     [_addBtn setBackgroundColor:ianRGBColor(255, 255, 255)];
 //    [_addBtn setTitle:@"增加" forState:UIControlStateNormal];
-    [_addBtn setBackgroundImage:[UIImage imageNamed:@"addRepairNote.png"] forState:UIControlStateNormal];
+//    [_addBtn setBackgroundImage:[UIImage imageNamed:@"addRepairNote.png"] forState:UIControlStateNormal];
+    [_addBtn setTitle:@"增加" forState:UIControlStateNormal];
+    [_addBtn setBackgroundColor:[UIColor blackColor]];
     
     [self.view addSubview:_addBtn];
     [_addBtn addTarget:self action:@selector(addNote) forControlEvents:UIControlEventTouchUpInside];
@@ -120,7 +122,9 @@
     _showDataBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.view.width*0.5-90, self.view.height-60, 50,30)];
     [_showDataBtn setBackgroundColor:ianRGBColor(255, 255, 255)];
 //    [_showDataBtn setTitle:@"展示" forState:UIControlStateNormal];
-    [_showDataBtn setBackgroundImage:[UIImage imageNamed:@"showData.png"] forState:UIControlStateNormal];
+//    [_showDataBtn setBackgroundImage:[UIImage imageNamed:@"showData.png"] forState:UIControlStateNormal];
+    [_showDataBtn setTitle:@"显示" forState:UIControlStateNormal];
+    [_showDataBtn setBackgroundColor:[UIColor blackColor]];
     
     [self.view addSubview:_showDataBtn];
     [_showDataBtn addTarget:self action:@selector(showData) forControlEvents:UIControlEventTouchUpInside];
@@ -128,6 +132,7 @@
     _alterDataBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.view.width*0.5+40, self.view.height-60, 50,30)];
     [_alterDataBtn setBackgroundColor:ianRGBColor(255, 255, 255)];
     [_alterDataBtn setTitle:@"修改" forState:UIControlStateNormal];
+    [_alterDataBtn setBackgroundColor:[UIColor blackColor]];
     [self.view addSubview:_alterDataBtn];
     [_alterDataBtn addTarget:self action:@selector(alterData) forControlEvents:UIControlEventTouchUpInside];
     
@@ -174,9 +179,7 @@
     _noticeLbl.userInteractionEnabled =NO;
     [_noticeLbl setFont:[UIFont fontWithName:@"宋体" size:10]];
 
-    
-    
-    
+
     
 }
 
@@ -230,6 +233,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [self.db close];
 }
 
 

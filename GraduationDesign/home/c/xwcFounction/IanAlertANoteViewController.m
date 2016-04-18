@@ -53,9 +53,6 @@
 }
 
 
-
-
-
 -(FMDatabase *)openDataBase
 {
     
@@ -140,10 +137,10 @@
     [self.view addSubview:addBtn];
     
     
-
-    
     
 }
+
+
 
 -(void)dateChanged:(UIDatePicker *)picker
 {
@@ -156,6 +153,16 @@
     
     IanLog([NSString stringWithFormat:@"%@",currentDateStr]);
 }
+
+
+#pragma -mark 删除了一条数据
+-(void)delRepair
+{
+    
+    IanLog(@"阿斯顿发生的发");
+    
+}
+
 
 #pragma -mark 增加一条数据
 -(void)addRepair
@@ -174,7 +181,6 @@
     }
     
     if ([_repairNotesDict[@"name"]  isEqual: @"0"]) {
-        
         
         [_repairNotesDict setValue:@"发动机机油" forKey:@"name"];
     }

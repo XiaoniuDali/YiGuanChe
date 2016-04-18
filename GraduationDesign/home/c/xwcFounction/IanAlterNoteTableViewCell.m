@@ -34,8 +34,8 @@
 
 -(void)setSubviews
 {
-    _labelName =[[UILabel alloc] initWithFrame:CGRectMake(0.25*self.width, 0, 0.25*self.width, 35)];
-    _labelTime =[[UILabel alloc] initWithFrame:CGRectMake(0.45*self.width, 0, 0.25*self.width, 35)];
+    _labelName =[[UILabel alloc] initWithFrame:CGRectMake(0.25*self.width, 0, 0.35*self.width, 35)];
+    _labelTime =[[UILabel alloc] initWithFrame:CGRectMake(0.61*self.width, 0, 0.35*self.width, 35)];
     
     
     [self.contentView addSubview:_labelName];
