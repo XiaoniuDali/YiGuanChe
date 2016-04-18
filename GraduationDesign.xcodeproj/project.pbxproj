@@ -27,6 +27,10 @@
 		397B7D611CBA04E2002A8C56 /* echarts.js in Resources */ = {isa = PBXBuildFile; fileRef = 397B7D5B1CBA04E2002A8C56 /* echarts.js */; };
 		397B7D621CBA04E2002A8C56 /* IanAddRepairNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 397B7D5D1CBA04E2002A8C56 /* IanAddRepairNoteViewController.m */; };
 		397B7D631CBA04E2002A8C56 /* IanNoteRepairController.m in Sources */ = {isa = PBXBuildFile; fileRef = 397B7D5F1CBA04E2002A8C56 /* IanNoteRepairController.m */; };
+		397B7D661CBA4339002A8C56 /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 397B7D651CBA4339002A8C56 /* RegistViewController.m */; };
+		39B562F31CC14D9D0049325D /* DTCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B562F21CC14D9D0049325D /* DTCViewController.m */; };
+		39B562F71CC150010049325D /* DTCTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B562F51CC150010049325D /* DTCTableViewCell.m */; };
+		39B562F81CC150010049325D /* DTCTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39B562F61CC150010049325D /* DTCTableViewCell.xib */; };
 		39DF7A591CAC1F6500FC0A3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF7A581CAC1F6500FC0A3D /* main.m */; };
 		39DF7A5C1CAC1F6500FC0A3D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF7A5B1CAC1F6500FC0A3D /* AppDelegate.m */; };
 		39DF7A5F1CAC1F6500FC0A3D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF7A5E1CAC1F6500FC0A3D /* ViewController.m */; };
@@ -157,6 +161,13 @@
 		397B7D5D1CBA04E2002A8C56 /* IanAddRepairNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IanAddRepairNoteViewController.m; sourceTree = "<group>"; };
 		397B7D5E1CBA04E2002A8C56 /* IanNoteRepairController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IanNoteRepairController.h; sourceTree = "<group>"; };
 		397B7D5F1CBA04E2002A8C56 /* IanNoteRepairController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IanNoteRepairController.m; sourceTree = "<group>"; };
+		397B7D641CBA4339002A8C56 /* RegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistViewController.h; sourceTree = "<group>"; };
+		397B7D651CBA4339002A8C56 /* RegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistViewController.m; sourceTree = "<group>"; };
+		39B562F11CC14D9D0049325D /* DTCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCViewController.h; sourceTree = "<group>"; };
+		39B562F21CC14D9D0049325D /* DTCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCViewController.m; sourceTree = "<group>"; };
+		39B562F41CC150010049325D /* DTCTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCTableViewCell.h; sourceTree = "<group>"; };
+		39B562F51CC150010049325D /* DTCTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCTableViewCell.m; sourceTree = "<group>"; };
+		39B562F61CC150010049325D /* DTCTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTCTableViewCell.xib; sourceTree = "<group>"; };
 		39DF7A541CAC1F6500FC0A3D /* GraduationDesign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraduationDesign.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39DF7A581CAC1F6500FC0A3D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		39DF7A5A1CAC1F6500FC0A3D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -400,6 +411,18 @@
 			path = xwcFounction;
 			sourceTree = "<group>";
 		};
+		39B562F01CC14D7E0049325D /* DTCSearch */ = {
+			isa = PBXGroup;
+			children = (
+				39B562F11CC14D9D0049325D /* DTCViewController.h */,
+				39B562F21CC14D9D0049325D /* DTCViewController.m */,
+				39B562F41CC150010049325D /* DTCTableViewCell.h */,
+				39B562F51CC150010049325D /* DTCTableViewCell.m */,
+				39B562F61CC150010049325D /* DTCTableViewCell.xib */,
+			);
+			path = DTCSearch;
+			sourceTree = "<group>";
+		};
 		39DF7A4B1CAC1F6500FC0A3D = {
 			isa = PBXGroup;
 			children = (
@@ -507,8 +530,9 @@
 		39DF7ABD1CAC220900FC0A3D /* homeController */ = {
 			isa = PBXGroup;
 			children = (
-				397B7D591CBA04E2002A8C56 /* xwcFounction */,
+				39B562F01CC14D7E0049325D /* DTCSearch */,
 				397B7D361CBA04D4002A8C56 /* fineFounction */,
+				397B7D591CBA04E2002A8C56 /* xwcFounction */,
 				39DF7ABE1CAC220900FC0A3D /* IanMainViewController.h */,
 				39DF7ABF1CAC220900FC0A3D /* IanMainViewController.m */,
 			);
@@ -766,6 +790,8 @@
 				39DF7BC31CAC292700FC0A3D /* CustomTabBarController.m */,
 				39DF7BDA1CAC2D2200FC0A3D /* IanNavigationController.h */,
 				39DF7BDB1CAC2D2200FC0A3D /* IanNavigationController.m */,
+				397B7D641CBA4339002A8C56 /* RegistViewController.h */,
+				397B7D651CBA4339002A8C56 /* RegistViewController.m */,
 			);
 			path = "启动登陆界面";
 			sourceTree = "<group>";
@@ -928,6 +954,7 @@
 				397B7D521CBA04D4002A8C56 /* ProvincesViewController.xib in Resources */,
 				39DF7BD01CAC2C6700FC0A3D /* image3.png in Resources */,
 				39DF7B801CAC22FA00FC0A3D /* SIAlertView.bundle in Resources */,
+				39B562F81CC150010049325D /* DTCTableViewCell.xib in Resources */,
 				397B7D601CBA04E2002A8C56 /* echarts.html in Resources */,
 				397B7D4D1CBA04D4002A8C56 /* CitiesViewController.xib in Resources */,
 				397B7D581CBA04D4002A8C56 /* SearchResultViewController.xib in Resources */,
@@ -1030,11 +1057,13 @@
 				39DF7BC41CAC292700FC0A3D /* CustomTabBarController.m in Sources */,
 				39DF7B7D1CAC22FA00FC0A3D /* UIScrollView+MJExtension.m in Sources */,
 				39DF7B781CAC22FA00FC0A3D /* MBProgressHUD.m in Sources */,
+				397B7D661CBA4339002A8C56 /* RegistViewController.m in Sources */,
 				397B7D511CBA04D4002A8C56 /* ProvincesViewController.m in Sources */,
 				397B7D4F1CBA04D4002A8C56 /* fineDetailTableViewCell.m in Sources */,
 				3954F8FA1CAFA343005C1353 /* vinModel.m in Sources */,
 				397B7D4C1CBA04D4002A8C56 /* CitiesViewController.m in Sources */,
 				39DF7BBB1CAC25C300FC0A3D /* SBJsonUTF8Stream.m in Sources */,
+				39B562F31CC14D9D0049325D /* DTCViewController.m in Sources */,
 				39DF7B7B1CAC22FA00FC0A3D /* MJRefreshFooterView.m in Sources */,
 				39DF7A591CAC1F6500FC0A3D /* main.m in Sources */,
 				39DF7B761CAC22FA00FC0A3D /* HMSegmentedControl.m in Sources */,
@@ -1045,6 +1074,7 @@
 				39DF7B7E1CAC22FA00FC0A3D /* UIScrollView+MJRefresh.m in Sources */,
 				39DF7BDF1CAC2E8000FC0A3D /* IHNewsViewController.m in Sources */,
 				39DF7B901CAC22FA00FC0A3D /* UIAlertView+AFNetworking.m in Sources */,
+				39B562F71CC150010049325D /* DTCTableViewCell.m in Sources */,
 				39DF7BB11CAC25C300FC0A3D /* NSObject+SBJson.m in Sources */,
 				39DF7AF01CAC220900FC0A3D /* UITextView+Extension.m in Sources */,
 				39DF7BC11CAC285200FC0A3D /* LaunchRoot.m in Sources */,

@@ -21,6 +21,10 @@
 //@end
 @interface vinModel : Tool_FMDBModel<NSCoding>
 
+@property (nonatomic, copy) NSString *telephone; // 电话
+
+@property (nonatomic, copy) NSString *password; // 密码
+
 @property (nonatomic, copy) NSString *shaftdistance;/*轴距*/
 
 @property (nonatomic, copy) NSString *crateWidth;

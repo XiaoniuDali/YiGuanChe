@@ -13,10 +13,13 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 #import "IHAcountTool.h"
+#import "vinModel.h"
 #define ScreenWidth self.view.bounds.size.width
 #define ScreenHeight self.view.bounds.size.height
 
 #define CellWidth (ScreenWidth - 3*30 - 20)/4
 #define CellHeight (ScreenHeight - 64 - 48)/8
 
+#define WeakSelf __weak typeof(self) weakSelf = self;
+#define buttonColor [UIColor colorWithRed:(13)/256.0 green:(196)/256.0 blue:(0)/256.0 alpha:1.0]
 #endif /* global_pch */

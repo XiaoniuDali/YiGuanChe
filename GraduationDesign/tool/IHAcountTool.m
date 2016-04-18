@@ -61,7 +61,7 @@
     
     [self showHUD:text andView:view];
     // 几秒后消失,当然，这里可以改为网络请求
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         // 移除HUD
         [self hideHUD];

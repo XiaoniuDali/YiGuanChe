@@ -18,8 +18,8 @@
 + (NetworkManager*)shareMgr;
 
 
-// 3.2注册
-- (void)app_login_register:(NSDictionary *)dic CompleteHandle:(CompleteHandle)completeHandle;
+//// 3.2注册
+//- (void)app_login_register:(NSDictionary *)dic CompleteHandle:(CompleteHandle)completeHandle;
 
 
 
@@ -27,4 +27,8 @@
 - (void)app_search_fine:(NSDictionary *)dic CompleteHandle:(CompleteHandle)completeHandle;
 // 城市ID查询
 - (void)app_get_all_config:(NSDictionary *)dic CompleteHandle:(CompleteHandle)completeHandle;
+// vin查询
+- (void)app_search_VIN:(NSDictionary *)dic completeHandle:(CompleteHandle)completeHandle;
+// DTC查询
+- (void)app_search_DTC:(NSDictionary *)dic completeHandle:(CompleteHandle)completeHandle;
 @end

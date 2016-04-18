@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DTCTableViewCell" rowHeight="123" id="KGk-i7-Jjw" customClass="DTCTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="123"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="122.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="后果：怠速或者减速不稳，点火困难" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMG-Uz-Z93">
+                        <rect key="frame" x="8" y="8" width="304" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="4iz-dk-WXm"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提醒：传感器信号电路短路到正极，传" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WqX-8K-oh5">
+                        <rect key="frame" x="8" y="63" width="304" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="类型：发动机系统" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUh-DP-Dgv">
+                        <rect key="frame" x="8" y="93.5" width="304" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="NgQ-Te-7HT"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="描述：&quot;歧管绝对压力（传感器）/大" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dA9-1E-VDF">
+                        <rect key="frame" x="8" y="34" width="304" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="rMG-Uz-Z93" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="32Y-ZT-2uk"/>
+                    <constraint firstItem="iUh-DP-Dgv" firstAttribute="top" secondItem="dA9-1E-VDF" secondAttribute="bottom" constant="38.5" id="5x9-FK-aqs"/>
+                    <constraint firstItem="rMG-Uz-Z93" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="6a1-4k-Py3"/>
+                    <constraint firstItem="dA9-1E-VDF" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="BMi-Pg-MFO"/>
+                    <constraint firstItem="dA9-1E-VDF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Ctf-SM-GH3"/>
+                    <constraint firstItem="WqX-8K-oh5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="EKk-mB-LSX"/>
+                    <constraint firstItem="iUh-DP-Dgv" firstAttribute="top" secondItem="WqX-8K-oh5" secondAttribute="bottom" constant="9.5" id="GG5-kd-F6t"/>
+                    <constraint firstItem="WqX-8K-oh5" firstAttribute="top" secondItem="dA9-1E-VDF" secondAttribute="bottom" constant="8" id="JmW-ij-vRJ"/>
+                    <constraint firstItem="iUh-DP-Dgv" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="NXz-wc-dOr"/>
+                    <constraint firstItem="rMG-Uz-Z93" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="d8e-Cs-8i4"/>
+                    <constraint firstItem="WqX-8K-oh5" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="da5-wy-BNZ"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="iUh-DP-Dgv" secondAttribute="bottom" id="hTU-DH-sTS"/>
+                    <constraint firstItem="iUh-DP-Dgv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="lsi-wS-qoe"/>
+                    <constraint firstItem="dA9-1E-VDF" firstAttribute="top" secondItem="rMG-Uz-Z93" secondAttribute="bottom" constant="5" id="otl-Wb-c9d"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="decribe" destination="dA9-1E-VDF" id="f2Q-za-hZg"/>
+                <outlet property="remind" destination="WqX-8K-oh5" id="HLO-sO-2Gm"/>
+                <outlet property="result" destination="rMG-Uz-Z93" id="uvW-lI-SVH"/>
+                <outlet property="type" destination="iUh-DP-Dgv" id="ZAl-WV-Ckm"/>
+            </connections>
+            <point key="canvasLocation" x="216" y="177.5"/>
+        </tableViewCell>
+    </objects>
+</document>

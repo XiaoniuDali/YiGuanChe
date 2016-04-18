@@ -10,6 +10,8 @@
 #import "IanNoteRepairController.h"
 #import "appMarco.h"
 #import "SearchFineViewController.h"
+#import "DTCViewController.h"
+
 #define UISCREENHEIGHT  self.view.bounds.size.height
 #define UISCREENWIDTH  self.view.bounds.size.width
 
@@ -27,28 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-//    vinModel *model = [vinModel new];
-//    model.shaftdistance = @"20";
-//    model.crateWidth = @"100";
-//    model.loadQualityFactor = @"23";
-//    model.displacement = @"43";
-//    //保存数据到数据库（模型中的成员变量有数组与模型）
-//    //如果模型中的成员变量是数组或者自定义模型，就将数组或者自定义模型归档(NSKeyedArchive)为二进制数据，再存入数据库；从数据库取出数据时，将二进制数据解档（NSKeyedUnArchive）为数组或者自定义模型；
-//    
-//    [model save];
-//    //将数据库中的数据取出来
-//    NSArray *he = [vinModel findAll];
-//    for (int i = 0; i<he.count; i++) {
-//        vinModel *s =he[i];
-//        //查看数组数据能否成功读取
-//        NSLog(@"array:%@",s);
-//        //查看模型数据能否成功读取
-//    }
-//
-//    NSLog(@"测试：%@",model.loadQualityFactor);
-//    
-    
+        
     [self createScrollView];
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     [flowLayout setItemSize:CGSizeMake(100, 100)];//设置cell的尺寸
@@ -122,6 +103,7 @@
             
             break;
         case 2:
+            cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"DTC.png"]];
             
             break;
         case 3:
@@ -176,6 +158,8 @@
         }
         case 2:
         {
+            DTCViewController *dct = [DTCViewController new];
+            [self.navigationController pushViewController:dct animated:YES];
             
             
             break;

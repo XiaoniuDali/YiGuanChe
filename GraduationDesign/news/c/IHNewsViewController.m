@@ -26,17 +26,16 @@
 -(void)setSubviews
 {
     UITableView *tableView =[[UITableView alloc] init];
-    [tableView setFrame:CGRectMake(-16,0, self.view.width, self.view.height-48)];
+    [tableView setFrame:CGRectMake(0,0, self.view.bounds.size.width, self.view.height-48)];
     tableView.delegate =self;
     tableView.dataSource =self;
     [self.view addSubview:tableView];
     self.tableView =tableView;
-    
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 20;
+    return 2;
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
