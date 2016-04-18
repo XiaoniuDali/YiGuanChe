@@ -8,7 +8,7 @@
             </head>
     <body>
         <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-        <div id="main" style="width: 350px;height:350px;"></div>
+        <div id="main" style="width: 350px;height:300px;"></div>
         <script type="text/javascript">
             
             
@@ -24,21 +24,44 @@
                 
                 // 指定图表的配置项和数据
                 var option = {
+                    backgroundColor:'#f8f8f8',
                     title: {
-                        text: 'ECharts 入门示例'
+                        text: '维修保养数据统计'
                     },
-                    tooltip: {},
-                    legend: {
-                        data:['销量']
+                    
+                    grid: {
+                        backgroundColor:'rgb(128, 128, 128)',
+                        left:5,
+                        right:5,
+                        bottom:0,
+                        containLabel:true,
                     },
+                    
+                    toolbox: {
+                        show: true,
+                        feature: {
+                            magicType: {show: true, type: ['line', 'bar']},
+                        },
+                        
+                    },
+                    tooltip : {
+                        trigger: 'axis',
+                        triggerOn:'click',
+                        
+                    },
+
                     xAxis: {
-                        data:xDataValue,//["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+                        data:xDataValue,
+                        name : '时间'
                     },
-                    yAxis: {},
+                    yAxis: {
+                        name :'费用(元)'
+                    },
+
                     series: [{
-                             name: '销量',
+                             name: '保养记录(元)',
                              type: 'bar',
-                             data:yDataVaue,//[5, 20, 36, 10, 10, 20]
+                             data:yDataVaue,
                              }]
                 };
                 
@@ -46,11 +69,10 @@
                 myChart.setOption(option);
                 
             }
-      //  var xDataValue =["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"];
-        //var yDataVaue =[5, 20, 36, 10, 10, 20];
+        //var xDataValue =["2012-01-02","2012-07-04","2013-07-08","2014-08-01","2016-01-04","2016-07-08"];
+      //  var yDataVaue =[5, 20, 36, 10, 10, 20];
         setData(xDataValue,yDataVaue);
-
-
+        
             </script>
     </body>
 </html>

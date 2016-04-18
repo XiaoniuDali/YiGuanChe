@@ -89,10 +89,13 @@
     _noticeLbl = [[UILabel alloc] initWithFrame:CGRectMake(0, label.frame.origin.y+27, self.view.width,95)];
     
     [_noticeLbl setBackgroundColor:[UIColor blueColor]];
-    [self.view addSubview:_noticeLbl];
     _noticeLbl.text =@"根据维修保养记录的数据，显示一些提示消息";
     _noticeLbl.userInteractionEnabled =NO;
     [_noticeLbl setFont:[UIFont fontWithName:@"宋体" size:15]];
+    
+    
+    [self.view addSubview:_noticeLbl];
+
     
     
     

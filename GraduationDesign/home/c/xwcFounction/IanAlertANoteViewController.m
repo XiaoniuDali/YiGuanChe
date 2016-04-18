@@ -6,12 +6,12 @@
 //  Copyright © 2016年 YJH. All rights reserved.
 //
 
-#import "IanAddRepairNoteViewController.h"
+#import "IanAlertANoteViewController.h"
 #import "appMarco.h"
 #import "FMDatabase.h"
 
 
-@interface IanAddRepairNoteViewController () <UIPickerViewDataSource,UIPickerViewDelegate>
+@interface IanAlertANoteViewController () <UIPickerViewDataSource,UIPickerViewDelegate>
 @property (nonatomic,strong) FMDatabase * db;
 @property (nonatomic,strong) NSArray * repairNames;
 @property (nonatomic,strong) UITextField * moneyTf;
@@ -23,17 +23,17 @@
 
 @end
 
-@implementation IanAddRepairNoteViewController
+@implementation IanAlertANoteViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     self.view.frame =IanMainScreen.bounds;
     [self.view setBackgroundColor:ianRGBColor(231, 231, 231)];
     self.title =@"增加维修记录";
     
     [self setSubviews];
-
+    
     self.db =[self openDataBase];
     
     BOOL result =[ self.db executeUpdate:@"create table if not exists repairNote (id integer primary key autoincrement,time text,site text,money text,projectName text)"];
@@ -51,7 +51,6 @@
 {
     [self.db close];
 }
-
 
 
 
@@ -124,7 +123,7 @@
     _moneyTf.backgroundColor =[UIColor whiteColor];
     _moneyTf.keyboardType = UIKeyboardTypeNumberPad;
     [self.view addSubview:_moneyTf];
-
+    
     
     
     UIButton *addBtn =[[UIButton alloc] initWithFrame:CGRectMake(self.view.width *0.5 -25, self.view.height -70 ,50,30)];
@@ -134,7 +133,14 @@
     [self.view addSubview:addBtn];
     
     
+    UIButton *delBtn =[[UIButton alloc] initWithFrame:CGRectMake(self.view.width *0.5 -25, self.view.height -70 ,50,30)];
+    delBtn.backgroundColor =[UIColor redColor];
+    [delBtn setTitle:@"删除" forState:UIControlStateNormal];
+    [delBtn addTarget:self action:@selector(delRepair) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:addBtn];
     
+    
+
     
     
 }
@@ -155,7 +161,7 @@
 -(void)addRepair
 {
     NSString *money =_moneyTf.text;
-
+    
     
     if (_moneyTf.text == nil )   money =@"0";
     if ([_repairNotesDict[@"time"] isEqual: @"0"]) {
@@ -168,12 +174,12 @@
     }
     
     if ([_repairNotesDict[@"name"]  isEqual: @"0"]) {
-  
+        
         
         [_repairNotesDict setValue:@"发动机机油" forKey:@"name"];
     }
     
-
+    
     
     [_repairNotesDict setValue:_siteTf.text forKey:@"site"];
     [_repairNotesDict setValue:money forKey:@"money"];
@@ -206,10 +212,10 @@
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-//    NSString *a = [NSString stringWithFormat:@"row===%ld",(long)row];
+    //    NSString *a = [NSString stringWithFormat:@"row===%ld",(long)row];
     _repairNames =[NSArray arrayWithObjects:@"发动机机油",@"机油滤清器",@"空气滤清器",@"燃油滤清器",@"火花塞",@"空调滤清器",@"前刹车片",@"后刹车片",@"前雨刷套装",@"防冻冷却液",@"空调制冷剂",@"蓄电池",@"轮胎",nil];
     
-//    IanLog(_repairNames[0]);
+    //    IanLog(_repairNames[0]);
     return _repairNames[row];
 }
 
