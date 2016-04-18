@@ -23,11 +23,17 @@
 		397B7D561CBA04D4002A8C56 /* SearchFineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 397B7D481CBA04D4002A8C56 /* SearchFineViewController.xib */; };
 		397B7D571CBA04D4002A8C56 /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 397B7D4A1CBA04D4002A8C56 /* SearchResultViewController.m */; };
 		397B7D581CBA04D4002A8C56 /* SearchResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 397B7D4B1CBA04D4002A8C56 /* SearchResultViewController.xib */; };
-		397B7D601CBA04E2002A8C56 /* echarts.html in Resources */ = {isa = PBXBuildFile; fileRef = 397B7D5A1CBA04E2002A8C56 /* echarts.html */; };
-		397B7D611CBA04E2002A8C56 /* echarts.js in Resources */ = {isa = PBXBuildFile; fileRef = 397B7D5B1CBA04E2002A8C56 /* echarts.js */; };
-		397B7D621CBA04E2002A8C56 /* IanAddRepairNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 397B7D5D1CBA04E2002A8C56 /* IanAddRepairNoteViewController.m */; };
-		397B7D631CBA04E2002A8C56 /* IanNoteRepairController.m in Sources */ = {isa = PBXBuildFile; fileRef = 397B7D5F1CBA04E2002A8C56 /* IanNoteRepairController.m */; };
 		397B7D661CBA4339002A8C56 /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 397B7D651CBA4339002A8C56 /* RegistViewController.m */; };
+		398984791CC5321100082A2B /* echarts.html in Resources */ = {isa = PBXBuildFile; fileRef = 398984671CC5321100082A2B /* echarts.html */; };
+		3989847A1CC5321100082A2B /* echarts.js in Resources */ = {isa = PBXBuildFile; fileRef = 398984681CC5321100082A2B /* echarts.js */; };
+		3989847B1CC5321100082A2B /* IanAddRepairNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3989846A1CC5321100082A2B /* IanAddRepairNoteViewController.m */; };
+		3989847C1CC5321100082A2B /* IanAlertANoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3989846C1CC5321100082A2B /* IanAlertANoteViewController.m */; };
+		3989847D1CC5321100082A2B /* IanAlterNoteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3989846E1CC5321100082A2B /* IanAlterNoteTableViewCell.m */; };
+		3989847E1CC5321100082A2B /* IanAlterNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 398984701CC5321100082A2B /* IanAlterNoteViewController.m */; };
+		3989847F1CC5321100082A2B /* IanNoteRepairController.m in Sources */ = {isa = PBXBuildFile; fileRef = 398984721CC5321100082A2B /* IanNoteRepairController.m */; };
+		398984801CC5321100082A2B /* IanRepairNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 398984741CC5321100082A2B /* IanRepairNote.m */; };
+		398984811CC5321100082A2B /* IanRepairNotesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 398984761CC5321100082A2B /* IanRepairNotesTableViewCell.m */; };
+		398984821CC5321100082A2B /* IanShowRepairNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 398984781CC5321100082A2B /* IanShowRepairNoteViewController.m */; };
 		39B562F31CC14D9D0049325D /* DTCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B562F21CC14D9D0049325D /* DTCViewController.m */; };
 		39B562F71CC150010049325D /* DTCTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B562F51CC150010049325D /* DTCTableViewCell.m */; };
 		39B562F81CC150010049325D /* DTCTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39B562F61CC150010049325D /* DTCTableViewCell.xib */; };
@@ -155,14 +161,26 @@
 		397B7D491CBA04D4002A8C56 /* SearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultViewController.h; sourceTree = "<group>"; };
 		397B7D4A1CBA04D4002A8C56 /* SearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultViewController.m; sourceTree = "<group>"; };
 		397B7D4B1CBA04D4002A8C56 /* SearchResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultViewController.xib; sourceTree = "<group>"; };
-		397B7D5A1CBA04E2002A8C56 /* echarts.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = echarts.html; sourceTree = "<group>"; };
-		397B7D5B1CBA04E2002A8C56 /* echarts.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = echarts.js; sourceTree = "<group>"; };
-		397B7D5C1CBA04E2002A8C56 /* IanAddRepairNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IanAddRepairNoteViewController.h; sourceTree = "<group>"; };
-		397B7D5D1CBA04E2002A8C56 /* IanAddRepairNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IanAddRepairNoteViewController.m; sourceTree = "<group>"; };
-		397B7D5E1CBA04E2002A8C56 /* IanNoteRepairController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IanNoteRepairController.h; sourceTree = "<group>"; };
-		397B7D5F1CBA04E2002A8C56 /* IanNoteRepairController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IanNoteRepairController.m; sourceTree = "<group>"; };
 		397B7D641CBA4339002A8C56 /* RegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistViewController.h; sourceTree = "<group>"; };
 		397B7D651CBA4339002A8C56 /* RegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistViewController.m; sourceTree = "<group>"; };
+		398984671CC5321100082A2B /* echarts.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = echarts.html; sourceTree = "<group>"; };
+		398984681CC5321100082A2B /* echarts.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = echarts.js; sourceTree = "<group>"; };
+		398984691CC5321100082A2B /* IanAddRepairNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IanAddRepairNoteViewController.h; sourceTree = "<group>"; };
+		3989846A1CC5321100082A2B /* IanAddRepairNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IanAddRepairNoteViewController.m; sourceTree = "<group>"; };
+		3989846B1CC5321100082A2B /* IanAlertANoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IanAlertANoteViewController.h; sourceTree = "<group>"; };
+		3989846C1CC5321100082A2B /* IanAlertANoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IanAlertANoteViewController.m; sourceTree = "<group>"; };
+		3989846D1CC5321100082A2B /* IanAlterNoteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IanAlterNoteTableViewCell.h; sourceTree = "<group>"; };
+		3989846E1CC5321100082A2B /* IanAlterNoteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IanAlterNoteTableViewCell.m; sourceTree = "<group>"; };
+		3989846F1CC5321100082A2B /* IanAlterNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IanAlterNoteViewController.h; sourceTree = "<group>"; };
+		398984701CC5321100082A2B /* IanAlterNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IanAlterNoteViewController.m; sourceTree = "<group>"; };
+		398984711CC5321100082A2B /* IanNoteRepairController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IanNoteRepairController.h; sourceTree = "<group>"; };
+		398984721CC5321100082A2B /* IanNoteRepairController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IanNoteRepairController.m; sourceTree = "<group>"; };
+		398984731CC5321100082A2B /* IanRepairNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IanRepairNote.h; sourceTree = "<group>"; };
+		398984741CC5321100082A2B /* IanRepairNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IanRepairNote.m; sourceTree = "<group>"; };
+		398984751CC5321100082A2B /* IanRepairNotesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IanRepairNotesTableViewCell.h; sourceTree = "<group>"; };
+		398984761CC5321100082A2B /* IanRepairNotesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IanRepairNotesTableViewCell.m; sourceTree = "<group>"; };
+		398984771CC5321100082A2B /* IanShowRepairNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IanShowRepairNoteViewController.h; sourceTree = "<group>"; };
+		398984781CC5321100082A2B /* IanShowRepairNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IanShowRepairNoteViewController.m; sourceTree = "<group>"; };
 		39B562F11CC14D9D0049325D /* DTCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCViewController.h; sourceTree = "<group>"; };
 		39B562F21CC14D9D0049325D /* DTCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCViewController.m; sourceTree = "<group>"; };
 		39B562F41CC150010049325D /* DTCTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCTableViewCell.h; sourceTree = "<group>"; };
@@ -401,12 +419,24 @@
 		397B7D591CBA04E2002A8C56 /* xwcFounction */ = {
 			isa = PBXGroup;
 			children = (
-				397B7D5A1CBA04E2002A8C56 /* echarts.html */,
-				397B7D5B1CBA04E2002A8C56 /* echarts.js */,
-				397B7D5C1CBA04E2002A8C56 /* IanAddRepairNoteViewController.h */,
-				397B7D5D1CBA04E2002A8C56 /* IanAddRepairNoteViewController.m */,
-				397B7D5E1CBA04E2002A8C56 /* IanNoteRepairController.h */,
-				397B7D5F1CBA04E2002A8C56 /* IanNoteRepairController.m */,
+				398984671CC5321100082A2B /* echarts.html */,
+				398984681CC5321100082A2B /* echarts.js */,
+				398984691CC5321100082A2B /* IanAddRepairNoteViewController.h */,
+				3989846A1CC5321100082A2B /* IanAddRepairNoteViewController.m */,
+				3989846B1CC5321100082A2B /* IanAlertANoteViewController.h */,
+				3989846C1CC5321100082A2B /* IanAlertANoteViewController.m */,
+				3989846D1CC5321100082A2B /* IanAlterNoteTableViewCell.h */,
+				3989846E1CC5321100082A2B /* IanAlterNoteTableViewCell.m */,
+				3989846F1CC5321100082A2B /* IanAlterNoteViewController.h */,
+				398984701CC5321100082A2B /* IanAlterNoteViewController.m */,
+				398984711CC5321100082A2B /* IanNoteRepairController.h */,
+				398984721CC5321100082A2B /* IanNoteRepairController.m */,
+				398984731CC5321100082A2B /* IanRepairNote.h */,
+				398984741CC5321100082A2B /* IanRepairNote.m */,
+				398984751CC5321100082A2B /* IanRepairNotesTableViewCell.h */,
+				398984761CC5321100082A2B /* IanRepairNotesTableViewCell.m */,
+				398984771CC5321100082A2B /* IanShowRepairNoteViewController.h */,
+				398984781CC5321100082A2B /* IanShowRepairNoteViewController.m */,
 			);
 			path = xwcFounction;
 			sourceTree = "<group>";
@@ -945,20 +975,20 @@
 				39DF7BD81CAC2CAA00FC0A3D /* AdDataPlist.plist in Resources */,
 				397B7D501CBA04D4002A8C56 /* fineDetailTableViewCell.xib in Resources */,
 				39DF7A671CAC1F6500FC0A3D /* LaunchScreen.storyboard in Resources */,
+				3989847A1CC5321100082A2B /* echarts.js in Resources */,
 				39DF7BCF1CAC2C6700FC0A3D /* image2.png in Resources */,
 				39DF7A641CAC1F6500FC0A3D /* Assets.xcassets in Resources */,
 				39DF7BCE1CAC2C6700FC0A3D /* image1.png in Resources */,
 				397B7D561CBA04D4002A8C56 /* SearchFineViewController.xib in Resources */,
 				39DF7BCD1CAC2C6700FC0A3D /* image0.png in Resources */,
 				39DF7A621CAC1F6500FC0A3D /* Main.storyboard in Resources */,
+				398984791CC5321100082A2B /* echarts.html in Resources */,
 				397B7D521CBA04D4002A8C56 /* ProvincesViewController.xib in Resources */,
 				39DF7BD01CAC2C6700FC0A3D /* image3.png in Resources */,
 				39DF7B801CAC22FA00FC0A3D /* SIAlertView.bundle in Resources */,
 				39B562F81CC150010049325D /* DTCTableViewCell.xib in Resources */,
-				397B7D601CBA04E2002A8C56 /* echarts.html in Resources */,
 				397B7D4D1CBA04D4002A8C56 /* CitiesViewController.xib in Resources */,
 				397B7D581CBA04D4002A8C56 /* SearchResultViewController.xib in Resources */,
-				397B7D611CBA04E2002A8C56 /* echarts.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1037,11 +1067,13 @@
 				39DF7BB91CAC25C300FC0A3D /* SBJsonStreamWriterState.m in Sources */,
 				39DF7B8E1CAC22FA00FC0A3D /* AFNetworkActivityIndicatorManager.m in Sources */,
 				39DF7B921CAC22FA00FC0A3D /* UIImageView+AFNetworking.m in Sources */,
+				3989847B1CC5321100082A2B /* IanAddRepairNoteViewController.m in Sources */,
 				39DF7B8F1CAC22FA00FC0A3D /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				39DF7A5F1CAC1F6500FC0A3D /* ViewController.m in Sources */,
 				39DF7B7C1CAC22FA00FC0A3D /* MJRefreshHeaderView.m in Sources */,
 				39DF7B6F1CAC22FA00FC0A3D /* AFNetworkReachabilityManager.m in Sources */,
 				39DF7B751CAC22FA00FC0A3D /* MF_Base64Additions.m in Sources */,
+				3989847F1CC5321100082A2B /* IanNoteRepairController.m in Sources */,
 				39DF7AF11CAC220900FC0A3D /* UIView+Extersion.m in Sources */,
 				39DF7B791CAC22FA00FC0A3D /* MJRefreshBaseView.m in Sources */,
 				39DF7BB31CAC25C300FC0A3D /* SBJsonStreamParser.m in Sources */,
@@ -1083,17 +1115,20 @@
 				39DF7B091CAC220900FC0A3D /* IHAcountTool.m in Sources */,
 				39DF7AF21CAC220900FC0A3D /* UIWindow+Extension.m in Sources */,
 				39DF7B911CAC22FA00FC0A3D /* UIButton+AFNetworking.m in Sources */,
+				3989847D1CC5321100082A2B /* IanAlterNoteTableViewCell.m in Sources */,
 				39DF7BB61CAC25C300FC0A3D /* SBJsonStreamParserState.m in Sources */,
 				39DF7B061CAC220900FC0A3D /* NetworkManager.m in Sources */,
 				39DF7B011CAC220900FC0A3D /* IanNavigationBar.m in Sources */,
 				39DF7B951CAC22FA00FC0A3D /* UIWebView+AFNetworking.m in Sources */,
 				39DF7B731CAC22FA00FC0A3D /* AFURLResponseSerialization.m in Sources */,
 				39DF7B931CAC22FA00FC0A3D /* UIProgressView+AFNetworking.m in Sources */,
-				397B7D631CBA04E2002A8C56 /* IanNoteRepairController.m in Sources */,
+				3989847E1CC5321100082A2B /* IanAlterNoteViewController.m in Sources */,
 				39DF7BB41CAC25C300FC0A3D /* SBJsonStreamParserAccumulator.m in Sources */,
 				39DF7B021CAC220900FC0A3D /* IanTabBar.m in Sources */,
 				39DF7AED1CAC220900FC0A3D /* NSDate+Extension.m in Sources */,
+				3989847C1CC5321100082A2B /* IanAlertANoteViewController.m in Sources */,
 				39DF7B6C1CAC22FA00FC0A3D /* AFHTTPRequestOperation.m in Sources */,
+				398984801CC5321100082A2B /* IanRepairNote.m in Sources */,
 				39DF7B711CAC22FA00FC0A3D /* AFURLConnectionOperation.m in Sources */,
 				397B7D351CB9F2A8002A8C56 /* Tool_FMDBModel.m in Sources */,
 				39DF7B6D1CAC22FA00FC0A3D /* AFHTTPRequestOperationManager.m in Sources */,
@@ -1103,12 +1138,13 @@
 				39DF7B081CAC220900FC0A3D /* IHSettingViewController.m in Sources */,
 				39DF7B721CAC22FA00FC0A3D /* AFURLRequestSerialization.m in Sources */,
 				39DF7BB71CAC25C300FC0A3D /* SBJsonStreamWriter.m in Sources */,
-				397B7D621CBA04E2002A8C56 /* IanAddRepairNoteViewController.m in Sources */,
 				39DF7B701CAC22FA00FC0A3D /* AFSecurityPolicy.m in Sources */,
+				398984811CC5321100082A2B /* IanRepairNotesTableViewCell.m in Sources */,
 				39DF7BD91CAC2CAA00FC0A3D /* AdScrollView.m in Sources */,
 				397B7D4E1CBA04D4002A8C56 /* CityNameViewController.m in Sources */,
 				39DF7B7A1CAC22FA00FC0A3D /* MJRefreshConst.m in Sources */,
 				39DF7B6E1CAC22FA00FC0A3D /* AFHTTPSessionManager.m in Sources */,
+				398984821CC5321100082A2B /* IanShowRepairNoteViewController.m in Sources */,
 				39DF7AFD1CAC220900FC0A3D /* IHAcount.m in Sources */,
 				39DF7BB51CAC25C300FC0A3D /* SBJsonStreamParserAdapter.m in Sources */,
 			);
