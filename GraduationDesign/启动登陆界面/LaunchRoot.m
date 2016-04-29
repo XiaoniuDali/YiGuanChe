@@ -67,7 +67,16 @@
     
     if (allModel.count == 0) {
         
-        [self gotoLogin];
+//        [self gotoLogin];
+        CustomTabBarController *tab =[[CustomTabBarController alloc ] init];
+        
+        [tab.view setFrame:self.view.bounds];
+        
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        
+        window.rootViewController =tab;
+        
+        [window makeKeyAndVisible];
     } else {
         
         for (int i = 0; i<allModel.count; i++) {
