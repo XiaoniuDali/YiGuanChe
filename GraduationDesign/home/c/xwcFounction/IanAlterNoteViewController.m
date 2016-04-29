@@ -10,6 +10,7 @@
 #import "FMDatabase.h"
 #import "appMarco.h"
 #import "IanAlterNoteTableViewCell.h"
+#import "IanAlertANoteViewController.h"
 
 @interface IanAlterNoteViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) FMDatabase * DB;
@@ -183,12 +184,13 @@
     IanLog(@"%ld",(long)indexPath.row);
     NSString * ID =_MArray[indexPath.row][@"ID"];
     
-    IanLog(@"id===%@",ID);
-//    FMResultSet * set =[self.DB executeQuery:@"select * from repairNote where id = ?;",ID];
+    IanAlertANoteViewController *alertANoteViewC =[[IanAlertANoteViewController alloc] init];
+    [self.navigationController pushViewController:alertANoteViewC animated:YES];
+    alertANoteViewC.ID = ID;
     
-//    [set next];
-//    IanLog(@"projectName====%@",[set stringForColumn:@"projectName"]);
-//    self.DB executeQuery: withArgumentsInArray:<#(NSArray *)#>
+    
+    IanLog(@"id===%@",ID);
+    
 }
 
 

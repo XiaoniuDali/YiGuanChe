@@ -27,18 +27,29 @@ static Tool_FMDBGetDatabase *tool_database = nil;
 //创建数据库保存路径
 + (NSString *)dbPath
 {
-    NSString *docsdir = [NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    NSFileManager *filemanage = [NSFileManager defaultManager];
-    docsdir = [docsdir stringByAppendingPathComponent:@"JKBD"];
-    BOOL isDir;
-    BOOL exit =[filemanage fileExistsAtPath:docsdir isDirectory:&isDir];
-    if (!exit || !isDir) {
-        [filemanage createDirectoryAtPath:docsdir withIntermediateDirectories:YES attributes:nil error:nil];
-    }
-    NSString *dbpath = [docsdir stringByAppendingPathComponent:@"jkdb.sqlite"];
-    NSLog(@"保存文件路径：%@",dbpath);
-    return dbpath;
+//    NSString *docsdir = [NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+//    NSFileManager *filemanage = [NSFileManager defaultManager];
+//    docsdir = [docsdir stringByAppendingPathComponent:@"JKBD"];
+//    BOOL isDir;
+//    BOOL exit =[filemanage fileExistsAtPath:docsdir isDirectory:&isDir];
+//    if (!exit || !isDir) {
+//        [filemanage createDirectoryAtPath:docsdir withIntermediateDirectories:YES attributes:nil error:nil];
+//    }
+//    NSString *dbpath = [docsdir stringByAppendingPathComponent:@"jkdb.sqlite"];
+//    NSLog(@"保存文件路径：%@",dbpath);
+//    return dbpath;
+    
+    
+    
+    NSString * doc =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *fileName =[doc stringByAppendingPathComponent:@"appDb.sqlite"];
+    return fileName;
 }
+
+
+
+
+
 //创建多线程安全的数据库
 - (FMDatabaseQueue *)dbQueue
 {

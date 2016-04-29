@@ -19,6 +19,7 @@
 @property (nonatomic,strong) NSMutableDictionary * repairNotesDict;
 @property (nonatomic,assign) NSString * date;
 @property (nonatomic,assign) NSString * repairName;
+@property (nonatomic,strong) FMResultSet * set;
 
 
 @end
@@ -30,29 +31,51 @@
     
     self.view.frame =IanMainScreen.bounds;
     [self.view setBackgroundColor:ianRGBColor(231, 231, 231)];
-    self.title =@"增加维修记录";
+    self.title =@"修改保养记录";
     
     [self setSubviews];
     
     self.db =[self openDataBase];
     
-    BOOL result =[ self.db executeUpdate:@"create table if not exists repairNote (id integer primary key autoincrement,time text,site text,money text,projectName text)"];
+//    BOOL result =[ self.db executeUpdate:@"create table if not exists repairNote (id integer primary key autoincrement,time text,site text,money text,projectName text)"];
+//    
+//    if (result) {
+//        IanLog(@"创建表成功");
+//    }else
+//    {
+//        IanLog(@"创建表失败");
+//    }
     
-    if (result) {
-        IanLog(@"创建表成功");
-    }else
-    {
-        IanLog(@"创建表失败");
-    }
-    _repairNotesDict =[NSMutableDictionary  dictionaryWithObjectsAndKeys:@"0",@"time",@"0",@"site",@"0",@"name",@"0",@"money", nil];
+
 }
+
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    _repairNotesDict =[NSMutableDictionary  dictionaryWithObjectsAndKeys:@"0",@"time",@"0",@"site",@"0",@"name",@"0",@"money", nil];
+    
+    _set = [self.db executeQuery:@"select * from repairNote where id=?",self.ID];
+    while([_set next]) {
+        [_repairNotesDict setValue:[_set stringForColumn:@"time"]  forKey:@"time"];
+        [_repairNotesDict setValue:[_set stringForColumn:@"site"]  forKey:@"site"];
+        [_repairNotesDict setValue:[_set stringForColumn:@"projectName"]  forKey:@"name"];
+        [_repairNotesDict setValue:[_set stringForColumn:@"money"]  forKey:@"money"];
+    }
+    
+}
+
+
+
+
+
+
 
 -(void)viewDidDisappear:(BOOL)animated
 {
     [self.db close];
 }
 
-
+//打开数据库
 -(FMDatabase *)openDataBase
 {
     
@@ -93,9 +116,8 @@
     UIDatePicker *datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(115,175,300,100)];
     datePicker.datePickerMode = UIDatePickerModeDate;
     
-    NSDate* minDate = [[NSDate alloc] initWithTimeIntervalSince1970:0];//initWithString:@"1900-01-01 00:00:00 -0500"];
-    NSDate* maxDate = [[NSDate alloc] init]; //:@"2099-01-01 00:00:00 -0500"];
-    
+    NSDate* minDate = [[NSDate alloc] initWithTimeIntervalSince1970:0];
+    NSDate* maxDate = [[NSDate alloc] init];
     datePicker.minimumDate = minDate;
     datePicker.maximumDate = maxDate;
     [ datePicker addTarget:self action:@selector(dateChanged:) forControlEvents:UIControlEventValueChanged];
@@ -108,6 +130,8 @@
     
     _siteTf =[[UITextField alloc] initWithFrame:CGRectMake(135,300,200,50)];
     _siteTf.backgroundColor =[UIColor whiteColor];
+    _siteTf.text =_repairNotesDict[@"site"];
+
     [self.view addSubview:_siteTf];
     
     
@@ -117,10 +141,13 @@
     [self.view addSubview:moneyLabel];
     
     _moneyTf =[[UITextField alloc] initWithFrame:CGRectMake(135,400,200,50)];
+    _moneyTf.text =_repairNotesDict[@"money"];
     _moneyTf.backgroundColor =[UIColor whiteColor];
     _moneyTf.keyboardType = UIKeyboardTypeNumberPad;
     [self.view addSubview:_moneyTf];
     
+    
+    #pragma -mark TODO 将时间选择器和项目选择器  设置默认的数字
     
     
     UIButton *addBtn =[[UIButton alloc] initWithFrame:CGRectMake(self.view.width *0.5 -25, self.view.height -70 ,50,30)];
@@ -151,7 +178,7 @@
     NSString *currentDateStr = [dateFormatter stringFromDate:picker.date];
     [_repairNotesDict setValue:currentDateStr forKey:@"time"];
     
-    IanLog([NSString stringWithFormat:@"%@",currentDateStr]);
+    IanLog(@"%@",currentDateStr);
 }
 
 
