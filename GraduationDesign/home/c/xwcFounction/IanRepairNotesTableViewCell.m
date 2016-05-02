@@ -92,7 +92,10 @@
 
 -(void)setCellWithData:(NSDictionary *)dict
 {
-    _labelName.text =dict[@"name"];
+    NSString *projectName =dict[@"action"];
+    projectName =[projectName stringByAppendingString:dict[@"name"]];
+    _labelName.text = projectName;
+    
     _labelTime.text =dict[@"time"];
     _labelSite.text = dict[@"site"];
     _labelMoney.text = dict[@"money"];

@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface IanRepairNote : NSObject
+
+@interface IanRepairNote : Tool_FMDBModel<NSCoding>
 @property (nonatomic,assign) NSString * time;
 @property (nonatomic,assign) NSString * site;
 @property (nonatomic,assign) NSString * money;
-@property (nonatomic,assign) NSString * name;
+@property (nonatomic,assign) NSString * projectName;
 
 @end

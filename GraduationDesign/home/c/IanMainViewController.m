@@ -32,7 +32,7 @@
         
     [self createScrollView];
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
-    [flowLayout setItemSize:CGSizeMake(100, 100)];//设置cell的尺寸
+    [flowLayout setItemSize:CGSizeMake(50, 50)];//设置cell的尺寸
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];//设置其布局方向
     flowLayout.sectionInset = UIEdgeInsetsMake(10, 15, 15, 10);//设置其边界
     //其布局很有意思，当你的cell设置大小后，一行多少个cell，由cell的宽度决定

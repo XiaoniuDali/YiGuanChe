@@ -21,6 +21,9 @@
 @property(nonatomic,strong) UIButton *showDataBtn;
 @property(nonatomic,strong) UITextView *noticeLbl;
 @property (nonatomic,strong) FMDatabase * db;
+@property (nonatomic,strong) UILabel * labelAllMoney;
+@property (nonatomic,strong) UILabel * labelAllLast;
+@property (nonatomic,strong) UILabel * labelLastName;
 
 @end
 
@@ -28,6 +31,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    
+    
     self.view.frame =IanMainScreen.bounds;
     self.title =@"维修记录统计";
     [self.view setBackgroundColor:ianRGBColor(231, 231,231)];
@@ -71,9 +77,7 @@
         moneySum +=moneyFloat;
         
     }
-    IanLog(@"moneySum===%f",moneySum);
     return moneySum;
-    
 }
 
 -(NSString *)getAllLastRepair
@@ -83,15 +87,21 @@
     while ([set next]) {
         lastRepair = [set stringForColumn:@"max(time)"];
     }
+    if (!lastRepair) {
+        lastRepair =@"没有记录";
+    }
     return lastRepair;
 }
+
+
 
 
 
 -(void)setSubview
 {
     //-------------------uiwebview----------------------------
-    _webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width,380)];
+    _webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, IanMainScreen.bounds.size.width,380)];
+     
     _webView.backgroundColor = [UIColor redColor];
     UIScrollView *temScrollView = [_webView.subviews objectAtIndex:0];
     temScrollView.scrollEnabled =NO;
@@ -109,8 +119,6 @@
     //    添加一条记录的按钮
     _addBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.view.width*0.5-25, self.view.height-70, 50,50)];
     [_addBtn setBackgroundColor:ianRGBColor(255, 255, 255)];
-//    [_addBtn setTitle:@"增加" forState:UIControlStateNormal];
-//    [_addBtn setBackgroundImage:[UIImage imageNamed:@"addRepairNote.png"] forState:UIControlStateNormal];
     [_addBtn setTitle:@"增加" forState:UIControlStateNormal];
     [_addBtn setBackgroundColor:[UIColor blackColor]];
     
@@ -121,8 +129,6 @@
     //    展示所有的数据
     _showDataBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.view.width*0.5-90, self.view.height-60, 50,30)];
     [_showDataBtn setBackgroundColor:ianRGBColor(255, 255, 255)];
-//    [_showDataBtn setTitle:@"展示" forState:UIControlStateNormal];
-//    [_showDataBtn setBackgroundImage:[UIImage imageNamed:@"showData.png"] forState:UIControlStateNormal];
     [_showDataBtn setTitle:@"显示" forState:UIControlStateNormal];
     [_showDataBtn setBackgroundColor:[UIColor blackColor]];
     
@@ -137,51 +143,124 @@
     [_alterDataBtn addTarget:self action:@selector(alterData) forControlEvents:UIControlEventTouchUpInside];
     
  
-    UILabel *labelAllMoney =[[UILabel alloc] init];
-    [labelAllMoney setFrame:CGRectMake(25, self.webView.height+15, 100, 30)];
+     _labelAllMoney =[[UILabel alloc] init];
+    [_labelAllMoney setFrame:CGRectMake((self.view.bounds.size.width - 170)*0.5, self.webView.height+30, 170, 25)];
     
 //    从数据库获取所有的数据
-    labelAllMoney.text =[NSString stringWithFormat:@"费用累计：%f",[self getAllMoneyFromDb]];
-    labelAllMoney.font = [UIFont systemFontOfSize:12];
-    labelAllMoney.textAlignment =NSTextAlignmentCenter;
-    [labelAllMoney setBackgroundColor:[UIColor yellowColor]];
-    [self.view addSubview:labelAllMoney];
+    _labelAllMoney.font = [UIFont systemFontOfSize:12];
+    _labelAllMoney.textAlignment =NSTextAlignmentCenter;
+    [_labelAllMoney setBackgroundColor:[UIColor clearColor]];
+    [self.view addSubview:_labelAllMoney];
     
     
     
-    UILabel *labelAllLast =[[UILabel alloc] init];
-    [labelAllLast setFrame:CGRectMake(150, self.webView.height+15, 180, 30)];
+    _labelAllLast =[[UILabel alloc] init];
+    [_labelAllLast setFrame:CGRectMake(10, self.webView.height+5, 170, 25)];
     
     //    从数据库获取所有的数据
-    labelAllLast.text =[NSString stringWithFormat:@"上次维修时间：%@",[self getAllLastRepair]];
-    labelAllLast.font = [UIFont systemFontOfSize:12];
-    labelAllLast.textAlignment =NSTextAlignmentCenter;
-    [labelAllLast setBackgroundColor:[UIColor yellowColor]];
-    [self.view addSubview:labelAllLast];
+//    _labelAllLast.text =[NSString stringWithFormat:@"最近维修时间：%@",[self getAllLastRepair]];
+    _labelAllLast.font = [UIFont systemFontOfSize:12];
+    _labelAllLast.textAlignment =NSTextAlignmentCenter;
+    [_labelAllLast setBackgroundColor:[UIColor clearColor]];
+    [self.view addSubview:_labelAllLast];
     
     
+    
+    _labelLastName =[[UILabel alloc] init];
+    [_labelLastName setFrame:CGRectMake(185, self.webView.height+5, 180, 25)];
+    
+    //    从数据库获取所有的数据
+//    _labelLastName.text =[NSString stringWithFormat:@"最近保养项目：%@",[self getLastRepairName]];
+    _labelLastName.font = [UIFont systemFontOfSize:12];
+    _labelLastName.textAlignment =NSTextAlignmentCenter;
+    [_labelLastName setBackgroundColor:[UIColor clearColor]];
+    [self.view addSubview:_labelLastName];
+ 
     
     UILabel *label =[[UILabel alloc] init];
-    [label setFrame:CGRectMake(self.view.width *0.5 - 50, self.webView.height+70, 100, 30)];
-    label.text = @"维修提示";
+    [label setFrame:CGRectMake(0, self.webView.height+60, self.view.width, 20)];
+    label.text = @"保养维修提示";
     label.textAlignment =NSTextAlignmentCenter;
+    [label setFont:[UIFont systemFontOfSize:12]];
     [label setBackgroundColor:[UIColor yellowColor]];
     [self.view addSubview:label];
     
 
     
-    _noticeLbl = [[UITextView alloc] initWithFrame:CGRectMake(0, label.frame.origin.y+27, self.view.width,95)];
+    _noticeLbl = [[UITextView alloc] initWithFrame:CGRectMake(5, label.frame.origin.y+20, self.view.width-10,125)];
     
     
-    [_noticeLbl setBackgroundColor:[UIColor blueColor]];
+    [_noticeLbl setBackgroundColor:[UIColor whiteColor]];
+    [_noticeLbl setTextAlignment:NSTextAlignmentLeft];
+    _noticeLbl.editable =NO;
     [self.view addSubview:_noticeLbl];
-    _noticeLbl.text =@"根据维修保养记录的数据，根据维修保养记录的数据根据维修保养记录的数据根据维根据维修保养记录的数据根据维修保养记录的数据根据维根据维修保养记录的数据根据维修保养记录的数据根据维根据维修保养记录的数据根据维修保养记录的数据根据维根据维修保养记录的数据根据维修保养记录的数据根据维根据维修保养记录的数据根据维修保养记录的数据根据维修保养记录的数据根据维修保养记录的数据根据维修保养记录的数据显示一些asdfasdfasdfasdfasdfasdfasdfasdfaskdhdfjkashlkdjfajjkkjasd提示消息";
-    _noticeLbl.userInteractionEnabled =NO;
+    
+    _noticeLbl.userInteractionEnabled =YES;
     [_noticeLbl setFont:[UIFont fontWithName:@"宋体" size:10]];
 
 
     
 }
+
+
+/**
+从数据库中获取所有的维修记录  加以分析  并且返回保养维修提示
+ */
+-(NSString *)getRepairTips
+{
+    NSString * repairTips =@"暂无维修提示";
+   
+    repairTips =[self getTips];
+
+    return repairTips;
+}
+
+
+
+// 获得所有需要检查的 提示
+-(NSString *)getTips
+{
+    NSString * tips =@"";
+    NSString * tip =@"";
+    int index=1;
+//    获得所有维修过的项目名称
+ 
+    FMResultSet *set = [self.db executeQuery:@"SELECT * FROM repairNote a , (SELECT projectName, MAX(time) AS OperateTime FROM repairNote GROUP BY projectName ) b WHERE a.projectName = b.projectName AND a. time = b.OperateTime"];
+    
+    while ([set next]) {
+        tip=[self getTipWithProjectName:[set stringForColumn:@"projectName"] lastTime:[set stringForColumn:@"time"] action:[set stringForColumn:@"action"]];
+        if (![tip isEqual:@""]) {
+            tips =[tips stringByAppendingString:[NSString stringWithFormat:@"%d、%@\n",index,tip] ];
+            index +=1;
+        }
+
+    }
+    
+    
+    
+    return tips;
+}
+-(NSString *)getTipWithProjectName:(NSString *)projectName lastTime:(NSString *)lastTime action:(NSString *)action
+{
+    NSString *tip =@"";
+    NSDateFormatter *formatter =[[NSDateFormatter alloc] init];
+    [formatter setDateFormat : @"yyyy-MM-dd"];
+    NSDate *dateTime = [formatter dateFromString:lastTime];
+    long interval = [dateTime timeIntervalSinceDate:[[NSDate alloc] init]];
+    
+    
+    
+    if ((interval >= -31536000)&([action isEqual:@"检查"])) {
+        tip = [NSString stringWithFormat:@"请立即检查%@是否能确保汽车能安全行驶",projectName];
+    }else if((interval >= -31536000)&([action isEqual:@"更换"])){
+        tip = [NSString stringWithFormat:@"请立即检查或及时更换%@以确保汽车能安全行驶",projectName];
+    }
+    return tip;
+}
+
+
+
+
 
 //添加维修记录
 -(void)addNote
@@ -210,24 +289,80 @@
     IanLog(@"showData");
 }
 
--(void)webViewDidFinishLoad:(UIWebView *)webView
+-(void)viewDidAppear:(BOOL)animated
 {
+    self.db = [self openDataBase];
+
+    _labelAllLast.text =[NSString stringWithFormat:@"最近维修时间：%@",[self getAllLastRepair]];
+    _labelLastName.text =[NSString stringWithFormat:@"最近保养项目：%@",[self getLastRepairName]];
+    _labelAllMoney.text =[NSString stringWithFormat:@"保养费用累计：%.2f元",[self getAllMoneyFromDb]];
+    _noticeLbl.text = [self getRepairTips];
+   
     
-    
-    NSString *xDataValue =@"[\"2012-02-14\",\"2012-02-14\",\"2012-02-14\",\"2013-02-10\",\"2014-01-05\",\"2015-01-05\",\"2016-01-08\",\"2016-02-08\"]";
-    NSString *yDataVaue =@"[500, 500, 500, 200, 360, 100, 210, 220]";
-    NSString *setValueData =[NSString stringWithFormat:@"setData(%@,%@)",xDataValue,yDataVaue];
-    
-    
-    //传值Y轴数据
-    [_webView stringByEvaluatingJavaScriptFromString:setValueData];
-    
-    
+    [_webView reload];
+//    [self viewWillAppear:animated];
 }
 
--(void)webViewDidStartLoad:(UIWebView *)webView
+-(void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    NSLog(@"webViewDidStartLoad======webViewDidStartLoad");
+ 
+    NSString *xDataValue =[self getXDataValue];
+
+    NSString *yDataVaue =[self getYDataValue];
+    NSString *setValueData =[NSString stringWithFormat:@"setData(%@,%@)",xDataValue,yDataVaue];
+  
+    //传值Y轴数据
+    [_webView stringByEvaluatingJavaScriptFromString:setValueData];
+ 
+}
+
+/**
+ 获取所有的维修保养时间  并且转换成字符串
+ */
+-(NSString *)getXDataValue
+{
+    NSMutableArray *arr =[[NSMutableArray alloc] init];
+    FMResultSet *result = [self.db executeQuery:@"select time from repairNote"];
+    while ([result next]) {
+        [arr addObject:[result stringForColumn:@"time"]];
+    }
+    NSData * JSONData = [NSJSONSerialization dataWithJSONObject:arr options:kNilOptions error:nil];
+    NSString *str = [[NSString alloc] initWithData:JSONData encoding:NSUTF8StringEncoding];
+    return str;
+}
+
+
+/**
+ 获取所有维修记录的money 并且转换成字符串
+ */
+-(NSString *)getYDataValue
+{
+    NSMutableArray *arr =[[NSMutableArray alloc] init];
+    FMResultSet *result = [self.db executeQuery:@"select money from repairNote"];
+    while ([result next]) {
+        [arr addObject:[result stringForColumn:@"money"]];
+    }
+    NSData * JSONData = [NSJSONSerialization dataWithJSONObject:arr options:kNilOptions error:nil];
+    NSString *str = [[NSString alloc] initWithData:JSONData encoding:NSUTF8StringEncoding];
+  
+    return str;
+}
+
+-(NSString*)getLastRepairName
+{
+    NSString *lastRepairName= @"";
+    NSString *lastRepairAction=@"";
+    FMResultSet *set =[self.db executeQuery:@"select max(projectName),max(action) from repairNote where time = (select max(time) from repairNote)"];
+    while ([set next]) {
+        lastRepairName = [set stringForColumn:@"max(projectName)"];
+        lastRepairAction =[set stringForColumn:@"max(action)"];
+    }
+    
+    NSString *repair =[lastRepairAction stringByAppendingString:lastRepairName];
+    if (!repair) {
+        repair =@"没有记录";
+    }
+    return repair;
 }
 
 - (void)didReceiveMemoryWarning {

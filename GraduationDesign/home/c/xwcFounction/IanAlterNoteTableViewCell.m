@@ -23,10 +23,10 @@
 {
     self =[super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        
         [self setSubviews];
-        [self setFrame:CGRectMake(0, 0, 375, 35)];
-        [self setBackgroundColor:[UIColor redColor]];
+        self.width =IanMainScreen.bounds.size.width;
+        self.height =36;
+
     }
     return self;
 }
@@ -34,9 +34,24 @@
 
 -(void)setSubviews
 {
-    _labelName =[[UILabel alloc] initWithFrame:CGRectMake(0.25*self.width, 0, 0.35*self.width, 35)];
-    _labelTime =[[UILabel alloc] initWithFrame:CGRectMake(0.61*self.width, 0, 0.35*self.width, 35)];
+    _labelName =[[UILabel alloc] initWithFrame:CGRectMake(0, 0,IanMainScreen.bounds.size.width*0.5-1, 35)];
+    [_labelName setTextAlignment:NSTextAlignmentCenter];
+    [_labelName setFont:[UIFont systemFontOfSize:12]];
     
+    UIView *line =[[UIView alloc] initWithFrame:CGRectMake(IanMainScreen.bounds.size.width*0.5, 0, 1, 36)];
+    [self.contentView addSubview:line];
+    [line setBackgroundColor:[UIColor blackColor]];
+    
+
+    
+    _labelTime =[[UILabel alloc] initWithFrame:CGRectMake(IanMainScreen.bounds.size.width*0.5, 0,IanMainScreen.bounds.size.width*0.5, 35)];
+    [_labelTime setTextAlignment:NSTextAlignmentCenter];
+    [_labelTime setFont:[UIFont systemFontOfSize:12]];
+    
+    
+    UIView *bottomLine =[[UIView alloc] initWithFrame:CGRectMake(0, 35, IanMainScreen.bounds.size.width, 1)];
+    [bottomLine setBackgroundColor:[UIColor blackColor]];
+    [self.contentView addSubview:bottomLine];
     
     [self.contentView addSubview:_labelName];
     [self.contentView addSubview:_labelTime];
@@ -46,22 +61,18 @@
 
 -(void)setCellWithData:(NSDictionary *)dict
 {
-    _labelName.text =dict[@"name"];
+    NSString *projectName =dict[@"action"];
+    projectName = [projectName stringByAppendingString:dict[@"name"]];
+    _labelName.text =projectName;
     _labelTime.text =dict[@"time"];
  
 }
 
 
 
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
     
-    
-    
-    IanLog(@"ddddddd");
-    
-    // Configure the view for the selected state
 }
 
 @end

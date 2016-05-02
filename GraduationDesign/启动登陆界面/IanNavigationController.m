@@ -26,6 +26,10 @@
     IanNavigationBar *tabbar =[[IanNavigationBar alloc] init];
     [self setValue:tabbar forKey:@"navigationBar"];
     
+    
+    
+    
+    
    
 }
 

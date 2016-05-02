@@ -36,18 +36,19 @@
     _set =[[FMResultSet alloc] init];
     _set =[self.DB executeQuery:@"select * from repairNote"];
     
-    
     _MArray = [[NSMutableArray alloc] init];
-    NSMutableDictionary *data =[[NSMutableDictionary alloc] init];
+    
     while ([_set next]) {
+        NSMutableDictionary *data =[[NSMutableDictionary alloc] init];
         [data setValue:[_set stringForColumn:@"projectName"]  forKey:@"name"];
         [data setValue:[_set stringForColumn:@"time"]  forKey:@"time"];
         [data setValue:[_set stringForColumn:@"site"]  forKey:@"site"];
         [data setValue:[_set stringForColumn:@"money"]  forKey:@"money"];
+        [data setValue:[_set stringForColumn:@"action"]  forKey:@"action"];
         [_MArray addObject:data];
+        data =nil;
     }
-    
-    
+  
     
     [self setSubView];
     
@@ -116,9 +117,7 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
-    
-    
-    
+
 }
 
 
@@ -227,13 +226,23 @@
         
         NSDictionary *dict =(NSDictionary *)_MArray[indexPath.row];
         [cell setCellWithData:dict];
+        
     }
+    
     return cell;
 }
 
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSelector:@selector(deselect) withObject:nil afterDelay:0.1f];
+    
  
+}
 
+-(void)deselect
+{
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+}
 
 
 @end

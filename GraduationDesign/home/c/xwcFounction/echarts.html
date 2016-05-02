@@ -8,7 +8,7 @@
             </head>
     <body>
         <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-        <div id="main" style="width: 350px;height:300px;"></div>
+        <div id="main" style="width: 360px;height:295px;"></div>
         <script type="text/javascript">
             
             
@@ -24,13 +24,13 @@
                 
                 // 指定图表的配置项和数据
                 var option = {
-                    backgroundColor:'#f8f8f8',
+                    backgroundColor:'rgb(255,255,255)',
                     title: {
                         text: '维修保养数据统计'
                     },
                     
                     grid: {
-                        backgroundColor:'rgb(128, 128, 128)',
+                        backgroundColor:'rgb(255,255,255)',
                         left:5,
                         right:5,
                         bottom:0,
@@ -40,14 +40,13 @@
                     toolbox: {
                         show: true,
                         feature: {
-                            magicType: {show: true, type: ['line', 'bar']},
+                            magicType: {show: true, type: ['bar', 'line']},
                         },
                         
                     },
                     tooltip : {
                         trigger: 'axis',
-                        triggerOn:'click',
-                        
+                        triggerOn:'click', 
                     },
 
                     xAxis: {
@@ -60,7 +59,15 @@
 
                     series: [{
                              name: '保养记录(元)',
-                             type: 'bar',
+                             type: 'line',
+                             smooth:true,
+                             lineStyle:{
+                                 normal:{
+                                     color:'rgb(253, 114, 35)',
+                                     width:2,
+                                     type:'solid',
+                                 },
+                             },
                              data:yDataVaue,
                              }]
                 };

@@ -53,6 +53,9 @@
 
 @property (nonatomic, copy) NSString *equipmentQuality; /*总质量*/
 
+/**
+ 车宽
+ */
 @property (nonatomic, copy) NSString *carWidth;
 
 @property (nonatomic, copy) NSString *tireSpecifications;/*轮胎规格*/
@@ -66,7 +69,9 @@
 @property (nonatomic, copy) NSString *emissionStandards; /*燃料种类*/
 
 @property (nonatomic, copy) NSString *beforeWheelTrack;/*前轮距*/
-
+/**
+ 车长
+ */
 @property (nonatomic, copy) NSString *carLong;
 
 @property (nonatomic, copy) NSString *power; /*功率（KW）*/
