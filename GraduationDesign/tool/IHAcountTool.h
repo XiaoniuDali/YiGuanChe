@@ -15,4 +15,5 @@
 + (void)showHUD:(NSString *)text andView:(UIView *)view;
 + (void)hideHUD;
 + (void)showDelyHUD:(NSString *)text andView:(UIView *)view;
++ (void)setExtraCellLineHidden: (UITableView *)tableView;
 @end

@@ -145,7 +145,7 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     // 这里服务器接口写死
     
-    [manager POST:[NSString stringWithFormat:@"%@",@"http://route.showapi.com/854-1"] parameters:dic success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager POST:[NSString stringWithFormat:@"%@",@"http://getDTC.api.juhe.cn/CarManagerServer/getDTC"] parameters:dic success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         if (completeHandle) {
             
