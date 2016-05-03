@@ -112,6 +112,14 @@
 		39DF7BD91CAC2CAA00FC0A3D /* AdScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF7BD61CAC2CAA00FC0A3D /* AdScrollView.m */; };
 		39DF7BDC1CAC2D2200FC0A3D /* IanNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF7BDB1CAC2D2200FC0A3D /* IanNavigationController.m */; };
 		39DF7BDF1CAC2E8000FC0A3D /* IHNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF7BDE1CAC2E8000FC0A3D /* IHNewsViewController.m */; };
+		606C63291CD7B94D001B2F27 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 606C63251CD7B94D001B2F27 /* MapViewController.m */; };
+		606C632A1CD7B94D001B2F27 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 606C63261CD7B94D001B2F27 /* MapViewController.xib */; };
+		606C632B1CD7B94D001B2F27 /* CarAgencyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 606C63281CD7B94D001B2F27 /* CarAgencyViewController.m */; };
+		606C63361CD7B974001B2F27 /* BasicMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 606C632E1CD7B974001B2F27 /* BasicMapAnnotation.m */; };
+		606C63371CD7B974001B2F27 /* CallOutAnnotationVifew.m in Sources */ = {isa = PBXBuildFile; fileRef = 606C63301CD7B974001B2F27 /* CallOutAnnotationVifew.m */; };
+		606C63381CD7B974001B2F27 /* CalloutMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 606C63321CD7B974001B2F27 /* CalloutMapAnnotation.m */; };
+		606C63391CD7B974001B2F27 /* JingDianMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 606C63341CD7B974001B2F27 /* JingDianMapCell.m */; };
+		606C633A1CD7B974001B2F27 /* JingDianMapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 606C63351CD7B974001B2F27 /* JingDianMapCell.xib */; };
 		996640DD424569A471969D02 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4049606E7913E0EDE53D452 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -338,6 +346,20 @@
 		39DF7BDE1CAC2E8000FC0A3D /* IHNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHNewsViewController.m; sourceTree = "<group>"; };
 		39DF7BE11CAC30C800FC0A3D /* appMarco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = appMarco.h; sourceTree = "<group>"; };
 		39E7CF331CB89E4F000CDE8A /* global.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = global.pch; sourceTree = "<group>"; };
+		606C63241CD7B94D001B2F27 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		606C63251CD7B94D001B2F27 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		606C63261CD7B94D001B2F27 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		606C63271CD7B94D001B2F27 /* CarAgencyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarAgencyViewController.h; sourceTree = "<group>"; };
+		606C63281CD7B94D001B2F27 /* CarAgencyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarAgencyViewController.m; sourceTree = "<group>"; };
+		606C632D1CD7B974001B2F27 /* BasicMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicMapAnnotation.h; sourceTree = "<group>"; };
+		606C632E1CD7B974001B2F27 /* BasicMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicMapAnnotation.m; sourceTree = "<group>"; };
+		606C632F1CD7B974001B2F27 /* CallOutAnnotationVifew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallOutAnnotationVifew.h; sourceTree = "<group>"; };
+		606C63301CD7B974001B2F27 /* CallOutAnnotationVifew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallOutAnnotationVifew.m; sourceTree = "<group>"; };
+		606C63311CD7B974001B2F27 /* CalloutMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalloutMapAnnotation.h; sourceTree = "<group>"; };
+		606C63321CD7B974001B2F27 /* CalloutMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalloutMapAnnotation.m; sourceTree = "<group>"; };
+		606C63331CD7B974001B2F27 /* JingDianMapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JingDianMapCell.h; sourceTree = "<group>"; };
+		606C63341CD7B974001B2F27 /* JingDianMapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JingDianMapCell.m; sourceTree = "<group>"; };
+		606C63351CD7B974001B2F27 /* JingDianMapCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JingDianMapCell.xib; sourceTree = "<group>"; };
 		B4049606E7913E0EDE53D452 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFC36F59DFF70180591FA75F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -560,6 +582,7 @@
 		39DF7ABD1CAC220900FC0A3D /* homeController */ = {
 			isa = PBXGroup;
 			children = (
+				603E21E11CD7709000110AE2 /* carAgency */,
 				39B562F01CC14D7E0049325D /* DTCSearch */,
 				397B7D361CBA04D4002A8C56 /* fineFounction */,
 				397B7D591CBA04E2002A8C56 /* xwcFounction */,
@@ -849,6 +872,35 @@
 			path = AdScrollview;
 			sourceTree = "<group>";
 		};
+		603E21E11CD7709000110AE2 /* carAgency */ = {
+			isa = PBXGroup;
+			children = (
+				606C632C1CD7B974001B2F27 /* CustomMapCalloutView */,
+				606C63241CD7B94D001B2F27 /* MapViewController.h */,
+				606C63251CD7B94D001B2F27 /* MapViewController.m */,
+				606C63261CD7B94D001B2F27 /* MapViewController.xib */,
+				606C63271CD7B94D001B2F27 /* CarAgencyViewController.h */,
+				606C63281CD7B94D001B2F27 /* CarAgencyViewController.m */,
+			);
+			name = carAgency;
+			sourceTree = "<group>";
+		};
+		606C632C1CD7B974001B2F27 /* CustomMapCalloutView */ = {
+			isa = PBXGroup;
+			children = (
+				606C632D1CD7B974001B2F27 /* BasicMapAnnotation.h */,
+				606C632E1CD7B974001B2F27 /* BasicMapAnnotation.m */,
+				606C632F1CD7B974001B2F27 /* CallOutAnnotationVifew.h */,
+				606C63301CD7B974001B2F27 /* CallOutAnnotationVifew.m */,
+				606C63311CD7B974001B2F27 /* CalloutMapAnnotation.h */,
+				606C63321CD7B974001B2F27 /* CalloutMapAnnotation.m */,
+				606C63331CD7B974001B2F27 /* JingDianMapCell.h */,
+				606C63341CD7B974001B2F27 /* JingDianMapCell.m */,
+				606C63351CD7B974001B2F27 /* JingDianMapCell.xib */,
+			);
+			path = CustomMapCalloutView;
+			sourceTree = "<group>";
+		};
 		BFF517E264C5CA3914F0A099 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -936,6 +988,7 @@
 				TargetAttributes = {
 					39DF7A531CAC1F6500FC0A3D = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = TZHP9KFE6M;
 					};
 					39DF7A6C1CAC1F6500FC0A3D = {
 						CreatedOnToolsVersion = 7.1;
@@ -975,6 +1028,7 @@
 				39DF7BD81CAC2CAA00FC0A3D /* AdDataPlist.plist in Resources */,
 				397B7D501CBA04D4002A8C56 /* fineDetailTableViewCell.xib in Resources */,
 				39DF7A671CAC1F6500FC0A3D /* LaunchScreen.storyboard in Resources */,
+				606C633A1CD7B974001B2F27 /* JingDianMapCell.xib in Resources */,
 				3989847A1CC5321100082A2B /* echarts.js in Resources */,
 				39DF7BCF1CAC2C6700FC0A3D /* image2.png in Resources */,
 				39DF7A641CAC1F6500FC0A3D /* Assets.xcassets in Resources */,
@@ -985,6 +1039,7 @@
 				398984791CC5321100082A2B /* echarts.html in Resources */,
 				397B7D521CBA04D4002A8C56 /* ProvincesViewController.xib in Resources */,
 				39DF7BD01CAC2C6700FC0A3D /* image3.png in Resources */,
+				606C632A1CD7B94D001B2F27 /* MapViewController.xib in Resources */,
 				39DF7B801CAC22FA00FC0A3D /* SIAlertView.bundle in Resources */,
 				39B562F81CC150010049325D /* DTCTableViewCell.xib in Resources */,
 				397B7D4D1CBA04D4002A8C56 /* CitiesViewController.xib in Resources */,
@@ -1094,8 +1149,10 @@
 				397B7D4F1CBA04D4002A8C56 /* fineDetailTableViewCell.m in Sources */,
 				3954F8FA1CAFA343005C1353 /* vinModel.m in Sources */,
 				397B7D4C1CBA04D4002A8C56 /* CitiesViewController.m in Sources */,
+				606C63371CD7B974001B2F27 /* CallOutAnnotationVifew.m in Sources */,
 				39DF7BBB1CAC25C300FC0A3D /* SBJsonUTF8Stream.m in Sources */,
 				39B562F31CC14D9D0049325D /* DTCViewController.m in Sources */,
+				606C63381CD7B974001B2F27 /* CalloutMapAnnotation.m in Sources */,
 				39DF7B7B1CAC22FA00FC0A3D /* MJRefreshFooterView.m in Sources */,
 				39DF7A591CAC1F6500FC0A3D /* main.m in Sources */,
 				39DF7B761CAC22FA00FC0A3D /* HMSegmentedControl.m in Sources */,
@@ -1109,6 +1166,7 @@
 				39B562F71CC150010049325D /* DTCTableViewCell.m in Sources */,
 				39DF7BB11CAC25C300FC0A3D /* NSObject+SBJson.m in Sources */,
 				39DF7AF01CAC220900FC0A3D /* UITextView+Extension.m in Sources */,
+				606C63391CD7B974001B2F27 /* JingDianMapCell.m in Sources */,
 				39DF7BC11CAC285200FC0A3D /* LaunchRoot.m in Sources */,
 				39DF7AEF1CAC220900FC0A3D /* UIBarButtonItem+Extension.m in Sources */,
 				397B7D541CBA04D4002A8C56 /* SearchFineModel.m in Sources */,
@@ -1119,6 +1177,7 @@
 				39DF7BB61CAC25C300FC0A3D /* SBJsonStreamParserState.m in Sources */,
 				39DF7B061CAC220900FC0A3D /* NetworkManager.m in Sources */,
 				39DF7B011CAC220900FC0A3D /* IanNavigationBar.m in Sources */,
+				606C63361CD7B974001B2F27 /* BasicMapAnnotation.m in Sources */,
 				39DF7B951CAC22FA00FC0A3D /* UIWebView+AFNetworking.m in Sources */,
 				39DF7B731CAC22FA00FC0A3D /* AFURLResponseSerialization.m in Sources */,
 				39DF7B931CAC22FA00FC0A3D /* UIProgressView+AFNetworking.m in Sources */,
@@ -1142,6 +1201,8 @@
 				398984811CC5321100082A2B /* IanRepairNotesTableViewCell.m in Sources */,
 				39DF7BD91CAC2CAA00FC0A3D /* AdScrollView.m in Sources */,
 				397B7D4E1CBA04D4002A8C56 /* CityNameViewController.m in Sources */,
+				606C63291CD7B94D001B2F27 /* MapViewController.m in Sources */,
+				606C632B1CD7B94D001B2F27 /* CarAgencyViewController.m in Sources */,
 				39DF7B7A1CAC22FA00FC0A3D /* MJRefreshConst.m in Sources */,
 				39DF7B6E1CAC22FA00FC0A3D /* AFHTTPSessionManager.m in Sources */,
 				398984821CC5321100082A2B /* IanShowRepairNoteViewController.m in Sources */,
@@ -1286,11 +1347,14 @@
 			baseConfigurationReference = DFC36F59DFF70180591FA75F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/GraduationDesign/tool/global.pch";
 				INFOPLIST_FILE = GraduationDesign/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yiguanche.GraduationDesign;
+				PRODUCT_BUNDLE_IDENTIFIER = agcom.com.AGMAP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1299,11 +1363,14 @@
 			baseConfigurationReference = 10F2EA6846F5FAA7F6A59DFD /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/GraduationDesign/tool/global.pch";
 				INFOPLIST_FILE = GraduationDesign/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yiguanche.GraduationDesign;
+				PRODUCT_BUNDLE_IDENTIFIER = agcom.com.AGMAP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

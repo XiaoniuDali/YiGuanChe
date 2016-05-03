@@ -11,7 +11,7 @@
 #import "appMarco.h"
 #import "SearchFineViewController.h"
 #import "DTCViewController.h"
-
+#import "CarAgencyViewController.h"
 #define UISCREENHEIGHT  self.view.bounds.size.height
 #define UISCREENWIDTH  self.view.bounds.size.width
 
@@ -116,6 +116,7 @@
             
             break;
         case 6:
+            cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"DTC.png"]];
             
             break;
             
@@ -181,7 +182,8 @@
         }
         case 6:
         {
-            
+            CarAgencyViewController *dct = [CarAgencyViewController new];
+            [self.navigationController pushViewController:dct animated:YES];
             break;
         }
             
