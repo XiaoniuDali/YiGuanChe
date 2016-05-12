@@ -15,7 +15,7 @@
     NSString *_locationCityName;
 }
 @property (nonatomic, strong) FMDatabase *dataBaseHandle;
-@property (nonatomic, strong) NSMutableArray *locationMuArray;
+//@property (nonatomic, strong) NSMutableArray *locationMuArray;
 
 @end
 
@@ -26,7 +26,7 @@
 {
     [super viewDidLoad];
     
-    self.locationMuArray = [NSMutableArray array];
+//    self.locationMuArray = [NSMutableArray array];
     
     [self initMapView];
 
@@ -83,7 +83,7 @@
                                    [resultSet stringForColumn:@"phoneNum"],@"phoneNum",
                                    [resultSet stringForColumn:@"addressDetail"],@"addressDetail",nil];
         
-        [_mapViewController putAddress:locationDic];
+        [_mapViewController putAddress:locationDic andCityName:nil];
     }
     // 关闭数据库
     [self.dataBaseHandle close];

@@ -31,4 +31,6 @@
 - (void)app_search_VIN:(NSDictionary *)dic completeHandle:(CompleteHandle)completeHandle;
 // DTC查询
 - (void)app_search_DTC:(NSDictionary *)dic completeHandle:(CompleteHandle)completeHandle;
+// 汽车加油站周边查询
+- (void)app_Search_AddOil:(NSDictionary *)dic completeHandle:(CompleteHandle)completeHandle;
 @end

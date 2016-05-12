@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3954F8FA1CAFA343005C1353 /* vinModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3954F8F91CAFA343005C1353 /* vinModel.m */; };
+		396072A91CE4D6B100F7D6B9 /* AddOilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 396072A71CE4D6B100F7D6B9 /* AddOilViewController.m */; };
+		396072AA1CE4D6B100F7D6B9 /* AddOilViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 396072A81CE4D6B100F7D6B9 /* AddOilViewController.xib */; };
+		396072AD1CE4DCEF00F7D6B9 /* AddOilModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 396072AC1CE4DCEF00F7D6B9 /* AddOilModel.m */; };
 		397B7D341CB9F2A8002A8C56 /* Tool_FMDBGetDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 397B7D311CB9F2A8002A8C56 /* Tool_FMDBGetDatabase.m */; };
 		397B7D351CB9F2A8002A8C56 /* Tool_FMDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 397B7D331CB9F2A8002A8C56 /* Tool_FMDBModel.m */; };
 		397B7D4C1CBA04D4002A8C56 /* CitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 397B7D381CBA04D4002A8C56 /* CitiesViewController.m */; };
@@ -146,6 +149,11 @@
 		10F2EA6846F5FAA7F6A59DFD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		3954F8F81CAFA343005C1353 /* vinModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vinModel.h; sourceTree = "<group>"; };
 		3954F8F91CAFA343005C1353 /* vinModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vinModel.m; sourceTree = "<group>"; };
+		396072A61CE4D6B100F7D6B9 /* AddOilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddOilViewController.h; path = AddOil/AddOilViewController.h; sourceTree = "<group>"; };
+		396072A71CE4D6B100F7D6B9 /* AddOilViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddOilViewController.m; path = AddOil/AddOilViewController.m; sourceTree = "<group>"; };
+		396072A81CE4D6B100F7D6B9 /* AddOilViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddOilViewController.xib; path = AddOil/AddOilViewController.xib; sourceTree = "<group>"; };
+		396072AB1CE4DCEF00F7D6B9 /* AddOilModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddOilModel.h; path = AddOil/AddOilModel.h; sourceTree = "<group>"; };
+		396072AC1CE4DCEF00F7D6B9 /* AddOilModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddOilModel.m; path = AddOil/AddOilModel.m; sourceTree = "<group>"; };
 		397B7D301CB9F2A8002A8C56 /* Tool_FMDBGetDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tool_FMDBGetDatabase.h; sourceTree = "<group>"; };
 		397B7D311CB9F2A8002A8C56 /* Tool_FMDBGetDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tool_FMDBGetDatabase.m; sourceTree = "<group>"; };
 		397B7D321CB9F2A8002A8C56 /* Tool_FMDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tool_FMDBModel.h; sourceTree = "<group>"; };
@@ -405,6 +413,18 @@
 			name = model;
 			sourceTree = "<group>";
 		};
+		396072A51CE4D67A00F7D6B9 /* AddOil */ = {
+			isa = PBXGroup;
+			children = (
+				396072A61CE4D6B100F7D6B9 /* AddOilViewController.h */,
+				396072A71CE4D6B100F7D6B9 /* AddOilViewController.m */,
+				396072A81CE4D6B100F7D6B9 /* AddOilViewController.xib */,
+				396072AB1CE4DCEF00F7D6B9 /* AddOilModel.h */,
+				396072AC1CE4DCEF00F7D6B9 /* AddOilModel.m */,
+			);
+			name = AddOil;
+			sourceTree = "<group>";
+		};
 		397B7D2F1CB9F2A8002A8C56 /* FMDB_tool */ = {
 			isa = PBXGroup;
 			children = (
@@ -592,6 +612,7 @@
 		39DF7ABD1CAC220900FC0A3D /* homeController */ = {
 			isa = PBXGroup;
 			children = (
+				396072A51CE4D67A00F7D6B9 /* AddOil */,
 				603E21E11CD7709000110AE2 /* carAgency */,
 				39B562F01CC14D7E0049325D /* DTCSearch */,
 				397B7D361CBA04D4002A8C56 /* fineFounction */,
@@ -1052,6 +1073,7 @@
 				606C632A1CD7B94D001B2F27 /* MapViewController.xib in Resources */,
 				39DF7B801CAC22FA00FC0A3D /* SIAlertView.bundle in Resources */,
 				39B562F81CC150010049325D /* DTCTableViewCell.xib in Resources */,
+				396072AA1CE4D6B100F7D6B9 /* AddOilViewController.xib in Resources */,
 				397B7D4D1CBA04D4002A8C56 /* CitiesViewController.xib in Resources */,
 				397B7D581CBA04D4002A8C56 /* SearchResultViewController.xib in Resources */,
 			);
@@ -1132,6 +1154,7 @@
 				39DF7BB91CAC25C300FC0A3D /* SBJsonStreamWriterState.m in Sources */,
 				39DF7B8E1CAC22FA00FC0A3D /* AFNetworkActivityIndicatorManager.m in Sources */,
 				39DF7B921CAC22FA00FC0A3D /* UIImageView+AFNetworking.m in Sources */,
+				396072AD1CE4DCEF00F7D6B9 /* AddOilModel.m in Sources */,
 				3989847B1CC5321100082A2B /* IanAddRepairNoteViewController.m in Sources */,
 				39DF7B8F1CAC22FA00FC0A3D /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				39DF7A5F1CAC1F6500FC0A3D /* ViewController.m in Sources */,
@@ -1145,6 +1168,7 @@
 				39DF7B001CAC220900FC0A3D /* IanCollectionViewCell.m in Sources */,
 				397B7D551CBA04D4002A8C56 /* SearchFineViewController.m in Sources */,
 				39DF7BC71CAC2AA600FC0A3D /* IanLoginViewController.m in Sources */,
+				396072A91CE4D6B100F7D6B9 /* AddOilViewController.m in Sources */,
 				39DF7BDC1CAC2D2200FC0A3D /* IanNavigationController.m in Sources */,
 				39DF7B941CAC22FA00FC0A3D /* UIRefreshControl+AFNetworking.m in Sources */,
 				39DF7BBC1CAC25C300FC0A3D /* SBJsonWriter.m in Sources */,

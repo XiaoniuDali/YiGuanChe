@@ -165,4 +165,28 @@
         
     }];
 }
+- (void)app_Search_AddOil:(NSDictionary *)dic completeHandle:(CompleteHandle)completeHandle{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    // 这里服务器接口写死
+    
+    [manager POST:[NSString stringWithFormat:@"%@",@"http://apis.haoservice.com/oil/region"] parameters:dic success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        if (completeHandle) {
+            
+            
+            completeHandle(responseObject);
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        if (completeHandle) {
+            
+            
+            completeHandle(nil);
+        }
+        
+        NSLog(@"错误: %@", error);
+        
+    }];
+}
 @end

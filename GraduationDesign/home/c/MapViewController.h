@@ -21,7 +21,7 @@
 
 - (void)resetAnnitations:(NSArray *)data;
 - (NSString *)returnTheCityName;
-- (void)putAddress:(NSDictionary *)cityNameDic;
+- (void)putAddress:(NSDictionary *)cityNameDic andCityName:(NSString *)cityName;
 @end
 
 @protocol MapViewControllerDidSelectDelegate <NSObject>

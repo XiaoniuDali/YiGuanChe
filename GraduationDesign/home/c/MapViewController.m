@@ -109,11 +109,14 @@
     return _cityName;
 }
 // 地理编码
-- (void)putAddress:(NSDictionary *)cityNameDic{
+- (void)putAddress:(NSDictionary *)cityNameDic andCityName:(NSString *)cityName{
     
     _carAgencyDic = cityNameDic;
     
-    NSString *cityName = [cityNameDic[@"addressDetail"] substringFromIndex:3];
+    if (cityName == nil) {
+        
+        cityName = [cityNameDic[@"addressDetail"] substringFromIndex:3];
+    }
 
     CLGeocoder *geocoder=[[CLGeocoder alloc]init];
     
