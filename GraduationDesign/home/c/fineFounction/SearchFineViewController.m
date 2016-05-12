@@ -24,6 +24,8 @@
 #import "SearchCityModel.h"
 #import <MJExtension.h>
 #import "MBProgressHUD.h"
+#import "FineWayViewController.h"
+#import "WhatICanDoViewController.h"
 @interface SearchFineViewController ()<CityNameViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *backgroundView;
 @property (weak, nonatomic) IBOutlet UIButton *searchBtn;
@@ -50,6 +52,15 @@
     }
     return _cityModelMutableArray;
 }
+- (IBAction)fineWay:(id)sender {
+    FineWayViewController *fineWay = [FineWayViewController new];
+    [self.navigationController pushViewController:fineWay animated:YES];
+}
+- (IBAction)whatICanDo:(id)sender {
+    WhatICanDoViewController *whatICanDo = [WhatICanDoViewController new];
+    [self.navigationController pushViewController:whatICanDo animated:YES];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setViewLayer];

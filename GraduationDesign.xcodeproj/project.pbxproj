@@ -37,6 +37,8 @@
 		39B562F31CC14D9D0049325D /* DTCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B562F21CC14D9D0049325D /* DTCViewController.m */; };
 		39B562F71CC150010049325D /* DTCTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B562F51CC150010049325D /* DTCTableViewCell.m */; };
 		39B562F81CC150010049325D /* DTCTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39B562F61CC150010049325D /* DTCTableViewCell.xib */; };
+		39D5315E1CDCE8B900EF60FF /* FineWayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D5315D1CDCE8B900EF60FF /* FineWayViewController.m */; };
+		39D531611CDCE8CE00EF60FF /* WhatICanDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D531601CDCE8CE00EF60FF /* WhatICanDoViewController.m */; };
 		39DF7A591CAC1F6500FC0A3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF7A581CAC1F6500FC0A3D /* main.m */; };
 		39DF7A5C1CAC1F6500FC0A3D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF7A5B1CAC1F6500FC0A3D /* AppDelegate.m */; };
 		39DF7A5F1CAC1F6500FC0A3D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF7A5E1CAC1F6500FC0A3D /* ViewController.m */; };
@@ -194,6 +196,10 @@
 		39B562F41CC150010049325D /* DTCTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCTableViewCell.h; sourceTree = "<group>"; };
 		39B562F51CC150010049325D /* DTCTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCTableViewCell.m; sourceTree = "<group>"; };
 		39B562F61CC150010049325D /* DTCTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTCTableViewCell.xib; sourceTree = "<group>"; };
+		39D5315C1CDCE8B900EF60FF /* FineWayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FineWayViewController.h; sourceTree = "<group>"; };
+		39D5315D1CDCE8B900EF60FF /* FineWayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FineWayViewController.m; sourceTree = "<group>"; };
+		39D5315F1CDCE8CE00EF60FF /* WhatICanDoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhatICanDoViewController.h; sourceTree = "<group>"; };
+		39D531601CDCE8CE00EF60FF /* WhatICanDoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhatICanDoViewController.m; sourceTree = "<group>"; };
 		39DF7A541CAC1F6500FC0A3D /* GraduationDesign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraduationDesign.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39DF7A581CAC1F6500FC0A3D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		39DF7A5A1CAC1F6500FC0A3D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -431,6 +437,10 @@
 				397B7D461CBA04D4002A8C56 /* SearchFineViewController.h */,
 				397B7D471CBA04D4002A8C56 /* SearchFineViewController.m */,
 				397B7D481CBA04D4002A8C56 /* SearchFineViewController.xib */,
+				39D5315C1CDCE8B900EF60FF /* FineWayViewController.h */,
+				39D5315D1CDCE8B900EF60FF /* FineWayViewController.m */,
+				39D5315F1CDCE8CE00EF60FF /* WhatICanDoViewController.h */,
+				39D531601CDCE8CE00EF60FF /* WhatICanDoViewController.m */,
 				397B7D491CBA04D4002A8C56 /* SearchResultViewController.h */,
 				397B7D4A1CBA04D4002A8C56 /* SearchResultViewController.m */,
 				397B7D4B1CBA04D4002A8C56 /* SearchResultViewController.xib */,
@@ -1172,6 +1182,7 @@
 				397B7D541CBA04D4002A8C56 /* SearchFineModel.m in Sources */,
 				39DF7B091CAC220900FC0A3D /* IHAcountTool.m in Sources */,
 				39DF7AF21CAC220900FC0A3D /* UIWindow+Extension.m in Sources */,
+				39D5315E1CDCE8B900EF60FF /* FineWayViewController.m in Sources */,
 				39DF7B911CAC22FA00FC0A3D /* UIButton+AFNetworking.m in Sources */,
 				3989847D1CC5321100082A2B /* IanAlterNoteTableViewCell.m in Sources */,
 				39DF7BB61CAC25C300FC0A3D /* SBJsonStreamParserState.m in Sources */,
@@ -1201,6 +1212,7 @@
 				398984811CC5321100082A2B /* IanRepairNotesTableViewCell.m in Sources */,
 				39DF7BD91CAC2CAA00FC0A3D /* AdScrollView.m in Sources */,
 				397B7D4E1CBA04D4002A8C56 /* CityNameViewController.m in Sources */,
+				39D531611CDCE8CE00EF60FF /* WhatICanDoViewController.m in Sources */,
 				606C63291CD7B94D001B2F27 /* MapViewController.m in Sources */,
 				606C632B1CD7B94D001B2F27 /* CarAgencyViewController.m in Sources */,
 				39DF7B7A1CAC22FA00FC0A3D /* MJRefreshConst.m in Sources */,
