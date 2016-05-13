@@ -1,5 +1,5 @@
 //
-//  IHSettingViewControllerViewController.h
+//  SettingViewController.h
 //  GraduationDesign
 //
 //  Created by shupengstar on 16/5/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IHSettingViewController : UIViewController
+@interface SettingViewController : UIViewController
 
 @end
