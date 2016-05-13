@@ -102,7 +102,7 @@
  
     
     
-    UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(150,85,200, 80)];
+    UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(150,55,200, 80)];
     pickerView.dataSource = self;
     pickerView.delegate = self;
     pickerView.showsSelectionIndicator = YES;
@@ -117,12 +117,12 @@
     [dateLabel setFont:[UIFont systemFontOfSize:13]];
     [self.view addSubview:dateLabel];
     
-    UIDatePicker *datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(115,175,300,100)];
+    UIDatePicker *datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(115,145,300,100)];
     datePicker.datePickerMode = UIDatePickerModeDate;
 //    [datePicker setBackgroundColor:[UIColor grayColor]];
     
-    NSDate* minDate = [[NSDate alloc] initWithTimeIntervalSince1970:0];//initWithString:@"1900-01-01 00:00:00 -0500"];
-    NSDate* maxDate = [[NSDate alloc] init]; //:@"2099-01-01 00:00:00 -0500"];
+    NSDate* minDate = [[NSDate alloc] initWithTimeIntervalSince1970:0];
+    NSDate* maxDate = [[NSDate alloc] init];
     
     datePicker.minimumDate = minDate;
     datePicker.maximumDate = maxDate;
@@ -180,10 +180,6 @@
 }
 
 
-
-
-
-
 -(void)dateChanged:(UIDatePicker *)picker
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -193,7 +189,7 @@
     NSString *currentDateStr = [dateFormatter stringFromDate:picker.date];
     [_repairNotesDict setValue:currentDateStr forKey:@"time"];
     
-//    IanLog([NSString stringWithFormat:@"%@",currentDateStr]);
+ 
 }
 
 #pragma -mark 增加一条数据

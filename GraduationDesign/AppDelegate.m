@@ -58,7 +58,7 @@
 //    
 //    
     
-    NSString *urlAsString = @"http://yqall02.baidupcs.com/file/7d02e1857998cdedb6e07d79b5b285c6?bkt=p3-14007d02e1857998cdedb6e07d79b5b285c6807137f90000000af000&fid=3324609554-250528-1025660187472971&time=1462262563&sign=FDTAXGERLBH-DCb740ccc5511e5e8fedcff06b081203-3m4lkGZdO%2FAd13mktwaLhUdBu%2Bw%3D&to=qyac&fm=Yan,B,U,nc&sta_dx=1&sta_cs=0&sta_ft=sqlite&sta_ct=0&fm2=Yangquan,B,U,nc&newver=1&newfm=1&secfm=1&flow_ver=3&pkey=14007d02e1857998cdedb6e07d79b5b285c6807137f90000000af000&sl=76480591&expires=8h&rt=pr&r=776002054&mlogid=2868223112067269884&vuk=3324609554&vbdid=2338314477&fin=appDb.sqlite&slt=pm&uta=0&rtype=1&iv=0&isw=0&dp-logid=2868223112067269884&dp-callid=0.1.1";
+    NSString *urlAsString = @"http://yqall02.baidupcs.com/file/df4794ee0e852bbda535536dad1e728a?bkt=p3-1400df4794ee0e852bbda535536dad1e728a630285e30000000b8000&fid=3324609554-250528-761321753585071&time=1463215271&sign=FDTAXGERLBH-DCb740ccc5511e5e8fedcff06b081203-ffKhEGBqn%2FpVP7q9sQJ3psE78xU%3D&to=qyac&fm=Yan,B,U,nc&sta_dx=1&sta_cs=0&sta_ft=sqlite&sta_ct=0&fm2=Yangquan,B,U,nc&newver=1&newfm=1&secfm=1&flow_ver=3&pkey=1400df4794ee0e852bbda535536dad1e728a630285e30000000b8000&sl=76480590&expires=8h&rt=pr&r=371452463&mlogid=3123963536427525852&vuk=3324609554&vbdid=960311854&fin=appDb.sqlite&slt=pm&uta=0&rtype=1&iv=0&isw=0&dp-logid=3123963536427525852&dp-callid=0.1.1";
     NSURL    *url = [NSURL URLWithString:urlAsString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSError *error = nil;

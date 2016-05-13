@@ -13,6 +13,8 @@
 #import "DTCViewController.h"
 #import "CarAgencyViewController.h"
 #import "AddOil/AddOilViewController.h"
+#import "IanCarCheckInfoViewController.h"
+#import "ianDriveCardInfoViewController.h"
 #define UISCREENHEIGHT  self.view.bounds.size.height
 #define UISCREENWIDTH  self.view.bounds.size.width
 
@@ -33,9 +35,9 @@
         
     [self createScrollView];
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
-    [flowLayout setItemSize:CGSizeMake(50, 50)];//设置cell的尺寸
+    [flowLayout setItemSize:CGSizeMake(130, 90)];//设置cell的尺寸
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];//设置其布局方向
-    flowLayout.sectionInset = UIEdgeInsetsMake(10, 15, 15, 10);//设置其边界
+    flowLayout.sectionInset = UIEdgeInsetsMake(10, 52, 15, 52);//设置其边界
     //其布局很有意思，当你的cell设置大小后，一行多少个cell，由cell的宽度决定
     
     UICollectionView *collectionView =[[UICollectionView alloc] initWithFrame:CGRectMake(0,214, self.view.bounds.size.width, self.view.bounds.size.height-48-125) collectionViewLayout:flowLayout] ;
@@ -95,7 +97,7 @@
     //    IanLog(@"asdasd");
     switch (indexPath.row) {
         case 0:
-            cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"fineICON"]];
+            cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"finelCON"]];
             break;
             
         case 1:
@@ -108,16 +110,19 @@
             
             break;
         case 3:
-            
+            cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"checkCarKnowledge.png"]];
             break;
         case 4:
+            cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"driveCardInfo.png"]];
             
             break;
         case 5:
-            cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"DTC.png"]];
+            cell.backgroundView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"gassStore"]];
+            
             break;
         case 6:
-            cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"DTC.png"]];
+            cell.backgroundView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tipsRemind"]];
+            [cell setFrame:CGRectMake(105, 310, 166, 81)];
             
             break;
             
@@ -169,13 +174,24 @@
         case 3:
         {
             
+            IanCarCheckInfoViewController *carChekVC =[IanCarCheckInfoViewController new];
+            self.hidesBottomBarWhenPushed =YES;
+            [self.navigationController pushViewController:carChekVC animated:YES];
+            self.hidesBottomBarWhenPushed =NO;
+            
+            
             break;
         }
         case 4:
         {
+            ianDriveCardInfoViewController *driveVC = [ianDriveCardInfoViewController new];
+            self.hidesBottomBarWhenPushed=YES;
+            [self.navigationController pushViewController:driveVC animated:YES];
+            self.hidesBottomBarWhenPushed=NO;
             
             break;
         }
+
         case 5:
         {
             AddOilViewController *addOil = [AddOilViewController new];

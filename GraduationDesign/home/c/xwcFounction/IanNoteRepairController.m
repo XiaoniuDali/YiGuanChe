@@ -15,15 +15,15 @@
 
 @interface IanNoteRepairController ()<UIWebViewDelegate>
 
-@property(nonatomic,strong) UIWebView * webView;
-@property(nonatomic,strong) UIButton *addBtn;
-@property(nonatomic,strong) UIButton *alterDataBtn;
-@property(nonatomic,strong) UIButton *showDataBtn;
-@property(nonatomic,strong) UITextView *noticeLbl;
+@property(nonatomic,weak) UIWebView * webView;
+@property(nonatomic,weak) UIButton *addBtn;
+@property(nonatomic,weak) UIButton *alterDataBtn;
+@property(nonatomic,weak) UIButton *showDataBtn;
+@property(nonatomic,weak) UITextView *noticeLbl;
 @property (nonatomic,strong) FMDatabase * db;
-@property (nonatomic,strong) UILabel * labelAllMoney;
-@property (nonatomic,strong) UILabel * labelAllLast;
-@property (nonatomic,strong) UILabel * labelLastName;
+@property (nonatomic,weak) UILabel * labelAllMoney;
+@property (nonatomic,weak) UILabel * labelAllLast;
+@property (nonatomic,weak) UILabel * labelLastName;
 
 @end
 
@@ -31,16 +31,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    
-    
     self.view.frame =IanMainScreen.bounds;
     self.title =@"维修记录统计";
     [self.view setBackgroundColor:ianRGBColor(231, 231,231)];
     
     self.db = [self openDataBase];
-    
-    
+ 
     
     //设置子控件
     [self setSubview];
@@ -92,16 +88,13 @@
     }
     return lastRepair;
 }
-
-
-
-
+ 
 
 -(void)setSubview
 {
     //-------------------uiwebview----------------------------
-    _webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, IanMainScreen.bounds.size.width,380)];
-     
+    UIWebView * webview = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, IanMainScreen.bounds.size.width,380)];
+    _webView = webview;
     _webView.backgroundColor = [UIColor redColor];
     UIScrollView *temScrollView = [_webView.subviews objectAtIndex:0];
     temScrollView.scrollEnabled =NO;
@@ -111,39 +104,45 @@
     
     NSString *filePath = [[NSBundle mainBundle]pathForResource:@"echarts" ofType:@"html"];
     NSString *htmlString = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-//    NSLog(@"htmlStringhtmlString%@",htmlString);
     
     [_webView loadHTMLString:htmlString baseURL:[NSURL URLWithString:filePath]];
     
     
     //    添加一条记录的按钮
-    _addBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.view.width*0.5-25, self.view.height-70, 50,50)];
-    [_addBtn setBackgroundColor:ianRGBColor(255, 255, 255)];
-    [_addBtn setTitle:@"增加" forState:UIControlStateNormal];
-    [_addBtn setBackgroundColor:[UIColor blackColor]];
+    UIButton *addBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.view.width*0.5-40, self.view.height-60, 80,42)];
+    _addBtn =addBtn;
+
+
+    [_addBtn setBackgroundImage:[UIImage imageNamed:@"add.png"] forState:UIControlStateNormal];
+ 
     
     [self.view addSubview:_addBtn];
     [_addBtn addTarget:self action:@selector(addNote) forControlEvents:UIControlEventTouchUpInside];
     
     
     //    展示所有的数据
-    _showDataBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.view.width*0.5-90, self.view.height-60, 50,30)];
-    [_showDataBtn setBackgroundColor:ianRGBColor(255, 255, 255)];
-    [_showDataBtn setTitle:@"显示" forState:UIControlStateNormal];
-    [_showDataBtn setBackgroundColor:[UIColor blackColor]];
+    UIButton *showDataBtn= [[UIButton alloc] initWithFrame:CGRectMake(self.view.width*0.5-140, self.view.height-60, 80,42)];
+    _showDataBtn = showDataBtn;
+ 
+    [_showDataBtn setBackgroundImage:[UIImage imageNamed:@"show.png"] forState:UIControlStateNormal];
+//    [_showDataBtn setBackgroundColor:[UIColor blackColor]];
     
     [self.view addSubview:_showDataBtn];
     [_showDataBtn addTarget:self action:@selector(showData) forControlEvents:UIControlEventTouchUpInside];
     //    修改数据
-    _alterDataBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.view.width*0.5+40, self.view.height-60, 50,30)];
-    [_alterDataBtn setBackgroundColor:ianRGBColor(255, 255, 255)];
-    [_alterDataBtn setTitle:@"修改" forState:UIControlStateNormal];
-    [_alterDataBtn setBackgroundColor:[UIColor blackColor]];
+    UIButton * alterDataBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.view.width*0.5+60, self.view.height-60, 80,42)];
+    _alterDataBtn =alterDataBtn;
+    
+ 
+    [_alterDataBtn setBackgroundImage:[UIImage imageNamed:@"alert.png"] forState:UIControlStateNormal];
+//    [_alterDataBtn setBackgroundColor:[UIColor blackColor]];
     [self.view addSubview:_alterDataBtn];
     [_alterDataBtn addTarget:self action:@selector(alterData) forControlEvents:UIControlEventTouchUpInside];
     
  
-     _labelAllMoney =[[UILabel alloc] init];
+     UILabel * labelAllMoney =[[UILabel alloc] init];
+    _labelAllMoney =labelAllMoney;
+    
     [_labelAllMoney setFrame:CGRectMake((self.view.bounds.size.width - 170)*0.5, self.webView.height+30, 170, 25)];
     
 //    从数据库获取所有的数据
@@ -153,8 +152,8 @@
     [self.view addSubview:_labelAllMoney];
     
     
-    
-    _labelAllLast =[[UILabel alloc] init];
+    UILabel * labelAllLast =[[UILabel alloc] init];
+    _labelAllLast =labelAllLast;
     [_labelAllLast setFrame:CGRectMake(10, self.webView.height+5, 170, 25)];
     
     //    从数据库获取所有的数据
@@ -166,8 +165,9 @@
     
     
     
-    _labelLastName =[[UILabel alloc] init];
-    [_labelLastName setFrame:CGRectMake(185, self.webView.height+5, 180, 25)];
+    UILabel *labelLastName =[[UILabel alloc] init];
+    _labelLastName =labelLastName;
+    [_labelLastName setFrame:CGRectMake(185, self.webView.height+5, 180, 30)];
     
     //    从数据库获取所有的数据
 //    _labelLastName.text =[NSString stringWithFormat:@"最近保养项目：%@",[self getLastRepairName]];
@@ -177,18 +177,17 @@
     [self.view addSubview:_labelLastName];
  
     
-    UILabel *label =[[UILabel alloc] init];
-    [label setFrame:CGRectMake(0, self.webView.height+60, self.view.width, 20)];
-    label.text = @"保养维修提示";
-    label.textAlignment =NSTextAlignmentCenter;
-    [label setFont:[UIFont systemFontOfSize:12]];
-    [label setBackgroundColor:[UIColor yellowColor]];
-    [self.view addSubview:label];
+    
+    UIImageView *imageView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"repairTips"]];
+    [imageView setFrame:CGRectMake(90, self.webView.height+55, 181, 26)];
+
+ 
+    [self.view addSubview:imageView];
     
 
     
-    _noticeLbl = [[UITextView alloc] initWithFrame:CGRectMake(5, label.frame.origin.y+20, self.view.width-10,125)];
-    
+    UITextView * noticeLbl = [[UITextView alloc] initWithFrame:CGRectMake(5, imageView.frame.origin.y+26, self.view.width-10,125)];
+    _noticeLbl =noticeLbl;
     
     [_noticeLbl setBackgroundColor:[UIColor whiteColor]];
     [_noticeLbl setTextAlignment:NSTextAlignmentLeft];
@@ -198,8 +197,6 @@
     _noticeLbl.userInteractionEnabled =YES;
     [_noticeLbl setFont:[UIFont fontWithName:@"宋体" size:10]];
 
-
-    
 }
 
 
@@ -209,10 +206,12 @@
 -(NSString *)getRepairTips
 {
     NSString * repairTips =@"暂无维修提示";
-   
-    repairTips =[self getTips];
-
+   if(![[self getTips] isEqualToString:@""])
+   {
+    return [self getTips];
+   }else{
     return repairTips;
+   }
 }
 
 
@@ -246,19 +245,17 @@
     NSDateFormatter *formatter =[[NSDateFormatter alloc] init];
     [formatter setDateFormat : @"yyyy-MM-dd"];
     NSDate *dateTime = [formatter dateFromString:lastTime];
-    long interval = [dateTime timeIntervalSinceDate:[[NSDate alloc] init]];
-    
-    
-    
-    if ((interval >= -31536000)&([action isEqual:@"检查"])) {
-        tip = [NSString stringWithFormat:@"请立即检查%@是否能确保汽车能安全行驶",projectName];
-    }else if((interval >= -31536000)&([action isEqual:@"更换"])){
-        tip = [NSString stringWithFormat:@"请立即检查或及时更换%@以确保汽车能安全行驶",projectName];
+    long interval = [[[NSDate alloc] init] timeIntervalSinceDate:dateTime] * 1000;
+ 
+    IanLog(@"interval==%ld",interval);
+    if ((interval >= 31536000000)&([action isEqual:@"检查"])) {
+        tip = [NSString stringWithFormat:@"您在%@进行了%@的检查,距今已有12个月，根据汽车零部件维修保养周期，您应该立即检查%@是否能确保汽车能安全行驶。",lastTime,projectName,projectName];
+
+    }else if((interval >= 31536000000)&([action isEqual:@"更换"])){
+        tip = [NSString stringWithFormat:@"您在%@进行了%@的检查,距今已有12个月，根据汽车零部件维修保养周期，您应该立即更换%@，这样才能确保您的汽车能安全行驶。",lastTime,projectName,projectName];
     }
     return tip;
 }
-
-
 
 
 
@@ -322,7 +319,7 @@
 -(NSString *)getXDataValue
 {
     NSMutableArray *arr =[[NSMutableArray alloc] init];
-    FMResultSet *result = [self.db executeQuery:@"select time from repairNote"];
+    FMResultSet *result = [self.db executeQuery:@"select time from repairNote order by time"];
     while ([result next]) {
         [arr addObject:[result stringForColumn:@"time"]];
     }
