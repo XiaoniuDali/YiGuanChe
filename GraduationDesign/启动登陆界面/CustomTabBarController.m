@@ -27,11 +27,11 @@
     [self addChildVCWithVC:mainVC image:@"tabbar_home" selectedImage:@"tabbar_home_selected" title:@"首页"];
     
     IHNewsViewController *newsVC =[[IHNewsViewController alloc] init];
-    [self addChildVCWithVC:newsVC image:@"tabbar_news" selectedImage:@"tabbar_news_selected" title:@"资讯"];
+    [self addChildVCWithVC:newsVC image:@"tabbar_news" selectedImage:@"tabbar_news_selected" title:@"维修知识"];
     
     
     IHSettingViewController *settingVC =[[IHSettingViewController alloc] init];
-    [self addChildVCWithVC:settingVC image:@"tabbar_setting" selectedImage:@"tabbar_setting_selected" title:@"设置"];
+    [self addChildVCWithVC:settingVC image:@"personOff" selectedImage:@"personOn" title:@"我"];
     
     self.tabBar.translucent = NO;
 }
