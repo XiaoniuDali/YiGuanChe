@@ -21,6 +21,7 @@
     // Do any additional setup after loading the view from its nib.
     self.resultTableView.estimatedRowHeight = 100;
     self.resultTableView.rowHeight = UITableViewAutomaticDimension;
+    self.resultTableView.tableFooterView = [UIView new];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

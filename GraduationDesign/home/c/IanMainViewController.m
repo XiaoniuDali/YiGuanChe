@@ -35,7 +35,7 @@
         
     [self createScrollView];
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
-    [flowLayout setItemSize:CGSizeMake(130, 90)];//设置cell的尺寸
+    [flowLayout setItemSize:CGSizeMake((self.view.bounds.size.width-52-52-15)/2.0, 90)];//设置cell的尺寸
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];//设置其布局方向
     flowLayout.sectionInset = UIEdgeInsetsMake(10, 52, 15, 52);//设置其边界
     //其布局很有意思，当你的cell设置大小后，一行多少个cell，由cell的宽度决定
@@ -122,7 +122,7 @@
             break;
         case 6:
             cell.backgroundView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tipsRemind"]];
-            [cell setFrame:CGRectMake(105, 310, 166, 81)];
+            [cell setFrame:CGRectMake((self.view.bounds.size.width-180)/2.0, 310, 166, 81)];
             
             break;
             
