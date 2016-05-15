@@ -64,6 +64,8 @@
 		15F6790A1CE8321500B308A4 /* SearchFineModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F679091CE8321500B308A4 /* SearchFineModels.m */; };
 		15F6790E1CE884D500B308A4 /* SettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F6790C1CE884D500B308A4 /* SettingTableViewCell.m */; };
 		15F6790F1CE884D500B308A4 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15F6790D1CE884D500B308A4 /* SettingTableViewCell.xib */; };
+		15F679521CE8C1A700B308A4 /* IanRemindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F679511CE8C1A700B308A4 /* IanRemindViewController.m */; };
+		15F679551CE8C1D000B308A4 /* IanMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F679531CE8C1D000B308A4 /* IanMainViewController.m */; };
 		3954F8FA1CAFA343005C1353 /* vinModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3954F8F91CAFA343005C1353 /* vinModel.m */; };
 		395C9C2E1CE615A8009BE708 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 395C9C2C1CE615A8009BE708 /* SettingViewController.m */; };
 		395C9C2F1CE615A8009BE708 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 395C9C2D1CE615A8009BE708 /* SettingViewController.xib */; };
@@ -117,7 +119,6 @@
 		39DF7AF01CAC220900FC0A3D /* UITextView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF7AB01CAC220900FC0A3D /* UITextView+Extension.m */; };
 		39DF7AF11CAC220900FC0A3D /* UIView+Extersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF7AB21CAC220900FC0A3D /* UIView+Extersion.m */; };
 		39DF7AF21CAC220900FC0A3D /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF7AB41CAC220900FC0A3D /* UIWindow+Extension.m */; };
-		39DF7AF71CAC220900FC0A3D /* IanMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF7ABF1CAC220900FC0A3D /* IanMainViewController.m */; };
 		39DF7AFD1CAC220900FC0A3D /* IHAcount.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF7AC81CAC220900FC0A3D /* IHAcount.m */; };
 		39DF7B001CAC220900FC0A3D /* IanCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF7AD21CAC220900FC0A3D /* IanCollectionViewCell.m */; };
 		39DF7B011CAC220900FC0A3D /* IanNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF7AD41CAC220900FC0A3D /* IanNavigationBar.m */; };
@@ -266,6 +267,10 @@
 		15F6790B1CE884D500B308A4 /* SettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewCell.h; sourceTree = "<group>"; };
 		15F6790C1CE884D500B308A4 /* SettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewCell.m; sourceTree = "<group>"; };
 		15F6790D1CE884D500B308A4 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
+		15F679501CE8C1A700B308A4 /* IanRemindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IanRemindViewController.h; sourceTree = "<group>"; };
+		15F679511CE8C1A700B308A4 /* IanRemindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IanRemindViewController.m; sourceTree = "<group>"; };
+		15F679531CE8C1D000B308A4 /* IanMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IanMainViewController.m; sourceTree = "<group>"; };
+		15F679541CE8C1D000B308A4 /* IanMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IanMainViewController.h; sourceTree = "<group>"; };
 		3954F8F81CAFA343005C1353 /* vinModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vinModel.h; sourceTree = "<group>"; };
 		3954F8F91CAFA343005C1353 /* vinModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vinModel.m; sourceTree = "<group>"; };
 		395C9C2B1CE615A8009BE708 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
@@ -361,8 +366,6 @@
 		39DF7AB21CAC220900FC0A3D /* UIView+Extersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extersion.m"; sourceTree = "<group>"; };
 		39DF7AB31CAC220900FC0A3D /* UIWindow+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Extension.h"; sourceTree = "<group>"; };
 		39DF7AB41CAC220900FC0A3D /* UIWindow+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Extension.m"; sourceTree = "<group>"; };
-		39DF7ABE1CAC220900FC0A3D /* IanMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IanMainViewController.h; sourceTree = "<group>"; };
-		39DF7ABF1CAC220900FC0A3D /* IanMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IanMainViewController.m; sourceTree = "<group>"; };
 		39DF7AC71CAC220900FC0A3D /* IHAcount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHAcount.h; sourceTree = "<group>"; };
 		39DF7AC81CAC220900FC0A3D /* IHAcount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHAcount.m; sourceTree = "<group>"; };
 		39DF7AD11CAC220900FC0A3D /* IanCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IanCollectionViewCell.h; sourceTree = "<group>"; };
@@ -617,6 +620,15 @@
 			path = repairKownledgeHTML;
 			sourceTree = "<group>";
 		};
+		15F6794F1CE8C1A700B308A4 /* remind */ = {
+			isa = PBXGroup;
+			children = (
+				15F679501CE8C1A700B308A4 /* IanRemindViewController.h */,
+				15F679511CE8C1A700B308A4 /* IanRemindViewController.m */,
+			);
+			path = remind;
+			sourceTree = "<group>";
+		};
 		3954F8F71CAFA315005C1353 /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -815,6 +827,7 @@
 		39DF7AB71CAC220900FC0A3D /* home */ = {
 			isa = PBXGroup;
 			children = (
+				15F6794F1CE8C1A700B308A4 /* remind */,
 				39DF7BD11CAC2CAA00FC0A3D /* AdScrollview */,
 				39DF7ABD1CAC220900FC0A3D /* homeController */,
 				39DF7AC61CAC220900FC0A3D /* homeModel */,
@@ -826,6 +839,8 @@
 		39DF7ABD1CAC220900FC0A3D /* homeController */ = {
 			isa = PBXGroup;
 			children = (
+				15F679531CE8C1D000B308A4 /* IanMainViewController.m */,
+				15F679541CE8C1D000B308A4 /* IanMainViewController.h */,
 				1506C1881CE7272000D5828E /* carCheckInfo */,
 				1506C17F1CE7270700D5828E /* searchDriveCardInfo */,
 				396072A51CE4D67A00F7D6B9 /* AddOil */,
@@ -833,8 +848,6 @@
 				39B562F01CC14D7E0049325D /* DTCSearch */,
 				397B7D361CBA04D4002A8C56 /* fineFounction */,
 				397B7D591CBA04E2002A8C56 /* xwcFounction */,
-				39DF7ABE1CAC220900FC0A3D /* IanMainViewController.h */,
-				39DF7ABF1CAC220900FC0A3D /* IanMainViewController.m */,
 			);
 			name = homeController;
 			path = c;
@@ -1476,7 +1489,7 @@
 				397B7D351CB9F2A8002A8C56 /* Tool_FMDBModel.m in Sources */,
 				1506C18C1CE7272000D5828E /* IanCarCheckInfoViewController.m in Sources */,
 				39DF7B6D1CAC22FA00FC0A3D /* AFHTTPRequestOperationManager.m in Sources */,
-				39DF7AF71CAC220900FC0A3D /* IanMainViewController.m in Sources */,
+				15F679551CE8C1D000B308A4 /* IanMainViewController.m in Sources */,
 				397B7D531CBA04D4002A8C56 /* SearchCityModel.m in Sources */,
 				39DF7B811CAC22FA00FC0A3D /* SIAlertView.m in Sources */,
 				39DF7B721CAC22FA00FC0A3D /* AFURLRequestSerialization.m in Sources */,
@@ -1488,6 +1501,7 @@
 				39D531611CDCE8CE00EF60FF /* WhatICanDoViewController.m in Sources */,
 				606C63291CD7B94D001B2F27 /* MapViewController.m in Sources */,
 				606C632B1CD7B94D001B2F27 /* CarAgencyViewController.m in Sources */,
+				15F679521CE8C1A700B308A4 /* IanRemindViewController.m in Sources */,
 				39DF7B7A1CAC22FA00FC0A3D /* MJRefreshConst.m in Sources */,
 				39DF7B6E1CAC22FA00FC0A3D /* AFHTTPSessionManager.m in Sources */,
 				398984821CC5321100082A2B /* IanShowRepairNoteViewController.m in Sources */,

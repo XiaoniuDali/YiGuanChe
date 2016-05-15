@@ -15,6 +15,7 @@
 #import "AddOil/AddOilViewController.h"
 #import "IanCarCheckInfoViewController.h"
 #import "ianDriveCardInfoViewController.h"
+#import "IanRemindViewController.h"
 #define UISCREENHEIGHT  self.view.bounds.size.height
 #define UISCREENWIDTH  self.view.bounds.size.width
 
@@ -32,15 +33,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        
+    
     [self createScrollView];
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
-    [flowLayout setItemSize:CGSizeMake((self.view.bounds.size.width-52-52-15)/2.0, 90)];//设置cell的尺寸
+    [flowLayout setItemSize:CGSizeMake(130, 90)];//设置cell的尺寸
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];//设置其布局方向
     flowLayout.sectionInset = UIEdgeInsetsMake(10, 52, 15, 52);//设置其边界
     //其布局很有意思，当你的cell设置大小后，一行多少个cell，由cell的宽度决定
     
-    UICollectionView *collectionView =[[UICollectionView alloc] initWithFrame:CGRectMake(0,214, self.view.bounds.size.width, self.view.bounds.size.height-48-200) collectionViewLayout:flowLayout] ;
+    UICollectionView *collectionView =[[UICollectionView alloc] initWithFrame:CGRectMake(0,214, self.view.bounds.size.width, self.view.bounds.size.height-48-125) collectionViewLayout:flowLayout] ;
     
     //    UIImageView *imageView =[[UIImageView alloc] init];
     //    [imageView setBackgroundColor:[UIColor redColor]];//ianRGBColor(59, 86, 129)//图片
@@ -79,7 +80,7 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 7;
+    return 8;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -122,7 +123,12 @@
             break;
         case 6:
             cell.backgroundView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tipsRemind"]];
-            [cell setFrame:CGRectMake((self.view.bounds.size.width-180)/2.0, 310, 166, 81)];
+            [cell setFrame:CGRectMake(0, 310, 166, 81)];
+            
+            break;
+        case 7:
+            cell.backgroundView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tipsRemind"]];
+            [cell setFrame:CGRectMake(166, 310, 166, 81)];
             
             break;
             
@@ -191,7 +197,7 @@
             
             break;
         }
-
+            
         case 5:
         {
             AddOilViewController *addOil = [AddOilViewController new];
@@ -206,9 +212,18 @@
             break;
         }
             
+        case 7:
+        {
+            IanRemindViewController *redmind = [IanRemindViewController new];
+            self.hidesBottomBarWhenPushed=YES;
+            [self.navigationController pushViewController:redmind animated:YES];
+            self.hidesBottomBarWhenPushed=NO;
+            break;
+        }
+            
         default:
             break;
-    }    
+    }
 }
 
 

@@ -56,7 +56,7 @@
 }
 - (void)downFiles{
     
-    [IHAcountTool showHUD:@"" andView:self.view];
+//    [IHAcountTool showHUD:@"" andView:self.view];
     
     
     NSString *urlAsString = @"http://sz.ctfs.ftn.qq.com/ftn_handler/aa55bbe77e1a7cc840504c80570c3ef2e8ff45ddfee2da262e8ad3563e60c0547a12c1c42f8e130a21709233b383708cdbea7a320594db4665bd12f7c4fe5ef5/?fname=appDb.sqlite&k=7436363464e1c39a7e0d2f674261054a560603565559045218030f51544c035d06071b565c0556480c0007500155065007550403646d3704454672564a1246095c42533459&fr=00&&txf_fid=54715fa3e9600fabc1c8e23e321b8da3164725b6&xffz=753664";
@@ -74,19 +74,16 @@
     [self.downLoadTask resume];
 }
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location{
-    //创建文件存储路径,downloadTask.response.suggestedFilename为所下载的文件名
-//    NSString *caches = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
-//    NSString *file = [caches stringByAppendingPathComponent:downloadTask.response.suggestedFilename];
+   
     NSString * doc =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     NSString *fileName =[doc stringByAppendingPathComponent:@"appDb.sqlite"];
+    
+    
+    
     NSFileManager *manager = [NSFileManager defaultManager];
     [manager moveItemAtPath:location.path toPath:fileName error:nil];
-    //下载完成提示框
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"下载完成" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:nil];
-    [alert addAction:action];
-    [self presentViewController:alert animated:YES completion:nil];
-    [IHAcountTool hideHUD];
+
+    [IHAcountTool showDelyHUD:@"正在初始化数据" andView:self.view];
     
 }
 - (void)goToMainUI
@@ -97,16 +94,17 @@
     
     if (allModel.count == 0) {
         
-        [self gotoLogin];
-//        CustomTabBarController *tab =[[CustomTabBarController alloc ] init];
-//        
-//        [tab.view setFrame:self.view.bounds];
-//        
-//        UIWindow *window = [UIApplication sharedApplication].keyWindow;
-//        
-//        window.rootViewController =tab;
-//        
-//        [window makeKeyAndVisible];
+//        [self gotoLogin];
+        
+        CustomTabBarController *tab =[[CustomTabBarController alloc ] init];
+        
+        [tab.view setFrame:self.view.bounds];
+        
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        
+        window.rootViewController =tab;
+        
+        [window makeKeyAndVisible];
     } else {
         
         for (int i = 0; i<allModel.count; i++) {

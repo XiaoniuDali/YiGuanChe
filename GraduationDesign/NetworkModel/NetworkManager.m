@@ -119,7 +119,9 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     // 这里服务器接口写死
     
-    [manager POST:[NSString stringWithFormat:@"%@",@"http://apis.haoservice.com/lifeservice/vin"] parameters:dic success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//     http://apis.haoservice.com/efficient/vinservice?vin=LSGPC52U6AF102554&key=您申请的APPKEY
+    
+    [manager POST:[NSString stringWithFormat:@"%@",@"http://apis.haoservice.com/efficient/vinservice"] parameters:dic success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         if (completeHandle) {
             

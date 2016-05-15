@@ -128,14 +128,18 @@
 - (void)registButton{
 //   apikey   e28898efbd004bf78dc03d1c3734619b
     // 汽车VIN   LSGPC52U6AF102554
+    
+//      伟成：49756c81fcd3498f8847d9e7ff7eeab2
 //    http://www.haoservice.com/docs/58
     
 //     http://apis.haoservice.com/lifeservice/vin?vin=LSGPC52U6AF102554&key=您申请的APPKEY
     
     
+//     http://apis.haoservice.com/efficient/vinservice?vin=LSGPC52U6AF102554&key=您申请的APPKEY
+    
     [IHAcountTool showHUD:@"" andView:self.view];
     NSDictionary *dic = @{
-                          @"vin" : self.vinTextField.text,//@"LSGPC52U6AF102554",
+                          @"vin" : @"LSGPC52U6AF102554",//self.vinTextField.text,//
                           @"key" : @"00c3a1a82ed6455eb442c5f2369dbc50"
                           };
      
@@ -166,12 +170,8 @@
 
     [[NetworkManager shareMgr] app_search_VIN:dic completeHandle:^(NSDictionary *response) {
         NSLog(@"得到数据：%@",response);
-        if ([response[@"error_code"] isEqualToString:@"10003"]) {
-            [IHAcountTool showDelyHUD:@"vin码错误" andView:self.view];
-            return ;
-        }
-        [IHAcountTool hideHUD];
-        if (response[@"result"]) {
+
+        if (response[@"result"] == 0) {
             vinModel *models = [vinModel new];
             
             [models mj_setKeyValues:response[@"result"]];
@@ -191,6 +191,7 @@
         } else {
             
             [IHAcountTool showDelyHUD:@"注册失败" andView:self.view];
+
         }
 
         //保存数据到数据库（模型中的成员变量有数组与模型）

@@ -169,8 +169,8 @@
 
     switch (indexPath.row) {
         case 0:
-            cell.Sort.text = @"品牌：";
-            cell.number.text = @"名称：";
+            cell.Sort.text = @"品牌";
+            cell.number.text = @"名称";
             
             break;
         case 1:
@@ -182,8 +182,8 @@
             cell.number.text = @"名称";
             break;
         case 2:
-            cell.Sort.text = @"排量：";
-            cell.number.text = @"产品类型：";
+            cell.Sort.text = @"排量";
+            cell.number.text = @"产品类型";
             break;
         case 3:
             cell.Sort.text = @"displacement";
@@ -193,8 +193,8 @@
             
             break;
         case 4:
-            cell.Sort.text = @"车长：";
-            cell.number.text = @"车高：";
+            cell.Sort.text = @"车长";
+            cell.number.text = @"车高";
             break;
         case 5:
             cell.Sort.text = self.locationDic[@"carLong"];
@@ -204,11 +204,11 @@
             
             break;
         case 6:
-            cell.Sort.text = @"车宽：";
+            cell.Sort.text = @"车宽";
             
             break;
         case 7:
-            cell.Sort.text = self.locationDic[@"carWidth"];
+            cell.number.text = self.locationDic[@"carWidth"];
             break;
             
         default:
