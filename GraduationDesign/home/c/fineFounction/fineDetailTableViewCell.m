@@ -17,6 +17,7 @@
 @implementation fineDetailTableViewCell
 
 - (void)setTheModel:(SearchFineModel *)fineModel{
+    
     self.timeLbl.text = [NSString stringWithFormat:@"%@",fineModel.occur_date];
     self.fineMoneyLbl.text = [NSString stringWithFormat:@"记%ld分,罚%ld元",fineModel.fen,fineModel.money];
     self.addressLbl.text = [NSString stringWithFormat:@"【%@】%@",fineModel.city_name,fineModel.occur_area];

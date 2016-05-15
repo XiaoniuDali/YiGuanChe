@@ -1,16 +1,17 @@
 //
-//  SearchFineModel.h
+//  SearchFineModels.h
 //  GraduationDesign
 //
-//  Created by shupengstar on 16/4/4.
-//  Copyright © 2016年 YJH. All rights reserved.
+//  Created by yihuan on 5/15/16.
+//  Copyright © 2016 YJH. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "Tool_FMDBModel.h"
-@interface SearchFineModel : NSObject
 
+@interface SearchFineModels : Tool_FMDBModel
 @property (nonatomic, assign) NSInteger id;
+
+@property (nonatomic, copy) NSString *officer;
 
 @property (nonatomic, assign) NSInteger money;
 
@@ -33,5 +34,4 @@
 @property (nonatomic, copy) NSString *status;
 
 @property (nonatomic, assign) NSInteger province_id;
-
 @end

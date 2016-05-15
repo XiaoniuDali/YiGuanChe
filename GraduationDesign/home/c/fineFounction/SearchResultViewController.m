@@ -33,6 +33,7 @@
     fineDetailTableViewCell *fineDetailCell = [tableView dequeueReusableCellWithIdentifier:@"fineDetailCell"];
     if (!fineDetailCell) {
         fineDetailCell = [[[NSBundle mainBundle] loadNibNamed:@"fineDetailTableViewCell" owner:self options:nil] lastObject];
+ 
     }
     
     [fineDetailCell setTheModel:self.resultArray[indexPath.row]];

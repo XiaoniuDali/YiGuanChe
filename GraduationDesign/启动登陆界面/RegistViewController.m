@@ -136,7 +136,7 @@
     [IHAcountTool showHUD:@"" andView:self.view];
     NSDictionary *dic = @{
                           @"vin" : self.vinTextField.text,//@"LSGPC52U6AF102554",
-                          @"key" : @"e28898efbd004bf78dc03d1c3734619b"
+                          @"key" : @"00c3a1a82ed6455eb442c5f2369dbc50"
                           };
      
     NSArray *allModel = [vinModel findAll];
@@ -166,6 +166,10 @@
 
     [[NetworkManager shareMgr] app_search_VIN:dic completeHandle:^(NSDictionary *response) {
         NSLog(@"得到数据：%@",response);
+        if ([response[@"error_code"] isEqualToString:@"10003"]) {
+            [IHAcountTool showDelyHUD:@"vin码错误" andView:self.view];
+            return ;
+        }
         [IHAcountTool hideHUD];
         if (response[@"result"]) {
             vinModel *models = [vinModel new];

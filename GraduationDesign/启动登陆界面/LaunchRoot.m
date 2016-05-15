@@ -10,13 +10,14 @@
 #import "CustomTabBarController.h"
 #import "IanLoginViewController.h"
 #import "IanNavigationController.h"
-
+#import "IHAcountTool.h"
 #define PageNumberOfScrollView 3
-@interface LaunchRoot ()<UIScrollViewDelegate>
+@interface LaunchRoot ()<UIScrollViewDelegate,NSURLSessionDownloadDelegate>
 @property (nonatomic, strong) NSMutableArray *arrayImageView;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIButton *btnStart;
-
+@property (nonatomic, strong) NSURLSession *sessons;
+@property (nonatomic, strong) NSURLSessionDownloadTask *downLoadTask;
 @property (nonatomic, strong) UIPageControl *pageControl;
 @end
 
@@ -35,7 +36,6 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     // 一个唯一标示 strFlag
     NSString* strFlag = [NSString stringWithFormat:@"isFirstStartWithVersion_%@",[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"]];
     
@@ -47,36 +47,66 @@
     }else{
         // 第一次使用
         NSLog(@"test");
+        [self downFiles];
         
         [self addImages];
         
-        [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:strFlag]; // 一进来先到这里，只加载一次。
+        [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:strFlag];
     }
+}
+- (void)downFiles{
     
+    [IHAcountTool showHUD:@"" andView:self.view];
+    
+    
+    NSString *urlAsString = @"http://sz.ctfs.ftn.qq.com/ftn_handler/aa55bbe77e1a7cc840504c80570c3ef2e8ff45ddfee2da262e8ad3563e60c0547a12c1c42f8e130a21709233b383708cdbea7a320594db4665bd12f7c4fe5ef5/?fname=appDb.sqlite&k=7436363464e1c39a7e0d2f674261054a560603565559045218030f51544c035d06071b565c0556480c0007500155065007550403646d3704454672564a1246095c42533459&fr=00&&txf_fid=54715fa3e9600fabc1c8e23e321b8da3164725b6&xffz=753664";
+//    NSString *urlAsString = nil;
+    
+    NSURL    *url = [NSURL URLWithString:urlAsString];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+
+    //初始sesson化配置对象
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    //初始化sesson
+    self.sessons = [NSURLSession sessionWithConfiguration:config delegate:self delegateQueue:[NSOperationQueue mainQueue]];
+    //创建下载任务
+    self.downLoadTask = [self.sessons downloadTaskWithRequest:request];
+    [self.downLoadTask resume];
+}
+- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location{
+    //创建文件存储路径,downloadTask.response.suggestedFilename为所下载的文件名
+//    NSString *caches = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+//    NSString *file = [caches stringByAppendingPathComponent:downloadTask.response.suggestedFilename];
+    NSString * doc =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *fileName =[doc stringByAppendingPathComponent:@"appDb.sqlite"];
+    NSFileManager *manager = [NSFileManager defaultManager];
+    [manager moveItemAtPath:location.path toPath:fileName error:nil];
+    //下载完成提示框
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"下载完成" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:nil];
+    [alert addAction:action];
+    [self presentViewController:alert animated:YES completion:nil];
+    [IHAcountTool hideHUD];
     
 }
-
 - (void)goToMainUI
 {
-    // 跳转到主界面
-//    CustomTabBarController *mainViewController = [CustomTabBarController new];
-//    [self presentViewController:mainViewController animated:YES completion:nil];
     // 如果获取不到用户信息，则跳到登录界面
     
     NSArray *allModel = [vinModel findAll];
     
     if (allModel.count == 0) {
         
-//        [self gotoLogin];
-        CustomTabBarController *tab =[[CustomTabBarController alloc ] init];
-        
-        [tab.view setFrame:self.view.bounds];
-        
-        UIWindow *window = [UIApplication sharedApplication].keyWindow;
-        
-        window.rootViewController =tab;
-        
-        [window makeKeyAndVisible];
+        [self gotoLogin];
+//        CustomTabBarController *tab =[[CustomTabBarController alloc ] init];
+//        
+//        [tab.view setFrame:self.view.bounds];
+//        
+//        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+//        
+//        window.rootViewController =tab;
+//        
+//        [window makeKeyAndVisible];
     } else {
         
         for (int i = 0; i<allModel.count; i++) {

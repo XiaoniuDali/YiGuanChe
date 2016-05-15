@@ -26,6 +26,9 @@
 #import "MBProgressHUD.h"
 #import "FineWayViewController.h"
 #import "WhatICanDoViewController.h"
+#import "SearchFineModels.h"
+#import <FMDatabase.h>
+#import "appMarco.h"
 @interface SearchFineViewController ()<CityNameViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *backgroundView;
 @property (weak, nonatomic) IBOutlet UIButton *searchBtn;
@@ -37,6 +40,7 @@
 @property (nonatomic, strong) NSMutableArray *handleMutableArray;
 @property (nonatomic, strong) NSMutableArray *cityModelMutableArray;
 @property (nonatomic, assign) NSInteger cityId;
+@property (nonatomic, strong) FMDatabase *dataBaseHandle;
 @end
 
 @implementation SearchFineViewController
@@ -63,6 +67,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.dataBaseHandle =[self createDatabase];
+    
+    [self createDataBase];
     [self setViewLayer];
     [self getCityID];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeCity:) name:@"didSelectCity" object:nil];
@@ -159,9 +166,30 @@
         NSString *status = [NSString stringWithFormat:@"%@",response[@"status"]];
         if ([status isEqualToString:@"2000"]) {
             // 弹出正常信息
-            [IHAcountTool showDelyHUD:@"恭喜你咩有不良信息" andView:self.view];
+            [IHAcountTool showDelyHUD:@"恭喜你没有不良信息" andView:self.view];
         }
         else if ([status isEqualToString:@"2001"]) {
+ 
+            NSArray *arr =response[@"historys"];
+            [self.dataBaseHandle executeUpdate:@"DELETE FROM FineInfo"];
+            for (NSDictionary *dic in arr) {
+                
+                NSString * car_id = dic[@"car_id"];
+                NSString * city_id = dic[@"city_id"];
+                NSString * code = dic[@"code"];
+                NSString * fen = dic[@"fen"];
+                NSString * info = dic[@"info"];
+                NSString * money = dic[@"money"];
+                
+                NSString * occur_area = dic[@"occur_area"];
+                NSString * occur_date = dic[@"occur_date"];
+                NSString * province_id = dic[@"province_id"];
+                
+                
+                [self.dataBaseHandle executeUpdate:@"insert into FineInfo(car_id ,city_id ,code ,fen ,info,money,occur_area ,occur_date ,province_id ) VALUES(?,?,?,?,?,?,?,?,?)",car_id,city_id,code,fen,info,money,occur_area,occur_date,province_id];
+            }
+            
+            
             
             self.handleMutableArray = [SearchFineModel mj_objectArrayWithKeyValuesArray:response[@"historys"]];
             
@@ -170,8 +198,11 @@
             searchFineVC.resultArray = self.handleMutableArray;
             
             [IHAcountTool hideHUD];
-            
+
             [self.navigationController pushViewController:searchFineVC animated:YES];
+            
+            
+            [self.dataBaseHandle close];
         }
         else {
             // 输入信息错误
@@ -179,6 +210,48 @@
         }
     }];
 }
+//
+- (void)createDataBase{
+
+    BOOL result =[ self.dataBaseHandle executeUpdate:@"create table if not exists FineInfo(id integer primary key autoincrement,car_id text,city_id text,code text,fen text,info text,money text,occur_area text,occur_date text,province_id text)"];
+    
+    if (result) {
+        NSLog(@"创建表成功");
+    }else
+    {
+        NSLog(@"创建表失败");
+    }
+ 
+}
+
+
+// 创建数据库
+-(FMDatabase *)createDatabase
+{
+    NSString * doc =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *fileName =[doc stringByAppendingPathComponent:@"appDb.sqlite"];
+    
+    FMDatabase *appDb =[FMDatabase databaseWithPath:fileName];
+    
+    IanLog(@"fileName==%@",fileName);
+    
+    if (![appDb open]) {
+        NSLog(@"opne 失败");
+    }else if ([appDb open])
+    {
+        IanLog(@"打开成功");
+    }
+    return appDb;
+}
+
+
+//-(void)viewDidDisappear:(BOOL)animated
+//{
+//    [self.dataBaseHandle close];
+//}
+
+
+
 
 #pragma mark --- 选择省份
 - (IBAction)findCity:(id)sender {

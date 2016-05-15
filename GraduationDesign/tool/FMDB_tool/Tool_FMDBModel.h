@@ -5,7 +5,8 @@
 //  Created by Yang on 16/3/24.
 //  Copyright © 2016年 Yang. All rights reserved.
 //
-
+//  保存数据到数据库（模型中的成员变量有数组与模型）
+//  //如果模型中的成员变量是数组或者自定义模型，就将数组或者自定义模型归档(NSKeyedArchive)为二进制数据，再存入数据库；从数据库取出数据时，将二进制数据解档（NSKeyedUnArchive）为数组或者自定义模型；
 /*
  1.如果一个数据模型需要进行数据库操作，那么必须继承Tool_FMDBModel，即我这么类是所有模型的父类；
  */

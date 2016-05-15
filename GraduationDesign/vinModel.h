@@ -25,8 +25,6 @@
 
 @property (nonatomic, copy) NSString *password; // 密码
 
-@property (nonatomic, copy) NSString *shaftdistance;/*轴距*/
-
 @property (nonatomic, copy) NSString *crateWidth;
 
 @property (nonatomic, copy) NSString *loadQualityFactor;

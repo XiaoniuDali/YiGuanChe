@@ -40,7 +40,7 @@
     flowLayout.sectionInset = UIEdgeInsetsMake(10, 52, 15, 52);//设置其边界
     //其布局很有意思，当你的cell设置大小后，一行多少个cell，由cell的宽度决定
     
-    UICollectionView *collectionView =[[UICollectionView alloc] initWithFrame:CGRectMake(0,214, self.view.bounds.size.width, self.view.bounds.size.height-48-125) collectionViewLayout:flowLayout] ;
+    UICollectionView *collectionView =[[UICollectionView alloc] initWithFrame:CGRectMake(0,214, self.view.bounds.size.width, self.view.bounds.size.height-48-200) collectionViewLayout:flowLayout] ;
     
     //    UIImageView *imageView =[[UIImageView alloc] init];
     //    [imageView setBackgroundColor:[UIColor redColor]];//ianRGBColor(59, 86, 129)//图片
