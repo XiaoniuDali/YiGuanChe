@@ -169,9 +169,10 @@
 
     
     
-    UIButton *addBtn =[[UIButton alloc] initWithFrame:CGRectMake(self.view.width *0.5 -100, self.view.height -120 ,200,30)];
-    addBtn.backgroundColor =[UIColor greenColor];
-    [addBtn setTitle:@"确定" forState:UIControlStateNormal];
+    UIButton *addBtn =[[UIButton alloc] initWithFrame:CGRectMake((self.view.width-120)*0.5, self.view.height -120 ,125,43)];
+//    addBtn.backgroundColor =[UIColor greenColor];
+    
+    [addBtn setBackgroundImage:[UIImage imageNamed:@"sure"] forState:UIControlStateNormal];
     [addBtn addTarget:self action:@selector(addRepair) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:addBtn];
     
@@ -319,7 +320,7 @@
         
         myView = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, 120, 25)];
         
-        myView.text = _repairNames[row];;//[pickerPlaceArray objectAtIndex:row];
+        myView.text = _repairNames[row];//[pickerPlaceArray objectAtIndex:row];
         
         [myView setTextAlignment:NSTextAlignmentCenter];
         

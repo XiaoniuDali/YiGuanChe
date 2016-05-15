@@ -123,12 +123,12 @@
             break;
         case 6:
             cell.backgroundView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tipsRemind"]];
-            [cell setFrame:CGRectMake(0, 310, 166, 81)];
+            
             
             break;
         case 7:
-            cell.backgroundView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tipsRemind"]];
-            [cell setFrame:CGRectMake(166, 310, 166, 81)];
+            cell.backgroundView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"saller"]];
+            
             
             break;
             
@@ -207,18 +207,20 @@
         }
         case 6:
         {
-            CarAgencyViewController *dct = [CarAgencyViewController new];
-            [self.navigationController pushViewController:dct animated:YES];
-            break;
-        }
-            
-        case 7:
-        {
             IanRemindViewController *redmind = [IanRemindViewController new];
             self.hidesBottomBarWhenPushed=YES;
             [self.navigationController pushViewController:redmind animated:YES];
             self.hidesBottomBarWhenPushed=NO;
             break;
+            
+        }
+            
+        case 7:
+        {
+            CarAgencyViewController *dct = [CarAgencyViewController new];
+            [self.navigationController pushViewController:dct animated:YES];
+            break;
+
         }
             
         default:

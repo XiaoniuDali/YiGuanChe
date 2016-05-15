@@ -103,19 +103,12 @@
     
     self.otherTipsTextView =[[UITextView alloc]initWithFrame:CGRectMake(0, 150+(self.view.height-150)*0.66, self.view.width, (self.view.height-150)*0.33+10)];
     [self.otherTipsTextView setBackgroundColor:ianRGBColor(231, 231,231)];
-    self.otherTipsTextView.text =@"这里显示其他提示";
+    self.otherTipsTextView.text =@"暂无任何提醒";
     [self.view addSubview:self.otherTipsTextView];
     
     [self orderFineInfo];
     
 }
-
-
-
-
-
-
-
 
 
 
