@@ -196,7 +196,8 @@
     
     UIButton *addBtn =[[UIButton alloc] initWithFrame:CGRectMake(self.view.width *0.5 -100, self.view.height -120 ,200,30)];
     addBtn.backgroundColor =[UIColor greenColor];
-    [addBtn setTitle:@"确定" forState:UIControlStateNormal];
+//    [addBtn setTitle:@"确定" forState:UIControlStateNormal];
+    [addBtn setBackgroundImage:[UIImage imageNamed:@"sure"] forState:UIControlStateNormal];
     [addBtn addTarget:self action:@selector(addRepair) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:addBtn];
     

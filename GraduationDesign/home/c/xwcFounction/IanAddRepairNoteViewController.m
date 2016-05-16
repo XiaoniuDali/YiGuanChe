@@ -94,7 +94,7 @@
 
 -(void)setSubviews
 {
-    UILabel *label =[[UILabel alloc] initWithFrame:CGRectMake(10, 100, 125, 50)];
+    UILabel *label =[[UILabel alloc] initWithFrame:CGRectMake(10, 80, 125, 50)];
     label.text =@"1、保养项目：";
     [label setFont:[UIFont systemFontOfSize:13]];
     [self.view addSubview:label];
@@ -102,7 +102,7 @@
  
     
     
-    UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(150,55,200, 80)];
+    UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(110,30,200, 80)];
     pickerView.dataSource = self;
     pickerView.delegate = self;
     pickerView.showsSelectionIndicator = YES;
@@ -112,12 +112,12 @@
     [self.view addSubview:pickerView];
     
     
-    UILabel *dateLabel =[[UILabel alloc] initWithFrame:CGRectMake(10, 200, 115, 50)];
+    UILabel *dateLabel =[[UILabel alloc] initWithFrame:CGRectMake(10, 210, 115, 50)];
     dateLabel.text =@"2、保养日期：";
     [dateLabel setFont:[UIFont systemFontOfSize:13]];
     [self.view addSubview:dateLabel];
     
-    UIDatePicker *datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(115,145,300,100)];
+    UIDatePicker *datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(95,130,250,80)];
     datePicker.datePickerMode = UIDatePickerModeDate;
 //    [datePicker setBackgroundColor:[UIColor grayColor]];
     
@@ -131,31 +131,31 @@
     
     [ self.view addSubview:datePicker];
     
-    UILabel *siteLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 300,125,50)];
+    UILabel *siteLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 330,125,50)];
     siteLabel.text =@"3、保养地点：";
     [siteLabel setFont:[UIFont systemFontOfSize:13]];
     
     [self.view addSubview:siteLabel];
     
-    _siteTf =[[UITextField alloc] initWithFrame:CGRectMake(135,310,200,30)];
+    _siteTf =[[UITextField alloc] initWithFrame:CGRectMake(135,340,200,30)];
     [_siteTf setTextAlignment:NSTextAlignmentCenter];
     _siteTf.backgroundColor =[UIColor clearColor];
     [_siteTf setFont:[UIFont systemFontOfSize:12]];
 
     [self.view addSubview:_siteTf];
     
-    UIView *line =[[UIView alloc] initWithFrame:CGRectMake(135,335, 200, 1)];
+    UIView *line =[[UIView alloc] initWithFrame:CGRectMake(135,365, 200, 1)];
     [line setBackgroundColor:[UIColor blackColor]];
     [self.view addSubview:line];
     
     
     
-    UILabel *moneyLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 400,125,50)];
+    UILabel *moneyLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 420,125,50)];
     moneyLabel.text =@"4、保养费用：";
     [moneyLabel setFont:[UIFont systemFontOfSize:13]];
     [self.view addSubview:moneyLabel];
     
-    _moneyTf =[[UITextField alloc] initWithFrame:CGRectMake(135,410,200,30)];
+    _moneyTf =[[UITextField alloc] initWithFrame:CGRectMake(135,430,200,30)];
     _moneyTf.backgroundColor =[UIColor clearColor];
     [_moneyTf setFont:[UIFont systemFontOfSize:12]];
     [_moneyTf setTextAlignment:NSTextAlignmentCenter];
@@ -163,7 +163,7 @@
     _moneyTf.keyboardType = UIKeyboardTypeNumberPad;
     [self.view addSubview:_moneyTf];
     
-    UIView *line1=[[UIView alloc] initWithFrame:CGRectMake(135,435, 200, 1)];
+    UIView *line1=[[UIView alloc] initWithFrame:CGRectMake(135,455, 200, 1)];
     [line1 setBackgroundColor:[UIColor blackColor]];
     [self.view addSubview:line1];
 
