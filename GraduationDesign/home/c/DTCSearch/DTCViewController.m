@@ -37,7 +37,7 @@
         }
         //        @"P0108"
         [IHAcountTool showHUD:@"" andView:self.view];
-        //        [weakSelf loadData]; // 注销方法，用的时候可以点开
+        [weakSelf loadData]; // 注销方法，用的时候可以点开
         
     }];
     

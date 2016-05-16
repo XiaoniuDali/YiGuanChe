@@ -31,7 +31,7 @@
     _AddOilModelMutableArray = [NSMutableArray array];
     
     // 防止乱点，先关闭
-//    [self loadData];
+    [self loadData];
     
     [self showAnnotions];
 

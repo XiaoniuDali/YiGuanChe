@@ -171,7 +171,7 @@
     [[NetworkManager shareMgr] app_search_VIN:dic completeHandle:^(NSDictionary *response) {
         NSLog(@"得到数据：%@",response);
 
-        if (response[@"result"] == 0) {
+        if (response[@"result"]) {
             vinModel *models = [vinModel new];
             
             [models mj_setKeyValues:response[@"result"]];
