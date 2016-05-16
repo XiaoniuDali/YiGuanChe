@@ -106,6 +106,7 @@
     self.otherTipsTextView.text =@"这里显示其他提示";
     [self.view addSubview:self.otherTipsTextView];
     
+    [self orderFineInfo];
     
 }
 
@@ -133,11 +134,9 @@
         NSString *province_id =[set stringForColumn:@"province_id"];
         
         //获得所有新的
-        
-//        --create table if not exists FineInfo(id integer primary key autoincrement,car_id text,city_id text,code text,fen text,info text,money text,occur_area text,occur_date text,province_id text)
-
+     
+        self.otherTipsTextView.text = [NSString stringWithFormat:@"您于%@在%@发生了违规现象：“%@”,需要罚款%@元,扣%@分，请及时处理",[occur_date substringWithRange:NSMakeRange(0, 16)],occur_area,info,money,fen];
     }
-    
     return @"dd";
 }
 
