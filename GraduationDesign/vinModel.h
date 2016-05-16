@@ -19,88 +19,74 @@
 //@property (nonatomic, copy) NSString *reason;
 //
 //@end
+
+
 @interface vinModel : Tool_FMDBModel<NSCoding>
 
-@property (nonatomic, copy) NSString *telephone; // 电话
+@property (nonatomic, copy) NSString *telephone;
 
-@property (nonatomic, copy) NSString *password; // 密码
+@property (nonatomic, copy) NSString *password;
 
-@property (nonatomic, copy) NSString *crateWidth;
+@property (nonatomic, copy) NSString *GL;
 
-@property (nonatomic, copy) NSString *loadQualityFactor;
+@property (nonatomic, copy) NSString *CSXS;
 
-@property (nonatomic, copy) NSString *displacement; /*排量（CC）*/
+@property (nonatomic, copy) NSString *BSQMS;
 
-@property (nonatomic, copy) NSString *totalQuality;
+@property (nonatomic, copy) NSString *PL;
 
-@property (nonatomic, copy) NSString *shaftNum;/*轴数*/
+@property (nonatomic, copy) NSString *CX;
 
-@property (nonatomic, copy) NSString *springNum; /*弹簧片数*/
+@property (nonatomic, copy) NSString *CLDM;
 
-@property (nonatomic, copy) NSString *semiSaddleBearingQuelity;/*排放依据标准*/
+@property (nonatomic, copy) NSString *SSNF;
 
-@property (nonatomic, copy) NSString *reatedQuality; /*额定质量*/
+@property (nonatomic, copy) NSString *CLLX;
 
-@property (nonatomic, copy) NSString *carrying;/*整车长*/
+@property (nonatomic, copy) NSString *BSQLX;
 
-@property (nonatomic, copy) NSString *crateHight;
+@property (nonatomic, copy) NSString *TCNF;
 
-@property (nonatomic, copy) NSString *type;  /*产品类型*/
+@property (nonatomic, copy) NSString *SSYF;
 
-@property (nonatomic, copy) NSString *maxSpeed;
+@property (nonatomic, copy) NSString *NK;
 
-@property (nonatomic, copy) NSString *equipmentQuality; /*总质量*/
+@property (nonatomic, copy) NSString *CMS;
 
-/**
- 车宽
- */
-@property (nonatomic, copy) NSString *carWidth;
+@property (nonatomic, copy) NSString *FDJXH;
 
-@property (nonatomic, copy) NSString *tireSpecifications;/*轮胎规格*/
+@property (nonatomic, copy) NSString *SCNF;
 
-@property (nonatomic, copy) NSString *turnToType;
+@property (nonatomic, copy) NSString *ZWS;
 
-@property (nonatomic, copy) NSString *brand; // 品牌
+@property (nonatomic, copy) NSString *Vin;
 
-@property (nonatomic, copy) NSString *tireNum; /*轮胎数*/
+@property (nonatomic, copy) NSString *RYBH;
 
-@property (nonatomic, copy) NSString *emissionStandards; /*燃料种类*/
+@property (nonatomic, copy) NSString *PP;
 
-@property (nonatomic, copy) NSString *beforeWheelTrack;/*前轮距*/
-/**
- 车长
- */
-@property (nonatomic, copy) NSString *carLong;
+@property (nonatomic, copy) NSString *CXI;
 
-@property (nonatomic, copy) NSString *power; /*功率（KW）*/
+@property (nonatomic, copy) NSString *RYLX;
 
-@property (nonatomic, copy) NSString *name; // 产品名称
+@property (nonatomic, copy) NSString *XSMC;
 
-@property (nonatomic, copy) NSString *combustionType; /*装备质量*/
+@property (nonatomic, copy) NSString *CJMC;
 
-@property (nonatomic, copy) NSString *engineProducers;
+@property (nonatomic, copy) NSString *QDFS;
 
-@property (nonatomic, copy) NSString *model;  /*产品型号*/
+@property (nonatomic, copy) NSString *VINNF;
 
-@property (nonatomic, copy) NSString *shaftLoad; /*轴荷*/
+@property (nonatomic, copy) NSString *FDJGS;
 
-@property (nonatomic, copy) NSString *beforeAfterHanging;/*前悬后悬*/
+@property (nonatomic, copy) NSString *PFBZ;
 
-@property (nonatomic, copy) NSString *cabCarring;
+@property (nonatomic, copy) NSString *JB;
 
-@property (nonatomic, copy) NSString *carHigh;
+@property (nonatomic, copy) NSString *ZDJG;
 
-@property (nonatomic, copy) NSString *productionDate; /*制造年份*/
+@property (nonatomic, copy) NSString *NLevelID;
 
-@property (nonatomic, copy) NSString *engineType; /*发动机型号*/
-
-@property (nonatomic, copy) NSString *departureAngle;
-
-@property (nonatomic, copy) NSString *trailerTotalQuality;
-
-@property (nonatomic, copy) NSString *crateLong;
-
-@property (nonatomic, copy) NSString *afterWheelTrack;/*后轮距*/
-
+@property (nonatomic, copy) NSString *DWS;
 @end
 

@@ -41,14 +41,35 @@
     while ([resultSet next]){
         
         self.locationDic = [NSDictionary dictionaryWithObjectsAndKeys:
-                                   [resultSet stringForColumn:@"telephone"],@"telephone",
-                                   [resultSet stringForColumn:@"brand"],@"brand",
-                                   [resultSet stringForColumn:@"name"],@"name",
-                                   [resultSet stringForColumn:@"displacement"],@"displacement",
-                                   [resultSet stringForColumn:@"type"],@"type",
-                                   [resultSet stringForColumn:@"carLong"],@"carLong",
-                                   [resultSet stringForColumn:@"carHigh"],@"carHigh",
-                                   [resultSet stringForColumn:@"carWidth"],@"carWidth",nil];
+                                   [resultSet stringForColumn:@"BSQLX"],@"BSQLX",
+                                   [resultSet stringForColumn:@"BSQMS"],@"BSQMS",
+                                   [resultSet stringForColumn:@"CJMC"],@"CJMC",
+                                   [resultSet stringForColumn:@"CLDM"],@"CLDM",
+                                   [resultSet stringForColumn:@"CLLX"],@"CLLX",
+                                   [resultSet stringForColumn:@"CMS"],@"CMS",
+                                   [resultSet stringForColumn:@"SSYF"],@"SSYF",
+                                   [resultSet stringForColumn:@"SSNF"],@"SSNF",
+                            [resultSet stringForColumn:@"CSXS"],@"CSXS",
+                            [resultSet stringForColumn:@"CX"],@"CX",
+                            [resultSet stringForColumn:@"CXI"],@"CXI",
+                            [resultSet stringForColumn:@"DWS"],@"DWS",
+                            [resultSet stringForColumn:@"FDJGS"],@"FDJGS",
+                            [resultSet stringForColumn:@"FDJXH"],@"FDJXH",
+                            [resultSet stringForColumn:@"FDJXH"],@"FDJXH",
+                            [resultSet stringForColumn:@"GL"],@"GL",
+                            [resultSet stringForColumn:@"JB"],@"JB",
+                            [resultSet stringForColumn:@"NK"],@"NK",
+                            [resultSet stringForColumn:@"PFBZ"],@"PFBZ",
+                            [resultSet stringForColumn:@"PL"],@"PL",
+                            [resultSet stringForColumn:@"PP"],@"PP",
+                            [resultSet stringForColumn:@"QDFS"],@"QDFS",
+                            [resultSet stringForColumn:@"RYBH"],@"RYBH",
+                            [resultSet stringForColumn:@"RYLX"],@"RYLX",
+                            [resultSet stringForColumn:@"SCNF"],@"SCNF",
+                            [resultSet stringForColumn:@"TCNF"],@"TCNF",
+                            [resultSet stringForColumn:@"ZDJG"],@"ZDJG",
+                            [resultSet stringForColumn:@"ZWS"],@"ZWS",
+                            nil];
         NSLog(@"%@",self.locationDic);
         
     }
@@ -157,7 +178,7 @@
     return 1;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 8;
+    return 28;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identified = @"SettingTableViewCell";
@@ -169,46 +190,142 @@
 
     switch (indexPath.row) {
         case 0:
-            cell.Sort.text = @"品牌";
-            cell.number.text = @"名称";
+            cell.Sort.text = @"变速器类型";
+            cell.number.text = @"变速箱描述";
             
             break;
         case 1:
             
-//            cell.Sort.text = self.locationDic[@"brand"];
-//            cell.number.text = self.locationDic[@"name"];
-            
-            cell.Sort.text = @"品牌";
-            cell.number.text = @"名称";
+            cell.Sort.text = self.locationDic[@"BSQLX"];
+            cell.number.text = self.locationDic[@"BSQMS"];
+
             break;
         case 2:
-            cell.Sort.text = @"排量";
-            cell.number.text = @"产品类型";
+            cell.Sort.text = @"厂家名称";
+            cell.number.text = @"车型代码";
             break;
         case 3:
-            cell.Sort.text = @"displacement";
-            cell.number.text = @"type";
-//            cell.Sort.text = self.locationDic[@"displacement"];
-//            cell.number.text = self.locationDic[@"type"];
+            cell.Sort.text = self.locationDic[@"CJMC"];
+            cell.number.text = self.locationDic[@"CLDM"];
             
             break;
         case 4:
-            cell.Sort.text = @"车长";
-            cell.number.text = @"车高";
+            cell.Sort.text = @"车辆类型";
+            cell.number.text = @"车门数";
             break;
         case 5:
-            cell.Sort.text = self.locationDic[@"carLong"];
-            cell.number.text = self.locationDic[@"carHigh"];
-            cell.Sort.text = @"carLong";
-            cell.number.text = @"carHigh";
+            cell.Sort.text = self.locationDic[@"CLLX"];
+            cell.number.text = self.locationDic[@"CMS"];
             
             break;
         case 6:
-            cell.Sort.text = @"车宽";
+            cell.Sort.text = @"上市年份";
+            cell.number.text = @"上市月份";
             
             break;
         case 7:
-            cell.number.text = self.locationDic[@"carWidth"];
+            cell.Sort.text = self.locationDic[@"SSNF"];
+            cell.number.text = self.locationDic[@"SSYF"];
+            break;
+            
+        case 8:
+            cell.Sort.text = @"车身形式";
+            cell.number.text = @"车型";
+            
+            break;
+        case 9:
+            cell.Sort.text = self.locationDic[@"CSXS"];
+            cell.number.text = self.locationDic[@"CX"];
+            break;
+            
+        case 10:
+            cell.Sort.text = @"车系";
+            cell.number.text = @"档位数";
+            
+            break;
+        case 11:
+            cell.Sort.text = self.locationDic[@"CXI"];
+            cell.number.text = self.locationDic[@"DWS"];
+            break;
+            
+        case 12:
+            cell.Sort.text = @"缸数";
+            cell.number.text = @"发动机型号";
+            
+            break;
+        case 13:
+            cell.Sort.text = self.locationDic[@"FDJGS"];
+            cell.number.text = self.locationDic[@"FDJXH"];
+            break;
+            
+        case 14:
+            cell.Sort.text = @"发动机型号";
+            cell.number.text = @"发动机最大功率(kW)";
+            
+            break;
+        case 15:
+            cell.Sort.text = self.locationDic[@"FDJXH"];
+            cell.number.text = self.locationDic[@"GL"];
+            break;
+            
+        case 16:
+            cell.Sort.text = @"车辆级别";
+            cell.number.text = @"年款";
+            
+            break;
+        case 17:
+            cell.Sort.text = self.locationDic[@"JB"];
+            cell.number.text = self.locationDic[@"NK"];
+            break;
+            
+        case 18:
+            cell.Sort.text = @"排放标准";
+            cell.number.text = @"排量";
+            
+            break;
+        case 19:
+            cell.Sort.text = self.locationDic[@"PFBZ"];
+            cell.number.text = self.locationDic[@"PL"];
+            break;
+            
+        case 20:
+            cell.Sort.text = @"品牌";
+            cell.number.text = @"驱动方式";
+            
+            break;
+        case 21:
+            cell.Sort.text = self.locationDic[@"PP"];
+            cell.number.text = self.locationDic[@"QDFS"];
+            break;
+            
+        case 22:
+            cell.Sort.text = @"燃油标号";
+            cell.number.text = @"燃油类型";
+            
+            break;
+        case 23:
+            cell.Sort.text = self.locationDic[@"RYBH"];
+            cell.number.text = self.locationDic[@"RYLX"];
+            break;
+            
+        case 24:
+            cell.Sort.text = @"生产年份";
+            cell.number.text = @"停产年份";
+            
+            break;
+        case 25:
+            cell.Sort.text = self.locationDic[@"SCNF"];
+            cell.number.text = self.locationDic[@"TCNF"];
+            break;
+            
+        case 26:
+            cell.Sort.text = @"指导价格";
+            cell.number.text = @"座位数";
+            
+            break;
+        case 27:
+            cell.Sort.text = self.locationDic[@"ZDJG"];
+            cell.number.text = self.locationDic[@"ZWS"];
             break;
             
         default:

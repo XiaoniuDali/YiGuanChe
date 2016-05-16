@@ -12,10 +12,13 @@
 #import "NetworkManager.h"
 #import <MJExtension.h>
 #import "IanLoginViewController.h"
+#import <FMDatabase.h>
+#import "appMarco.h"
 @interface RegistViewController ()
 @property (nonatomic, strong) UITextField *vinTextField, *pwdTextField, *rePwdTextField, *telephoneTextField;
 @property (nonatomic, strong) UIButton *registBtn;
 @property (nonatomic, strong) UITextView *locateVIN;
+@property (nonatomic, strong) FMDatabase *dataBaseHandle;
 @end
 
 @implementation RegistViewController
@@ -26,7 +29,46 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     [self setUI];
+    
+    self.dataBaseHandle =[self createDatabase];
+    [self createDataBase];
 }
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [self.dataBaseHandle close];
+}
+
+// 创建数据库
+-(FMDatabase *)createDatabase
+{
+    NSString * doc =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *fileName =[doc stringByAppendingPathComponent:@"appDb.sqlite"];
+    
+    FMDatabase *appDb =[FMDatabase databaseWithPath:fileName];
+    
+    IanLog(@"fileName==%@",fileName);
+    
+    if (![appDb open]) {
+        NSLog(@"opne 失败");
+    }else if ([appDb open])
+    {
+        IanLog(@"打开成功");
+    }
+    return appDb;
+}
+- (void)createDataBase{
+    
+    BOOL result =[ self.dataBaseHandle executeUpdate:@"create table if not exists vinModel(id integer primary key autoincrement,BSQLX text,BSQMS text,CJMC text,CLDM text,CLLX text,CMS text,CSXS text,CX text,CXI text,DWS text,FDJGS text,FDJXH text,GL text,JB text,NK text,NLevelID text,PFBZ,PL text,PP text,QDFS text,RYBH text,RYLX text,SCNF text,SSNF text,SSYF text,TCNF text,VINNF text,Vin text,XSMC text,ZDJG text,ZWS text)"];
+    
+    if (result) {
+        NSLog(@"创建表成功");
+    }else
+    {
+        NSLog(@"创建表失败");
+    }
+    
+}
+
 - (void)setUI{
     __weak typeof(self) weakSelf = self;
     self.locateVIN = ({
@@ -140,9 +182,10 @@
     [IHAcountTool showHUD:@"" andView:self.view];
     NSDictionary *dic = @{
                           @"vin" : @"LSGPC52U6AF102554",//self.vinTextField.text,//
-                          @"key" : @"00c3a1a82ed6455eb442c5f2369dbc50"
+                          @"key" : @"49756c81fcd3498f8847d9e7ff7eeab2"
                           };
-     
+//    NSDictionary *dic = nil;
+    
     NSArray *allModel = [vinModel findAll];
     for (int i = 0; i<allModel.count; i++) {
         vinModel *haveModel =allModel[i];
@@ -152,7 +195,7 @@
             return;
         }
         NSLog(@"array:%@",haveModel);
-        //查看模型数据能否成功读取
+        //查看模型数据能否成功读取广州宝马
     }
     
     if (self.vinTextField.text.length == 0 || self.vinTextField.text.length != 17) {
@@ -172,13 +215,46 @@
         NSLog(@"得到数据：%@",response);
 
         if (response[@"result"]) {
-            vinModel *models = [vinModel new];
             
-            [models mj_setKeyValues:response[@"result"]];
-            // 保存数据到数据库
-            models.telephone = self.telephoneTextField.text;
-            models.password = self.pwdTextField.text;
-            [models save];
+            NSDictionary *dic =response[@"result"];
+            
+            [self.dataBaseHandle executeUpdate:@"DELETE FROM vinModel"];
+            NSString * telephone = self.telephoneTextField.text;
+            NSString * password = self.pwdTextField.text;
+            NSString * BSQLX = dic[@"BSQLX"];
+            NSString * BSQMS = dic[@"BSQMS"];
+            NSString * CJMC = dic[@"CJMC"];
+            NSString * CLDM = dic[@"CLDM"];
+            NSString * CLLX = dic[@"CLLX"];
+            NSString * CMS = dic[@"CMS"];
+            NSString * CSXS = dic[@"CSXS"];
+            NSString * CX = dic[@"CX"];
+            NSString * CXI = dic[@"CXI"];
+            NSString * DWS = dic[@"DWS"];
+            NSString * FDJGS = dic[@"FDJGS"];
+            NSString * FDJXH = dic[@"FDJXH"];
+            NSString * GL = dic[@"GL"];
+            NSString * JB = dic[@"JB"];
+            NSString * NK = dic[@"NK"];
+            NSString * NLevelID = dic[@"NLevelID"];
+            NSString * PFBZ = dic[@"PFBZ"];
+            NSString * PL = dic[@"PL"];
+            NSString * PP = dic[@"PP"];
+            NSString * QDFS = dic[@"QDFS"];
+            NSString * RYBH = dic[@"RYBH"];
+            NSString * RYLX = dic[@"RYLX"];
+            NSString * SCNF = dic[@"SCNF"];
+            NSString * SSNF = dic[@"SSNF"];
+            NSString * SSYF = dic[@"SSYF"];
+            NSString * TCNF = dic[@"TCNF"];
+            NSString * VINNF = dic[@"VINNF"];
+            NSString * Vin = dic[@"Vin"];
+            NSString * XSMC = dic[@"XSMC"];
+            NSString * ZDJG = dic[@"ZDJG"];
+            NSString * ZWS = dic[@"ZWS"];
+            
+            
+            [self.dataBaseHandle executeUpdate:@"insert into vinModel(telephone,password,BSQLX ,BSQMS ,CJMC ,CLDM ,CLLX,CMS,CSXS ,CX ,CXI ,DWS ,FDJGS ,FDJXH ,GL,JB,NK ,NLevelID ,PFBZ,PL ,PP ,QDFS ,RYBH ,RYLX,SCNF,SSNF ,SSYF,TCNF ,VINNF,Vin,XSMC,ZDJG,ZWS) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",telephone,password,BSQLX ,BSQMS ,CJMC ,CLDM ,CLLX,CMS,CSXS ,CX ,CXI ,DWS ,FDJGS ,FDJXH ,GL,JB,NK ,NLevelID ,PFBZ,PL ,PP ,QDFS ,RYBH ,RYLX,SCNF,SSNF ,SSYF,TCNF ,VINNF,Vin,XSMC,ZDJG,ZWS];
             
             [IHAcountTool showDelyHUD:@"注册成功" andView:self.view];
             
@@ -200,46 +276,36 @@
 }
 @end
 
-//得到数据：{
-//    "error_code" = 0;
-//    reason = "\U6210\U529f";
-//    result =     {
-//        afterWheelTrack = 1558;
-//        beforeAfterHanging = "951/962";
-//        beforeWheelTrack = 1544;
-//        brand = "\U96ea\U4f5b\U5170(CHEVROLET)";
-//        cabCarring = "";
-//        carHigh = 1477;
-//        carLong = 4598;
-//        carWidth = 1797;
-//        carrying = 5;
-//        combustionType = "";
-//        crateHight = "";
-//        crateLong = "";
-//        crateWidth = "";
-//        departureAngle = "11.3/16.7";
-//        displacement = 89;
-//        emissionStandards = "GB18352.3-2005\U56fd\U2163";
-//        engineProducers = "\U4e0a\U6d77\U901a\U7528\U4e1c\U5cb3\U52a8\U529b\U603b\U6210\U6709\U9650\U516c\U53f8";
-//        engineType = LDE;
-//        equipmentQuality = 1390;
-//        loadQualityFactor = "";
-//        maxSpeed = 180;
-//        model = LDE;
-//        name = "\U96ea\U4f5b\U5170(CHEVROLET) SGM7166ATB \U8f7f\U8f66";
-//        power = 1598;
-//        productionDate = "2010\U5e74\U6b3e ";
-//        reatedQuality = "";
-//        semiSaddleBearingQuelity = "";
-//        shaftLoad = "950/850";
-//        shaftNum = 2;
-//        shaftdistance = 2685;
-//        springNum = "-/-";
-//        tireNum = 4;
-//        tireSpecifications = "205/60R16,205/65R15";
-//        totalQuality = "";
-//        trailerTotalQuality = "";
-//        turnToType = "";
-//        type = "\U8f7f\U8f66";
-//    };
-//}
+//result =     {
+//    BSQLX = "\U624b\U52a8";变速器类型
+//    BSQMS = "\U624b\U52a8\U53d8\U901f\U5668(MT)";变速箱描述
+//    CJMC = "\U4e0a\U6d77\U901a\U7528";厂家名称
+//    CLDM = SGM7169MTA;车型代码
+//    CLLX = "\U8f7f\U8f66";车辆类型
+//    CMS = "\U56db\U95e8";车门数
+//    CSXS = "\U4e09\U53a2";车身形式
+//    CX = "\U79d1\U9c81\U5179";车型
+//    CXI = "\U79d1\U9c81\U5179";车系
+//    DWS = 5;档位数
+//    FDJGS = 4;缸数
+//    FDJXH = LDE;发动机型号
+//    GL = 86;发动机最大功率(kW)
+//    JB = "\U7d27\U51d1\U578b\U8f66";车辆级别
+//    NK = 2010;年款
+//    NLevelID = CGX0516M0005;
+//    PFBZ = "\U56fd4";排放标准
+//    PL = "1.6";	排量
+//    PP = "\U96ea\U4f5b\U5170";品牌
+//    QDFS = "\U524d\U8f6e\U9a71\U52a8";驱动方式
+//    RYBH = "93#";燃油标号
+//    RYLX = "\U6c7d\U6cb9";燃油类型
+//    SCNF = 2010;生产年份
+//    SSNF = 2010;上市年份
+//    SSYF = 8;上市月份
+//    TCNF = 2011;停产年份
+//    VINNF = 2010;VIN对应的年份，可为具体的年份和“未查到年代”两种
+//    Vin = LSGPC52U6AF102554;
+//    XSMC = "1.6 \U624b\U52a8 SL \U5929\U5730\U7248";销售名称
+//    ZDJG = "11.39";指导价格
+//    ZWS = 5;座位数
+//};
