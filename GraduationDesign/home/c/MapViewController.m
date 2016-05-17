@@ -115,7 +115,7 @@
     
     if (cityName == nil) {
         
-        cityName = [cityNameDic[@"addressDetail"] substringFromIndex:3];
+        cityName = [cityNameDic[@"carAddress"] substringFromIndex:3];
     }
 
     CLGeocoder *geocoder=[[CLGeocoder alloc]init];

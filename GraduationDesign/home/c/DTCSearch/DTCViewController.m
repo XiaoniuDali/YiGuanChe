@@ -71,7 +71,7 @@
     //{"result":{"body":{"description":"歧管绝对压力（传感器）/大气压力（传感器）电路高","dtcleavel":null,"aftermath":"怠速或者减速不稳，点火困难","type":"发动机系统","remind":"传感器信号电路短路到正极，传感器故障，或电子控制模块故障，立即维修"}},"reason":"查询成功","error_code":"0"}
     NSDictionary *dic = @{
                           @"key" : @"0e12d4c090977e2261d2a776df227bcd",
-                          @"code" :self.dtcString //@"P0108"
+                          @"code" :self.dtcString //@"P0001"//
                           };
     [[NetworkManager shareMgr] app_search_DTC:dic completeHandle:^(NSDictionary *respose) {
         

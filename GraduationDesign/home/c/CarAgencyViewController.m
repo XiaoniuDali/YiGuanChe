@@ -61,7 +61,7 @@
     // 打开数据库
     [self.dataBaseHandle open];
     
-    BOOL result =[ self.dataBaseHandle executeUpdate:@"create table if not exists carAgency (id integer primary key autoincrement,carName text,carBrand text,phoneNum integer,addressDetail text)"];
+    BOOL result =[ self.dataBaseHandle executeUpdate:@"create table if not exists carAgency (id integer primary key autoincrement,carName text,carBrand text,carPhone integer,carAddress text)"];
     
     if (result) {
         NSLog(@"创建表成功");
@@ -71,7 +71,7 @@
     }
 
 //    NSString *sql = [NSString stringWithFormat:@"SELECT *FROM carAngency WHERE addressDetail GLOB '%@*' AND carBrand GLOB '%@'",_locationCityName,searchBar.text];
-    NSString *sql = [NSString stringWithFormat:@"SELECT *FROM carAgency WHERE addressDetail GLOB '%@*' AND carBrand GLOB '%@'",@"广州",searchBar.text]; // 奔驰
+    NSString *sql = [NSString stringWithFormat:@"SELECT *FROM carAgency WHERE carAddress GLOB '%@*' AND carName GLOB '%@'",@"广州",searchBar.text]; // 奔驰
     
     FMResultSet *resultSet = [self.dataBaseHandle executeQuery:sql];
     
@@ -80,8 +80,8 @@
         NSDictionary *locationDic=[NSDictionary dictionaryWithObjectsAndKeys:
                                    [resultSet stringForColumn:@"carName"],@"carName",
                                    [resultSet stringForColumn:@"carBrand"],@"carBrand",
-                                   [resultSet stringForColumn:@"phoneNum"],@"phoneNum",
-                                   [resultSet stringForColumn:@"addressDetail"],@"addressDetail",nil];
+                                   [resultSet stringForColumn:@"carPhone"],@"carPhone",
+                                   [resultSet stringForColumn:@"carAddress"],@"carAddress",nil];
         
         [_mapViewController putAddress:locationDic andCityName:nil];
     }
